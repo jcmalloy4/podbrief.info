@@ -1,50 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PodBrief – Smarter Podcast Summaries</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PodBrief</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hero">
-    <nav class="navbar">
-      <div class="logo">PodBrief</div>
-      <a href="#download" class="cta">Download</a>
-    </nav>
-    <div class="hero-content">
-      <h1>Smarter Podcast Listening</h1>
-      <p>Summarize, search, and remember the best moments from any podcast — powered by AI.</p>
-      <a href="#download" class="btn-primary">Get the App</a>
+  <header class="navbar">
+    <div class="navbar-content">
+      <div class="navbar-logo">
+        <img src="assets/podbrief_logo.png" alt="PodBrief Logo" />
+        <span>PodBrief</span>
+      </div>
+      <nav class="navbar-links">
+        <a href="#Overview">Overview</a>
+        <a href="#Features">Features</a>
+      </nav>
     </div>
   </header>
 
-  <section class="features">
-    <h2>What PodBrief Can Do</h2>
-    <div class="feature-grid">
-      <div class="feature">
-        <h3>Summarize Episodes</h3>
-        <p>Get key takeaways from your favorite shows in seconds.</p>
-      </div>
-      <div class="feature">
-        <h3>Search Your Library</h3>
-        <p>Find anything you’ve heard — across all your subscriptions.</p>
-      </div>
-      <div class="feature">
-        <h3>Stay Updated</h3>
-        <p>Get a daily digest of new episodes from your favorite podcasts.</p>
-      </div>
+  <section id="Overview" class="hero">
+    <h1>A smarter way to listen to podcasts</h1>
+    <p>Stay on top of your favorite shows with a smart feed, fast AI summaries, and seamless playback—just a better podcast app.</p>
+    <a href="#" class="btn-primary">Try for free</a>
+  
+    <div class="image-wrapper">
+      <div class="glow"></div>
+      <img src="assets/phone-hero.png" alt="PodBrief app screenshot" class="hero-image" />
     </div>
   </section>
+  <section class="features" id="Features">
+    <h2 class="features-title">Know what’s new and worth listening to</h2>
+  
+    <div class="feature-item">
+      <div class="feature-image-wrapper">
+        <div class="feature-glow"></div>
+        <img src="assets/feature-feed.png" alt="Daily Feed Screenshot" class="feature-image" />
+      </div>
+      <div class="feature-text">
+        <h3>A daily feed of podcasts for smarter listening</h3>
+        <p>
+          See the latest episodes from your favorite shows, all in one scrollable feed. Keep track of more podcasts than ever, and quickly scan what’s new to find what you actually want to hear.        </p>
+      </div>
+    </div>
 
-  <section class="download" id="download">
-    <h2>Download PodBrief</h2>
-    <p>Available on the App Store</p>
-    <a href="https://apps.apple.com" class="btn-primary">Go to App Store</a>
+    <div class="feature-spacer"></div>
+
+    <div class="feature-item">
+      <div class="feature-image-wrapper">
+        <div class="feature-glow"></div>
+        <img src="assets/feature-brief.png" alt="Daily Feed Screenshot" class="feature-image" />
+      </div>
+      <div class="feature-text">
+        <h3>Episode briefs that cut through the noise</h3>
+        <p>
+          PodBrief gives you clear, concise summaries that surface the key insights from every episode. It’s everything you need to decide what to listen to—and what to skip.        </p>
+      </div>
+    </div>
+
+    <div class="feature-spacer"></div>
+
+    <div class="feature-item">
+      <div class="feature-image-wrapper">
+        <div class="feature-glow"></div>
+        <img src="assets/feature-player.png" alt="Daily Feed Screenshot" class="feature-image" />
+      </div>
+      <div class="feature-text">
+        <h3>Everything else you’d expect from a podcast app — just smarter</h3>
+        <p>
+          All the core podcast features you need, from a smooth playback to adjustable speed — plus the smart tools you didn’t know you were missing.      </div>
+    </div>
+
   </section>
-
-  <footer class="footer">
-    <p>&copy; 2025 PodBrief. All rights reserved.</p>
-  </footer>
 </body>
 </html>
