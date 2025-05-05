@@ -251,6 +251,7 @@
     justify-content: center;      /* Center all columns */
     align-items: flex-start;
     gap: 4rem;                    /* spacing between columns */
+    padding: 0 1rem;
   }
   
   
@@ -271,6 +272,10 @@
     gap: 0.25rem;
     align-items: middle;
     justify-content: center;
+    white-space: nowrap; /* prevents breaking the email */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
   
   .footer-column a {
@@ -397,4 +402,10 @@
   width: 100%;
   max-width: 400px;
 }
+}
+
+@media (max-width: 700px) {
+  .footer-columns {
+    gap: 1.5rem; /* reduce spacing between columns */
+  }
 }
