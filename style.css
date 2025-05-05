@@ -329,7 +329,7 @@
   }
 
   .image-wrapper {
-    padding: 0 1rem
+    padding: 0 .5rem
   }
 
   .navbar {
@@ -364,7 +364,7 @@
     font-size: 1.75rem;
     font-weight: 700;
     color: white;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     font-family: 'Inter', sans-serif;
   }
 
