@@ -252,7 +252,6 @@
     justify-content: center;      /* Center all columns */
     align-items: flex-start;
     gap: 4rem;                    /* spacing between columns */
-    flex-wrap: wrap;
   }
   
   
@@ -317,60 +316,57 @@
   }
 
   @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-  
-    .hero p {
-      font-size: 1rem;
-    }
-  
-    .hero-image {
-      width: 95%;
-      max-width: 380px;
-    }
-  
-    .features-title {
-      font-size: 1.6rem;
-    }
-  
-    .feature-item {
-      flex-direction: column;
-      text-align: center;
-      gap: 2rem;
-    }
-  
-    .feature-text h3 {
-      font-size: 1.25rem;
-    }
-  
-    .feature-text p {
-      font-size: 1rem;
-    }
-  
-    .navbar {
-      top: 10px;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-    }
-  
-    .navbar-content {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  
-    .footer-columns {
-      flex-direction: column;
-      gap: 2rem;
-      align-items: center;
-    }
-  
-    .footer-column {
-      text-align: center;
-    }
-  
-    .email-row {
-      flex-direction: column;
-      align-items: center;
-    }
+  .hero h1 {
+    font-size: 2rem;
   }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-image {
+    width: 95%;
+    max-width: 450px;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1a1a2e;
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 0.75rem 1.5rem;
+    width: fit-content; /* allows content to determine width */
+  }
+  
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .email-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-image {
+    width: 80%;
+    max-width: 175px;
+    position: relative;
+    z-index: 1;
+    border-radius: 1.5rem;
+  }
+
+  .features-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+}
