@@ -16,6 +16,7 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 50px; /* equal to or greater than your navbar height */
+    overflow-x: hidden;
   }
   
   
@@ -330,24 +331,18 @@
   }
 
   .navbar {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #1a1a2e;
-    border-radius: 999px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    padding: 0.75rem 1.5rem;
-    width: fit-content; /* allows content to determine width */
-  }
-  
-  .navbar-content {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+    padding: 0.75rem 1rem;
   }
 
+  .navbar-content {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
   .email-row {
     flex-direction: column;
     align-items: center;
@@ -367,6 +362,12 @@
     color: white;
     margin-bottom: 2rem;
     font-family: 'Inter', sans-serif;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
   }
 
 }
