@@ -30,7 +30,7 @@
   
   /* Headline */
   .hero h1 {
-    font-size: 3.8rem;
+    font-size: 3.2rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
   }
@@ -38,9 +38,9 @@
   /* Subheadline */
   .hero p {
     max-width: 700px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #ccc;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     line-height: 1.6;
   }
   
@@ -54,7 +54,7 @@
     font-weight: bold;
     text-decoration: none;
     transition: background 0.3s ease;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     z-index: 1;
     position: relative;
   }
@@ -90,7 +90,7 @@
   }
   
   .hero-image {
-    max-width: 500px;
+    max-width: 550px;
     width: 80%;
     position: relative;
     z-index: 1;
@@ -98,7 +98,7 @@
   }
 
   .features {
-    padding: 6rem 2rem;
+    padding: 2rem 2rem;
     background-color: #10101e;
     text-align: center;
   }
@@ -107,7 +107,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     color: white;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     font-family: 'Inter', sans-serif;
   }
   
@@ -144,7 +144,7 @@
   
   .feature-image {
     width: 100%;
-    max-width: 200px;
+    max-width: 175px;
     position: relative;
     z-index: 1;
     border-radius: 1.5rem;
@@ -155,7 +155,7 @@
   }
   
   .feature-text h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: white;
@@ -226,4 +226,74 @@
   
   .navbar-links a:hover {
     color: white;
+  }
+  .footer {
+    background-color: #0c0c18;
+    padding: 2rem 0;
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+
+  .footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .footer-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 180px;
+  }
+  
+  .footer-column h4 {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-column a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 0.4rem;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-column a:hover {
+    color: #53a0fe;
+  }
+  
+  .footer-column p {
+    margin: 0.3rem 0;
+  }
+
+  footer a {
+    color: #aaa; /* soft gray for better contrast on dark background */
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+  
+  footer a:hover {
+    color: #53a0fe; /* your accent blue */
+  }
+
+  .back-button {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #53a0fe;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+  
+  .back-button:hover {
+    color: #3b8eea;
   }
