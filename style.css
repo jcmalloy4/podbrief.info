@@ -327,7 +327,11 @@
 
   .hero-image {
     width: 95%;
-    max-width: 450px;
+    max-width: 95%;
+  }
+
+  .image-wrapper {
+    padding: 0 1rem
   }
 
   .navbar {
@@ -352,7 +356,7 @@
 
   .feature-image {
     width: 80%;
-    max-width: 175px;
+    max-width: 140px;
     position: relative;
     z-index: 1;
     border-radius: 1.5rem;
