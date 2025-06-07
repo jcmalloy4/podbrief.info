@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Episode Briefing - PodBrief</title>
+    
+    <!-- Dynamic Open Graph tags - will be populated by JavaScript -->
+    <meta property="og:title" content="Episode Briefing - PodBrief" id="og-title">
+    <meta property="og:description" content="Get an AI-powered briefing for this podcast episode. Instant insights and key takeaways." id="og-description">
+    <meta property="og:image" content="https://podbrief.info/Assets/podbrief_preview.png" id="og-image">
+    <meta property="og:url" content="https://podbrief.info" id="og-url">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="PodBrief">
+    
+    <!-- Dynamic Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Episode Briefing - PodBrief" id="twitter-title">
+    <meta name="twitter:description" content="Get an AI-powered briefing for this podcast episode" id="twitter-description">
+    <meta name="twitter:image" content="https://podbrief.info/Assets/podbrief_preview.png" id="twitter-image">
+    
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .briefing-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .episode-info {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .podcast-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            margin: 0 auto 1rem;
+            background: #2A2A2A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        
+        .app-redirect-section {
+            margin: 3rem 0;
+        }
+        
+        .open-app-button {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            display: none;
+        }
+        
+        .open-app-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+        
+        .fallback-options {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            display: none;
+        }
+        
+        .download-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        
+        .download-link:hover {
+            background: #2a2a2a;
+        }
+        
+        .loading-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            border-top-color: #6366f1;
+            animation: spin 1s linear infinite;
+            margin-right: 0.5rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .redirect-status {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo" />
+                <span>PodBrief</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="briefing-container">
+        <h1>Opening in PodBrief...</h1>
+        
+        <div class="episode-info">
+            <div class="podcast-image" id="podcast-image">🎧</div>
+            <h2 id="episode-title">Loading episode...</h2>
+            <p id="podcast-name">Preparing your briefing</p>
+            <div class="loading-indicator"></div>
+            <p class="redirect-status" id="redirect-status">Attempting to open in app...</p>
+        </div>
+
+        <div class="app-redirect-section">
+            <button class="open-app-button" id="open-app-button" onclick="manualAppRedirect()">
+                Open in PodBrief App
+            </button>
+            
+            <div class="fallback-options" id="fallback-options">
+                <h3>Don't have the PodBrief app?</h3>
+                <p>Get the app to experience AI-powered podcast briefings</p>
+                <div class="download-links">
+                    <a href="#" class="download-link" id="ios-download">
+                        📱 Download for iOS
+                    </a>
+                    <a href="#" class="download-link" id="android-download">
+                        🤖 Download for Android
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Extract episode information from URL
+        function parseURL() {
+            const path = window.location.pathname;
+            const params = path.split('/').filter(p => p); // Remove empty strings
+            
+            if (params.length >= 3 && params[0] === 'briefing') {
+                return {
+                    podcastId: params[1],
+                    episodeGuid: params[2]
+                };
+            }
+            return null;
+        }
+
+        // Update page metadata dynamically
+        function updateMetadata(episodeData) {
+            const title = `${episodeData.episodeTitle || 'Episode'} - ${episodeData.podcastName || 'Podcast'} Briefing`;
+            const description = `Get an AI-powered briefing for this ${episodeData.podcastName || 'podcast'} episode. Instant insights and key takeaways.`;
+            const imageUrl = episodeData.podcastImageURL || 'https://podbrief.info/Assets/podbrief_preview.png';
+            const currentUrl = window.location.href;
+
+            // Update page title
+            document.title = title;
+            document.getElementById('page-title').textContent = title;
+
+            // Update Open Graph tags
+            document.getElementById('og-title').content = title;
+            document.getElementById('og-description').content = description;
+            document.getElementById('og-image').content = imageUrl;
+            document.getElementById('og-url').content = currentUrl;
+
+            // Update Twitter tags
+            document.getElementById('twitter-title').content = title;
+            document.getElementById('twitter-description').content = description;
+            document.getElementById('twitter-image').content = imageUrl;
+
+            // Update page content
+            document.getElementById('episode-title').textContent = episodeData.episodeTitle || 'Episode Briefing';
+            document.getElementById('podcast-name').textContent = episodeData.podcastName || 'Podcast';
+            
+            if (episodeData.podcastImageURL) {
+                document.getElementById('podcast-image').innerHTML = `<img src="${episodeData.podcastImageURL}" alt="Podcast artwork" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">`;
+            }
+        }
+
+        // Smart app redirection based on platform
+        function smartRedirect(podcastId, episodeGuid) {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isIOS = /iphone|ipad|ipod/.test(userAgent);
+            const isAndroid = /android/.test(userAgent);
+            const isMobile = isIOS || isAndroid;
+
+            const universalLink = `https://podbrief.info/briefing/${podcastId}/${episodeGuid}`;
+            const customScheme = `podbrief://briefing/${podcastId}/${episodeGuid}`;
+
+            if (isIOS) {
+                document.getElementById('redirect-status').textContent = 'Opening in PodBrief for iOS...';
+                
+                // Try universal link first (will work if app is installed)
+                window.location.href = universalLink;
+                
+                // Fallback to custom scheme after short delay
+                setTimeout(() => {
+                    window.location.href = customScheme;
+                }, 1000);
+
+                // Show manual button after 3 seconds
+                setTimeout(() => {
+                    showFallbackOptions('ios');
+                }, 3000);
+
+            } else if (isAndroid) {
+                document.getElementById('redirect-status').textContent = 'Opening in PodBrief for Android...';
+                
+                // Android intent URL
+                const intentURL = `intent://briefing/${podcastId}/${episodeGuid}#Intent;scheme=podbrief;package=com.johncmalloy4.PodBrief;end`;
+                window.location.href = intentURL;
+
+                // Show manual button after 3 seconds
+                setTimeout(() => {
+                    showFallbackOptions('android');
+                }, 3000);
+
+            } else {
+                // Desktop - show download options immediately
+                document.getElementById('redirect-status').textContent = 'PodBrief is available on mobile devices';
+                showFallbackOptions('desktop');
+            }
+        }
+
+        // Show fallback options when app redirect fails
+        function showFallbackOptions(platform) {
+            document.querySelector('.loading-indicator').style.display = 'none';
+            document.getElementById('open-app-button').style.display = 'inline-block';
+            document.getElementById('fallback-options').style.display = 'block';
+            
+            if (platform === 'desktop') {
+                document.getElementById('redirect-status').textContent = 'Get PodBrief on your mobile device to view this briefing';
+            } else {
+                document.getElementById('redirect-status').textContent = 'Trouble opening the app? Try the button below or download PodBrief';
+            }
+        }
+
+        // Manual app redirect when button is clicked
+        function manualAppRedirect() {
+            const episodeData = parseURL();
+            if (episodeData) {
+                const customScheme = `podbrief://briefing/${episodeData.podcastId}/${episodeData.episodeGuid}`;
+                window.location.href = customScheme;
+            }
+        }
+
+        // Mock episode data fetching (replace with real API call)
+        function fetchEpisodeData(podcastId, episodeGuid) {
+            // This would normally fetch from your API
+            // For now, return mock data
+            return {
+                episodeTitle: 'Sample Episode Title',
+                podcastName: 'Sample Podcast',
+                podcastImageURL: null // Will use default
+            };
+        }
+
+        // Initialize page
+        function init() {
+            const episodeData = parseURL();
+            
+            if (!episodeData) {
+                // Invalid URL - redirect to home
+                window.location.href = '/';
+                return;
+            }
+
+            // Update metadata with episode info
+            const episodeInfo = fetchEpisodeData(episodeData.podcastId, episodeData.episodeGuid);
+            updateMetadata(episodeInfo);
+
+            // Start smart redirect after short delay to allow page to load
+            setTimeout(() => {
+                smartRedirect(episodeData.podcastId, episodeData.episodeGuid);
+            }, 1500);
+        }
+
+        // Start when page loads
+        window.addEventListener('load', init);
+
+        // Handle browser back button
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                // Page was loaded from cache, re-initialize
+                init();
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PodBrief - Loading...</title>
+    
+    <!-- Open Graph for rich previews -->
+    <meta property="og:title" content="PodBrief - Episode Briefing">
+    <meta property="og:description" content="Get an AI-powered briefing for this podcast episode.">
+    <meta property="og:image" content="https://podbrief.info/Assets/podbrief_preview.png">
+    <meta property="og:url" content="https://podbrief.info">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .loading-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #333;
+            border-radius: 50%;
+            border-top-color: #6366f1;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            color: #888;
+            margin-bottom: 2rem;
+        }
+        
+        .fallback-message {
+            max-width: 500px;
+            display: none;
+        }
+        
+        .fallback-message h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .fallback-message p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        .home-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.2s ease;
+        }
+        
+        .home-button:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Loading PodBrief...</p>
+        
+        <div class="fallback-message" id="fallback-message">
+            <h2>Looking for an episode briefing?</h2>
+            <p>We're redirecting you to the right place. If you're looking for a specific episode briefing, make sure you have the PodBrief app installed.</p>
+            <a href="/" class="home-button">Go to PodBrief Home</a>
+        </div>
+    </div>
+
+    <script src="/app-redirect.js"></script>
+    <script>
+        function handleRouting() {
+            const path = window.location.pathname;
+            const params = path.split('/').filter(p => p);
+            
+            // Check if this is a briefing URL
+            if (params.length >= 3 && params[0] === 'briefing') {
+                const podcastId = params[1];
+                const episodeGuid = params[2];
+                
+                // Redirect to the briefing page with the episode data
+                window.location.href = `/briefing/?podcast=${podcastId}&episode=${episodeGuid}`;
+                return;
+            }
+            
+            // Check if this is a briefing URL with query parameters
+            if (params[0] === 'briefing' && params.length === 1) {
+                // This is already a briefing page request, load the briefing.html
+                window.location.href = '/briefing.html' + window.location.search;
+                return;
+            }
+            
+            // For other URLs, show fallback after a delay
+            setTimeout(() => {
+                document.querySelector('.loading-spinner').style.display = 'none';
+                document.querySelector('.loading-text').style.display = 'none';
+                document.getElementById('fallback-message').style.display = 'block';
+            }, 2000);
+        }
+        
+        // Start routing when page loads
+        window.addEventListener('load', handleRouting);
+    </script>
+</body>
+</html> 
