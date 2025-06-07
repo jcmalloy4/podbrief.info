@@ -28,12 +28,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     <script>
-        // Smart app redirect - runs after page loads and metadata is already parsed
+        // Automatic app redirect - runs immediately when page loads
         window.addEventListener('load', function() {
             const podcastId = "{{ page.podcast_id }}";
             const episodeGuid = "{{ page.episode_guid }}";
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            const isAndroid = /Android/.test(navigator.userAgent);
             
-            // Store data for the dynamic briefing page
+            // Store data for potential web fallback
             sessionStorage.setItem('briefingData', JSON.stringify({
                 podcastId: podcastId,
                 episodeGuid: episodeGuid,
@@ -43,35 +45,34 @@
                 staticPage: true
             }));
             
-            // Redirect to the dynamic briefing page
-            window.location.href = `/briefing/?podcast=${podcastId}&episode=${episodeGuid}`;
+            // Show loading state
+            const loadingText = document.getElementById('loading-text');
+            if (loadingText) loadingText.textContent = 'Opening PodBrief App...';
+            
+            // Attempt direct app redirect
+            if (isIOS) {
+                // Try to open in PodBrief app
+                window.location.href = `podbrief://briefing/${podcastId}/${episodeGuid}`;
+                
+                // Fallback to App Store after 2 seconds if app didn't open
+                setTimeout(() => {
+                    if (loadingText) loadingText.textContent = 'App not installed? Redirecting to App Store...';
+                    window.location.href = 'https://apps.apple.com/app/podbrief/idYOUR-APP-ID';
+                }, 2000);
+                
+            } else if (isAndroid) {
+                // Android intent with automatic fallback
+                window.location.href = `intent://briefing/${podcastId}/${episodeGuid}#Intent;scheme=podbrief;package=com.johncmalloy4.PodBrief;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.johncmalloy4.PodBrief;end`;
+                
+            } else {
+                // Desktop users - redirect to web briefing after short delay
+                setTimeout(() => {
+                    window.location.href = `/briefing/?podcast=${podcastId}&episode=${episodeGuid}`;
+                }, 1500);
+            }
         });
-    </script>
-</head>
-<body>
-    <div style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; background: linear-gradient(135deg, #0a0a0a, #1a1a1a); color: white;">
-        <img src="/Assets/podbrief_preview_optimized.png" alt="PodBrief Logo" style="width: 150px; height: 150px; border-radius: 24px; margin-bottom: 2rem;">
         
-        {% if page.episode_title %}
-        <h1 style="font-size: 2rem; margin-bottom: 1rem; color: white;">{{ page.episode_title }}</h1>
-        <h2 style="font-size: 1.2rem; margin-bottom: 1rem; color: #888;">{{ page.podcast_name }}</h2>
-        {% if page.description %}
-        <p style="color: #ccc; max-width: 600px; line-height: 1.6; margin-bottom: 2rem;">{{ page.description }}</p>
-        {% endif %}
-        {% else %}
-        <h1 style="font-size: 2rem; margin-bottom: 1rem; color: white;">PodBrief</h1>
-        <p style="color: #ccc; max-width: 600px; line-height: 1.6; margin-bottom: 2rem;">Get instant AI-powered briefings for your favorite podcast episodes.</p>
-        {% endif %}
-        
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-            <a href="#" onclick="openInApp(); return false;" style="padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Open in PodBrief App</a>
-            <a href="/" style="padding: 0.75rem 1.5rem; background: #333; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Browse More Episodes</a>
-        </div>
-        
-        <p style="color: #666; font-size: 0.9rem; margin-top: 2rem;">Redirecting to the full briefing experience...</p>
-    </div>
-    
-    <script>
+        // Fallback manual trigger for users who want to retry
         function openInApp() {
             const podcastId = "{{ page.podcast_id }}";
             const episodeGuid = "{{ page.episode_guid }}";
@@ -79,19 +80,73 @@
             const isAndroid = /Android/.test(navigator.userAgent);
             
             if (isIOS) {
-                // Try to open in PodBrief app, fallback to App Store
                 window.location.href = `podbrief://briefing/${podcastId}/${episodeGuid}`;
-                setTimeout(() => {
-                    window.location.href = 'https://apps.apple.com/app/podbrief/idYOUR-APP-ID';
-                }, 1000);
             } else if (isAndroid) {
-                // Try to open in PodBrief app, fallback to Play Store
                 window.location.href = `intent://briefing/${podcastId}/${episodeGuid}#Intent;scheme=podbrief;package=com.johncmalloy4.PodBrief;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.johncmalloy4.PodBrief;end`;
             } else {
-                // Desktop - redirect to main site
-                window.location.href = '/';
+                window.location.href = `/briefing/?podcast=${podcastId}&episode=${episodeGuid}`;
             }
         }
+    </script>
+</head>
+<body>
+    <div style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; background: linear-gradient(135deg, #0a0a0a, #1a1a1a); color: white;">
+        <img src="/Assets/podbrief_preview_optimized.jpg" alt="PodBrief Logo" style="width: 150px; height: 150px; border-radius: 24px; margin-bottom: 2rem;">
+        
+        {% if page.episode_title %}
+        <h1 style="font-size: 2rem; margin-bottom: 1rem; color: white;">{{ page.episode_title }}</h1>
+        <h2 style="font-size: 1.2rem; margin-bottom: 1rem; color: #888;">{{ page.podcast_name }}</h2>
+        {% else %}
+        <h1 style="font-size: 2rem; margin-bottom: 1rem; color: white;">PodBrief</h1>
+        {% endif %}
+        
+        <!-- Loading spinner -->
+        <div style="width: 40px; height: 40px; border: 3px solid #333; border-radius: 50%; border-top-color: #6366f1; animation: spin 1s linear infinite; margin-bottom: 1rem;"></div>
+        
+        <p id="loading-text" style="color: #ccc; margin-bottom: 2rem;">Loading episode briefing...</p>
+        
+        <!-- Fallback options (hidden initially, shown if redirect fails) -->
+        <div id="fallback-options" style="display: none;">
+            {% if page.description %}
+            <p style="color: #ccc; max-width: 600px; line-height: 1.6; margin-bottom: 2rem;">{{ page.description }}</p>
+            {% endif %}
+            
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1rem;">
+                <a href="#" onclick="openInApp(); return false;" style="padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Open in PodBrief App</a>
+                <a href="/" style="padding: 0.75rem 1.5rem; background: #333; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Browse More Episodes</a>
+            </div>
+            
+            <p style="color: #666; font-size: 0.9rem;">Having trouble? <a href="#" onclick="openInApp(); return false;" style="color: #6366f1; text-decoration: none;">Try again</a> or <a href="/" style="color: #6366f1; text-decoration: none;">browse episodes on web</a></p>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Show fallback options after 5 seconds if still on page */
+        body {
+            animation: showFallback 0s 5s forwards;
+        }
+        
+        @keyframes showFallback {
+            to {
+                --show-fallback: block;
+            }
+        }
+    </style>
+    
+    <script>
+        // Show fallback options if user is still on page after 5 seconds
+        setTimeout(() => {
+            const fallbackOptions = document.getElementById('fallback-options');
+            const loadingText = document.getElementById('loading-text');
+            if (fallbackOptions && loadingText) {
+                loadingText.textContent = 'Taking longer than expected...';
+                fallbackOptions.style.display = 'block';
+            }
+        }, 5000);
     </script>
 </body>
 </html> 
