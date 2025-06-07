@@ -90,26 +90,29 @@
         </div>
     </div>
 
-    <script src="/app-redirect.js"></script>
     <script>
         function handleRouting() {
             const path = window.location.pathname;
             const params = path.split('/').filter(p => p);
             
-            // Check if this is a briefing URL
+            console.log('404 handling path:', path, 'params:', params);
+            
+            // Check if this is a briefing URL: /briefing/{podcastId}/{episodeGuid}
             if (params.length >= 3 && params[0] === 'briefing') {
                 const podcastId = params[1];
                 const episodeGuid = params[2];
                 
-                // Redirect to the briefing page with the episode data
+                console.log('Redirecting to briefing page with:', podcastId, episodeGuid);
+                
+                // Store the episode data for the briefing page to access
+                sessionStorage.setItem('briefingData', JSON.stringify({
+                    podcastId: podcastId,
+                    episodeGuid: episodeGuid,
+                    originalPath: path
+                }));
+                
+                // Redirect to the briefing directory which has the actual page
                 window.location.href = `/briefing/?podcast=${podcastId}&episode=${episodeGuid}`;
-                return;
-            }
-            
-            // Check if this is a briefing URL with query parameters
-            if (params[0] === 'briefing' && params.length === 1) {
-                // This is already a briefing page request, load the briefing.html
-                window.location.href = '/briefing.html' + window.location.search;
                 return;
             }
             
