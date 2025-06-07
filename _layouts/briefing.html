@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Dynamic title based on episode data -->
+    <title>{% if page.episode_title %}{{ page.episode_title }} - {{ page.podcast_name }}{% else %}PodBrief - AI-Powered Podcast Briefings{% endif %}</title>
+    
+    <!-- Open Graph for rich previews - Static, no JavaScript required -->
+    <meta property="og:title" content="{% if page.episode_title %}{{ page.episode_title }} - {{ page.podcast_name }}{% else %}PodBrief - AI-Powered Podcast Briefings{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}Get instant AI-powered briefings for your favorite podcast episodes. Save time and never miss key insights.{% endif %}">
+    <meta property="og:image" content="https://podbrief.info/Assets/podbrief_preview_optimized.jpg">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PodBrief">
+    
+    <!-- Twitter Card metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if page.episode_title %}{{ page.episode_title }} - {{ page.podcast_name }}{% else %}PodBrief - AI-Powered Podcast Briefings{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}Get instant AI-powered briefings for your favorite podcast episodes. Save time and never miss key insights.{% endif %}">
+    <meta name="twitter:image" content="https://podbrief.info/Assets/podbrief_preview_optimized.jpg">
+    
+    <!-- Apple Universal Links -->
+    <meta name="apple-itunes-app" content="app-id=YOUR-APP-ID, app-argument={{ site.url }}{{ page.url }}">
+    
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        // Smart app redirect - runs after page loads and metadata is already parsed
+        window.addEventListener('load', function() {
+            const podcastId = "{{ page.podcast_id }}";
+            const episodeGuid = "{{ page.episode_guid }}";
+            
+            // Store data for the dynamic briefing page
+            sessionStorage.setItem('briefingData', JSON.stringify({
+                podcastId: podcastId,
+                episodeGuid: episodeGuid,
+                episodeTitle: "{{ page.episode_title }}",
+                podcastName: "{{ page.podcast_name }}",
+                description: "{{ page.description }}",
+                staticPage: true
+            }));
+            
+            // Redirect to the dynamic briefing page
+            window.location.href = `/briefing/?podcast=${podcastId}&episode=${episodeGuid}`;
+        });
+    </script>
+</head>
+<body>
+    <div style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; background: linear-gradient(135deg, #0a0a0a, #1a1a1a); color: white;">
+        <img src="/Assets/podbrief_preview_optimized.png" alt="PodBrief Logo" style="width: 150px; height: 150px; border-radius: 24px; margin-bottom: 2rem;">
+        
+        {% if page.episode_title %}
+        <h1 style="font-size: 2rem; margin-bottom: 1rem; color: white;">{{ page.episode_title }}</h1>
+        <h2 style="font-size: 1.2rem; margin-bottom: 1rem; color: #888;">{{ page.podcast_name }}</h2>
+        {% if page.description %}
+        <p style="color: #ccc; max-width: 600px; line-height: 1.6; margin-bottom: 2rem;">{{ page.description }}</p>
+        {% endif %}
+        {% else %}
+        <h1 style="font-size: 2rem; margin-bottom: 1rem; color: white;">PodBrief</h1>
+        <p style="color: #ccc; max-width: 600px; line-height: 1.6; margin-bottom: 2rem;">Get instant AI-powered briefings for your favorite podcast episodes.</p>
+        {% endif %}
+        
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            <a href="#" onclick="openInApp(); return false;" style="padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Open in PodBrief App</a>
+            <a href="/" style="padding: 0.75rem 1.5rem; background: #333; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Browse More Episodes</a>
+        </div>
+        
+        <p style="color: #666; font-size: 0.9rem; margin-top: 2rem;">Redirecting to the full briefing experience...</p>
+    </div>
+    
+    <script>
+        function openInApp() {
+            const podcastId = "{{ page.podcast_id }}";
+            const episodeGuid = "{{ page.episode_guid }}";
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            const isAndroid = /Android/.test(navigator.userAgent);
+            
+            if (isIOS) {
+                // Try to open in PodBrief app, fallback to App Store
+                window.location.href = `podbrief://briefing/${podcastId}/${episodeGuid}`;
+                setTimeout(() => {
+                    window.location.href = 'https://apps.apple.com/app/podbrief/idYOUR-APP-ID';
+                }, 1000);
+            } else if (isAndroid) {
+                // Try to open in PodBrief app, fallback to Play Store
+                window.location.href = `intent://briefing/${podcastId}/${episodeGuid}#Intent;scheme=podbrief;package=com.johncmalloy4.PodBrief;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.johncmalloy4.PodBrief;end`;
+            } else {
+                // Desktop - redirect to main site
+                window.location.href = '/';
+            }
+        }
+    </script>
+</body>
+</html> 

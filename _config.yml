@@ -1,0 +1,32 @@
+title: "PodBrief - AI-Powered Podcast Briefings"
+description: "Get instant AI-powered briefings for your favorite podcast episodes. Save time and never miss key insights."
+url: "https://podbrief.info"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Collections for briefings
+collections:
+  briefings:
+    output: true
+    permalink: /briefing/:name/
+
+# Defaults for briefing pages
+defaults:
+  - scope:
+      path: "_briefings"
+      type: "briefings"
+    values:
+      layout: "briefing"
+      
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/ 
