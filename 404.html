@@ -109,7 +109,7 @@
                 const podcastId = params[1];
                 const episodeGuid = params[2];
                 
-                console.log('Redirecting to briefing page with:', podcastId, episodeGuid);
+                console.log('Detected briefing URL - podcastId:', podcastId, 'episodeGuid:', episodeGuid);
                 
                 // Store the episode data for the briefing page to access
                 sessionStorage.setItem('briefingData', JSON.stringify({
@@ -118,8 +118,25 @@
                     originalPath: path
                 }));
                 
-                // Redirect to the briefing directory which has the actual page
-                window.location.href = `/briefing/?podcast=${podcastId}&episode=${episodeGuid}`;
+                // Try to redirect to existing Jekyll page first (format: podcastId-episodeGuid)
+                const jekyllPageUrl = `/briefing/${podcastId}-${episodeGuid}/`;
+                
+                // Test if Jekyll page exists by making a head request
+                fetch(jekyllPageUrl, { method: 'HEAD' })
+                    .then(response => {
+                        if (response.ok) {
+                            // Jekyll page exists, redirect there
+                            window.location.href = jekyllPageUrl;
+                        } else {
+                            // No Jekyll page exists, create dynamic metadata and redirect
+                            createDynamicBriefingPage(podcastId, episodeGuid);
+                        }
+                    })
+                    .catch(() => {
+                        // Network error or CORS, fallback to dynamic page
+                        createDynamicBriefingPage(podcastId, episodeGuid);
+                    });
+                
                 return;
             }
             
@@ -129,6 +146,64 @@
                 document.querySelector('.loading-text').style.display = 'none';
                 document.getElementById('fallback-message').style.display = 'block';
             }, 2000);
+        }
+        
+        function createDynamicBriefingPage(podcastId, episodeGuid) {
+            // Update the current page with dynamic Open Graph metadata
+            updatePageMetadata(podcastId, episodeGuid);
+            
+            // Show loading state and then redirect
+            document.querySelector('.loading-text').textContent = 'Opening PodBrief App...';
+            
+            // Attempt app redirect similar to Jekyll pages
+            setTimeout(() => {
+                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+                const isAndroid = /Android/.test(navigator.userAgent);
+                
+                if (isIOS) {
+                    window.location.href = `podbrief://briefing/${podcastId}/${episodeGuid}`;
+                    setTimeout(() => {
+                        window.location.href = 'https://apps.apple.com/app/podbrief/idYOUR-APP-ID';
+                    }, 2000);
+                } else if (isAndroid) {
+                    window.location.href = `intent://briefing/${podcastId}/${episodeGuid}#Intent;scheme=podbrief;package=com.johncmalloy4.PodBrief;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.johncmalloy4.PodBrief;end`;
+                } else {
+                    window.location.href = `/briefing/?podcast=${podcastId}&episode=${episodeGuid}`;
+                }
+            }, 1000);
+        }
+        
+        function updatePageMetadata(podcastId, episodeGuid) {
+            // Update title
+            document.title = 'PodBrief - AI-Powered Podcast Briefings';
+            
+            // Update or create Open Graph meta tags
+            const metaTags = [
+                { property: 'og:title', content: 'PodBrief - AI-Powered Podcast Briefings' },
+                { property: 'og:description', content: 'Get instant AI-powered briefings for your favorite podcast episodes. Save time and never miss key insights.' },
+                { property: 'og:image', content: 'https://podbrief.info/Assets/podbrief_preview_optimized.jpg' },
+                { property: 'og:url', content: `https://podbrief.info/briefing/${podcastId}/${episodeGuid}/` },
+                { property: 'og:type', content: 'website' },
+                { property: 'og:site_name', content: 'PodBrief' },
+                { name: 'twitter:card', content: 'summary_large_image' },
+                { name: 'twitter:title', content: 'PodBrief - AI-Powered Podcast Briefings' },
+                { name: 'twitter:description', content: 'Get instant AI-powered briefings for your favorite podcast episodes. Save time and never miss key insights.' },
+                { name: 'twitter:image', content: 'https://podbrief.info/Assets/podbrief_preview_optimized.jpg' }
+            ];
+            
+            metaTags.forEach(tag => {
+                const identifier = tag.property ? `meta[property="${tag.property}"]` : `meta[name="${tag.name}"]`;
+                let metaTag = document.querySelector(identifier);
+                
+                if (!metaTag) {
+                    metaTag = document.createElement('meta');
+                    if (tag.property) metaTag.setAttribute('property', tag.property);
+                    if (tag.name) metaTag.setAttribute('name', tag.name);
+                    document.head.appendChild(metaTag);
+                }
+                
+                metaTag.setAttribute('content', tag.content);
+            });
         }
         
         // Start routing when page loads
