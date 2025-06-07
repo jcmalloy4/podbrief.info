@@ -1,0 +1,24 @@
+runtime: nodejs20
+
+# Environment variables
+env_variables:
+  NODE_ENV: production
+
+# Instance configuration
+automatic_scaling:
+  min_instances: 0
+  max_instances: 10
+  target_cpu_utilization: 0.6
+
+# Static file handlers for assets
+handlers:
+- url: /Assets
+  static_dir: Assets
+  
+- url: /(.*\.(css|js|png|jpg|jpeg|gif|ico|svg))$
+  static_files: \1
+  upload: .*\.(css|js|png|jpg|jpeg|gif|ico|svg)$
+  
+- url: /.*
+  script: auto
+  secure: always 
