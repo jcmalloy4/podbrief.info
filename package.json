@@ -1,0 +1,25 @@
+{
+  "name": "podbrief-website",
+  "version": "1.0.0",
+  "description": "PodBrief website with dynamic Open Graph metadata for iMessage compatibility",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "keywords": [
+    "podcast",
+    "briefing",
+    "ai",
+    "open-graph",
+    "imessage"
+  ],
+  "author": "PodBrief",
+  "license": "MIT"
+} 
