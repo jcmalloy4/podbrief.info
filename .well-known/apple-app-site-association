@@ -1,34 +1,35 @@
 {
     "applinks": {
-        "details": [
+      "details": [
+        {
+          "appIDs": [ "PMZU62DPF8.com.johncmalloy4.PodBrief" ],
+          "components": [
             {
-                "appIDs": [ "TEAMID.com.podbrief.app" ],
-                "components": [
-                    {
-                        "#": "no_universal_links",
-                        "exclude": true,
-                        "comment": "Matches any URL whose fragment equals no_universal_links and instructs the system not to open it as a universal link"
-                    },
-                    {
-                        "/": "/privacy*",
-                        "comment": "Matches privacy policy page"
-                    },
-                    {
-                        "/": "/terms*", 
-                        "comment": "Matches terms of service page"
-                    },
-                    {
-                        "/": "*",
-                        "comment": "Matches any URL and allows the app to handle it as a universal link"
-                    }
-                ]
+              "#": "no_universal_links",
+              "exclude": true,
+              "comment": "Exclude fragment-based links"
+            },
+            {
+              "/": "/privacy*",
+              "comment": "Matches privacy policy page"
+            },
+            {
+              "/": "/terms*",
+              "comment": "Matches terms of service page"
+            },
+            {
+              "/": "*",
+              "comment": "Match all other paths"
             }
-        ]
+          ]
+        }
+      ]
     },
     "webcredentials": {
-        "apps": [ "TEAMID.com.podbrief.app" ]
+      "apps": [ "PMZU62DPF8.com.johncmalloy4.PodBrief" ]
     },
     "appclips": {
-        "apps": [ "TEAMID.com.podbrief.app.Clip" ]
+      "apps": [ "PMZU62DPF8.com.johncmalloy4.PodBrief.Clip" ]
     }
-} 
+  }
+  
