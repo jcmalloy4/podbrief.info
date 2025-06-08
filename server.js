@@ -184,9 +184,26 @@ function createImageComposition(contentImageUrl) {
   return contentImageUrl || DEFAULT_IMAGE;
 }
 
+// Helper function to clean HTML from text
+function cleanHtml(text) {
+  if (!text) return '';
+  // Remove HTML tags
+  let cleaned = text.replace(/<[^>]*>/g, '');
+  // Remove extra whitespace
+  cleaned = cleaned.replace(/\s+/g, ' ').trim();
+  // Decode HTML entities
+  cleaned = cleaned.replace(/&quot;/g, '"')
+                  .replace(/&apos;/g, "'")
+                  .replace(/&lt;/g, '<')
+                  .replace(/&gt;/g, '>')
+                  .replace(/&amp;/g, '&');
+  return cleaned;
+}
+
 // Helper function to generate common HTML structure
 function generatePageHTML({ title, description, imageUrl, url, content, deepLink, isEpisode = false }) {
   const compositeImage = imageUrl || DEFAULT_IMAGE;
+  const cleanDescription = cleanHtml(description);
   
   return `
 <!DOCTYPE html>
@@ -200,7 +217,7 @@ function generatePageHTML({ title, description, imageUrl, url, content, deepLink
     
     <!-- Open Graph metadata for rich previews -->
     <meta property="og:title" content="${title}">
-    <meta property="og:description" content="${description}">
+    <meta property="og:description" content="${cleanDescription}">
     <meta property="og:image" content="${compositeImage}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -212,11 +229,11 @@ function generatePageHTML({ title, description, imageUrl, url, content, deepLink
     <!-- Twitter Card metadata -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${title}">
-    <meta name="twitter:description" content="${description}">
+    <meta name="twitter:description" content="${cleanDescription}">
     <meta name="twitter:image" content="${compositeImage}">
     
     <!-- Additional meta tags for better SEO -->
-    <meta name="description" content="${description}">
+    <meta name="description" content="${cleanDescription}">
     <meta name="keywords" content="podcast, AI, briefing, summary, ${isEpisode ? 'episode' : 'podcast'}">
     <meta name="author" content="PodBrief">
     
@@ -458,6 +475,7 @@ app.get('/episode/:id', async (req, res) => {
     const episodeData = await fetchEpisodeDetails(podcastId, episodeGuid);
     
     if (episodeData) {
+      const cleanedDescription = cleanHtml(episodeData.description);
       const content = `
         ${episodeData.imageUrl && episodeData.imageUrl !== DEFAULT_IMAGE ? 
           `<img src="${episodeData.imageUrl}" alt="${episodeData.title}" class="content-image">` : ''
@@ -468,13 +486,13 @@ app.get('/episode/:id', async (req, res) => {
           ${episodeData.publishedDate ? ` • ${episodeData.publishedDate}` : ''}
           ${episodeData.duration ? ` • ${Math.floor(episodeData.duration / 60)} min` : ''}
         </div>
-        <div class="preview-description">${episodeData.description || 'Listen to this podcast episode and get an AI-powered briefing with key insights, main topics, and takeaways.'}</div>
+        <div class="preview-description">${cleanedDescription || 'Listen to this podcast episode and get an AI-powered briefing with key insights, main topics, and takeaways.'}</div>
         <a href="https://apps.apple.com/app/your-app-id" class="cta-button">Open in PodBrief</a>
       `;
       
       const html = generatePageHTML({
         title: `${episodeData.title}${episodeData.podcastTitle ? ` - ${episodeData.podcastTitle}` : ''} - PodBrief`,
-        description: episodeData.description || `Listen to this episode from ${episodeData.podcastTitle || 'this podcast'} and discover key insights with AI-powered briefing.`,
+        description: cleanedDescription || `Listen to this episode from ${episodeData.podcastTitle || 'this podcast'} and discover key insights with AI-powered briefing.`,
         imageUrl: episodeData.imageUrl,
         url: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
         content: content,
