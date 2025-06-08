@@ -1,3 +1,7 @@
+# DEPRECATED: This file was used for App Engine deployment
+# The application has been migrated to Cloud Run
+# This file is kept for reference only
+
 runtime: nodejs20
 
 # Environment variables
@@ -5,8 +9,8 @@ env_variables:
   NODE_ENV: production
   # Backend API URL - Using the actual PodBrief backend service
   BACKEND_URL: https://podbrief-5kgqcgqjsa-uc.a.run.app
-  # Firebase API Key for token exchange
-  FIREBASE_API_KEY: AIzaSyBlRxE3r7CBKUIkdAquG4CnbP3893rvxmI
+  # Firebase API Key - NOW CONFIGURED IN CLOUD RUN ENVIRONMENT
+  # FIREBASE_API_KEY: [REMOVED FOR SECURITY - SET IN CLOUD RUN]
   # Firebase will use the default service account when deployed on GCP
   # Make sure your App Engine default service account has Firebase Admin permissions
 
