@@ -193,7 +193,51 @@ app.get('/podcast/:podcastId', async (req, res) => {
   res.send(html);
 });
 
-// Dynamic briefing route handler (episodes shared as briefings)
+// Episode detail route
+app.get('/episode/:id', async (req, res) => {
+  const { id } = req.params;
+  
+  // Parse the ID: podcastId-episodeGuid (split at first hyphen)
+  let podcastId, episodeGuid;
+  
+  if (id.includes('-')) {
+    const parts = id.split('-');
+    podcastId = parts[0];
+    episodeGuid = parts.slice(1).join('-'); // In case GUID contains dashes
+  } else {
+    return res.status(404).send('Invalid episode format');
+  }
+  
+  // In a real app, fetch episode and podcast data from Firestore
+  // Path: podcasts/{podcastId}/episodes/{episodeGuid}
+  const episodeData = {
+    title: `Episode ${episodeGuid.substring(0, 8)}... - PodBrief`,
+    description: `Listen to this podcast episode and get an AI-powered briefing with key insights, main topics, and takeaways.`,
+    imageUrl: `https://podbrief.info/Assets/podbrief_preview.png`,
+    podcastId,
+    episodeGuid
+  };
+  
+  const content = `
+    <div class="preview-title">🎧 Episode Details</div>
+    <div class="preview-description">Listen to this episode and discover key insights with our AI-powered briefing feature.</div>
+    <a href="https://apps.apple.com/app/your-app-id" class="cta-button">Open in PodBrief</a>
+  `;
+  
+  const html = generatePageHTML({
+    title: episodeData.title,
+    description: episodeData.description,
+    imageUrl: episodeData.imageUrl,
+    url: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+    content: content,
+    deepLink: `podbrief://episode/${podcastId}-${episodeGuid}`,
+    isEpisode: true
+  });
+  
+  res.send(html);
+});
+
+// Dynamic briefing route handler (briefing sharing)
 app.get('/briefing/:id', async (req, res) => {
   const { id } = req.params;
   
