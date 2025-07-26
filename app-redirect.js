@@ -6,10 +6,10 @@
 class PodBriefRedirect {
     constructor() {
         this.appScheme = 'podbrief://';
-        this.iosPackage = 'com.johncmalloy4.PodBrief';
-        this.androidPackage = 'com.johncmalloy4.PodBrief';
-        this.appStoreURL = '#'; // Replace with actual App Store URL
-        this.playStoreURL = '#'; // Replace with actual Play Store URL
+        this.iosPackage = 'com.PodBrief';
+        this.androidPackage = 'com.PodBrief';
+        this.appStoreURL = 'https://apps.apple.com/app/podbrief/id6748547717';
+        this.playStoreURL = 'https://play.google.com/store/apps/details?id=com.PodBrief';
     }
 
     // Detect user's platform

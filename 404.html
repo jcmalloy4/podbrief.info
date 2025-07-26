@@ -139,11 +139,11 @@
                             // Try to open app, fallback to App Store
                             window.location.href = `podbrief://briefing/${podcastId}/${episodeGuid}`;
                             setTimeout(() => {
-                                window.location.href = 'https://apps.apple.com/app/your-app-id';
+                                                                 window.location.href = 'https://apps.apple.com/app/podbrief/id6748547717';
                             }, 2000);
                         } else if (isAndroid) {
                             // Android intent URL
-                            window.location.href = `intent://briefing/${podcastId}/${episodeGuid}#Intent;scheme=podbrief;package=com.johncmalloy4.PodBrief;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.johncmalloy4.PodBrief;end`;
+                            window.location.href = `intent://briefing/${podcastId}/${episodeGuid}#Intent;scheme=podbrief;package=com.PodBrief;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.PodBrief;end`;
                         } else {
                             // Desktop fallback - could redirect to web app or show instructions
                             window.location.href = `/briefing/?podcast=${podcastId}&episode=${episodeGuid}`;

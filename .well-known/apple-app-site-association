@@ -2,7 +2,7 @@
     "applinks": {
       "details": [
         {
-          "appIDs": [ "PMZU62DPF8.com.johncmalloy4.PodBrief" ],
+          "appIDs": [ "PMZU62DPF8.com.PodBrief" ],
           "components": [
             {
               "#": "no_universal_links",
@@ -26,10 +26,10 @@
       ]
     },
     "webcredentials": {
-      "apps": [ "PMZU62DPF8.com.johncmalloy4.PodBrief" ]
+      "apps": [ "PMZU62DPF8.com.PodBrief" ]
     },
     "appclips": {
-      "apps": [ "PMZU62DPF8.com.johncmalloy4.PodBrief.Clip" ]
+      "apps": [ "PMZU62DPF8.com.PodBrief.Clip" ]
     }
   }
   

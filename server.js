@@ -167,7 +167,7 @@ async function checkBriefingStatus(podcastId, episodeGuid) {
 }
 
 // Helper function to generate Apple Smart App Banner
-function generateAppBanner(appId = 'your-app-id') {
+function generateAppBanner(appId = '6748547717') {
   return `
     <!-- Apple Smart App Banner -->
     <meta name="apple-itunes-app" content="app-id=${appId}">
@@ -370,11 +370,11 @@ function generatePageHTML({ title, description, imageUrl, url, content, deepLink
                 // Try to open app with deep link
                 window.location.href = '${deepLink}';
                 setTimeout(() => {
-                    window.location.href = 'https://apps.apple.com/app/your-app-id';
+                                                window.location.href = 'https://apps.apple.com/app/podbrief/id6748547717';
                 }, 2000);
             } else if (isAndroid) {
                 // Android intent URL
-                const intentUrl = '${deepLink.replace('podbrief://', 'intent://')}#Intent;scheme=podbrief;package=com.johncmalloy4.PodBrief;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.johncmalloy4.PodBrief;end';
+                const intentUrl = '${deepLink.replace('podbrief://', 'intent://')}#Intent;scheme=podbrief;package=com.PodBrief;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.PodBrief;end';
                 window.location.href = intentUrl;
             } else {
                 // Desktop fallback - show install prompt
@@ -406,7 +406,7 @@ app.get('/podcast/:podcastId', async (req, res) => {
           ${podcastData.episodeCount ? ` • ${podcastData.episodeCount} episodes` : ''}
         </div>
         <div class="preview-description">${podcastData.description || 'Discover AI-powered briefings for all episodes of this podcast. Get instant summaries and key insights from every episode.'}</div>
-        <a href="https://apps.apple.com/app/your-app-id" class="cta-button">Open in PodBrief</a>
+        <a href="https://apps.apple.com/app/podbrief/id6748547717" class="cta-button">Open in PodBrief</a>
       `;
       
       const html = generatePageHTML({
@@ -438,7 +438,7 @@ app.get('/podcast/:podcastId', async (req, res) => {
       <img src="${fallbackData.imageUrl}" alt="PodBrief" class="content-image">
       <div class="preview-title">🎧 Podcast Details</div>
       <div class="preview-description">${fallbackData.description}</div>
-      <a href="https://apps.apple.com/app/your-app-id" class="cta-button">Get PodBrief App</a>
+      <a href="https://apps.apple.com/app/podbrief/id6748547717" class="cta-button">Get PodBrief App</a>
     `;
     
     const html = generatePageHTML({
@@ -487,7 +487,7 @@ app.get('/episode/:id', async (req, res) => {
           ${episodeData.duration ? ` • ${Math.floor(episodeData.duration / 60)} min` : ''}
         </div>
         <div class="preview-description">${cleanedDescription || 'Listen to this podcast episode and get an AI-powered briefing with key insights, main topics, and takeaways.'}</div>
-        <a href="https://apps.apple.com/app/your-app-id" class="cta-button">Open in PodBrief</a>
+        <a href="https://apps.apple.com/app/podbrief/id6748547717" class="cta-button">Open in PodBrief</a>
       `;
       
       const html = generatePageHTML({
@@ -517,7 +517,7 @@ app.get('/episode/:id', async (req, res) => {
     const content = `
       <div class="preview-title">🎧 Episode Details</div>
       <div class="preview-description">${fallbackData.description}</div>
-      <a href="https://apps.apple.com/app/your-app-id" class="cta-button">Open in PodBrief</a>
+      <a href="https://apps.apple.com/app/podbrief/id6748547717" class="cta-button">Open in PodBrief</a>
     `;
     
     const html = generatePageHTML({
@@ -576,7 +576,7 @@ app.get('/briefing/:id', async (req, res) => {
             : 'Get an instant AI-powered briefing of this podcast episode with key insights and main topics.'
           }
         </div>
-        <a href="https://apps.apple.com/app/your-app-id" class="cta-button">
+        <a href="https://apps.apple.com/app/podbrief/id6748547717" class="cta-button">
           ${briefingExists ? 'Read Full Briefing' : 'Generate Briefing'}
         </a>
       `;
@@ -610,7 +610,7 @@ app.get('/briefing/:id', async (req, res) => {
     const content = `
       <div class="preview-title">🎧 Episode Briefing</div>
       <div class="preview-description">${fallbackData.description}</div>
-      <a href="https://apps.apple.com/app/your-app-id" class="cta-button">Read Full Briefing</a>
+      <a href="https://apps.apple.com/app/podbrief/id6748547717" class="cta-button">Read Full Briefing</a>
     `;
     
     const html = generatePageHTML({
