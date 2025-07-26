@@ -2,7 +2,7 @@
     "applinks": {
       "details": [
         {
-          "appIDs": [ "PMZU62DPF8.com.PodBrief" ],
+          "appIDs": [ "3S7863R65A.com.PodBrief" ],
           "components": [
             {
               "#": "no_universal_links",
@@ -26,10 +26,10 @@
       ]
     },
     "webcredentials": {
-      "apps": [ "PMZU62DPF8.com.PodBrief" ]
+      "apps": [ "3S7863R65A.com.PodBrief" ]
     },
     "appclips": {
-      "apps": [ "PMZU62DPF8.com.PodBrief.Clip" ]
+      "apps": [ "3S7863R65A.com.PodBrief.Clip" ]
     }
   }
   
