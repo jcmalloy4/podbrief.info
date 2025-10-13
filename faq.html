@@ -180,12 +180,64 @@
       }
 
       @media (max-width: 768px) {
+        .faq-container {
+          padding: 2rem 1rem;
+        }
+
+        .faq-header {
+          margin-bottom: 2rem;
+        }
+
         .faq-header h1 {
-          font-size: 2rem;
+          font-size: 1.75rem;
+          line-height: 1.3;
+        }
+
+        .faq-header p {
+          font-size: 1rem;
+          padding: 0 0.5rem;
+        }
+
+        .faq-category {
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+        }
+
+        .faq-category h2 {
+          font-size: 1.25rem;
+        }
+
+        .faq-question {
+          padding: 1.25rem 1rem;
         }
 
         .faq-question h3 {
-          font-size: 1rem;
+          font-size: 0.95rem;
+          line-height: 1.4;
+          padding-right: 0.5rem;
+        }
+
+        .faq-toggle {
+          font-size: 1.25rem;
+          margin-left: 0.5rem;
+        }
+
+        .faq-answer-content {
+          padding: 0 1rem 1.25rem 1rem;
+          font-size: 0.95rem;
+        }
+
+        .contact-section {
+          margin-top: 3rem;
+          padding: 1.5rem 1rem;
+        }
+
+        .contact-section h2 {
+          font-size: 1.25rem;
+        }
+
+        .contact-section p {
+          font-size: 0.95rem;
         }
       }
     </style>
@@ -211,6 +263,7 @@
     <div class="faq-header">
       <h1>Frequently Asked Questions</h1>
       <p>Everything you need to know about PodBrief and AI-powered podcast briefings</p>
+      <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" style="display: inline-block; margin-top: 1.5rem; padding: 0.75rem 1.5rem; background: #6366f1; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.2s;">Download on the App Store</a>
     </div>
 
     <!-- General Questions -->
@@ -257,8 +310,8 @@
         </div>
         <div class="faq-answer">
           <div class="faq-answer-content">
-            <p>PodBrief is currently in development and will be launching soon. We're working hard to perfect the experience and ensure our AI briefings deliver maximum value to podcast listeners.</p>
-            <p>Want to be notified when we launch? Follow us on social media or reach out to <a href="mailto:john@podbrief.info" style="color: #6366f1;">john@podbrief.info</a> to join our early access list.</p>
+            <p>Yes! PodBrief is now available on the App Store for iPhone and iPad. Download it today to start experiencing AI-powered podcast briefings.</p>
+            <p><a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" style="color: #6366f1; font-weight: 600;">Download PodBrief on the App Store →</a></p>
           </div>
         </div>
       </div>
@@ -376,26 +429,13 @@
 
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFAQ(this)">
-          <h3>Can I import my existing podcast subscriptions?</h3>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-content">
-            <p>Yes! When PodBrief launches, you'll be able to import your subscriptions from other podcast apps using OPML file import. This makes it easy to switch to PodBrief without losing your carefully curated list of shows.</p>
-            <p>You can also search for and add new podcasts directly within the app.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
           <h3>Is there a desktop or web version?</h3>
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer">
           <div class="faq-answer-content">
-            <p>PodBrief is initially launching as a mobile app for iOS and Android, where most podcast listening happens. We're designed for on-the-go listening with smart briefings that help you make quick decisions about what to play.</p>
-            <p>Desktop and web versions may be considered based on user feedback after launch.</p>
+            <p>PodBrief is currently available as a mobile app for iOS, where most podcast listening happens. We're designed for on-the-go listening with smart briefings that help you make quick decisions about what to play.</p>
+            <p>Desktop and web versions may be considered based on user feedback. <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" style="color: #6366f1;">Download PodBrief for iPhone →</a></p>
           </div>
         </div>
       </div>
@@ -413,8 +453,13 @@
         </div>
         <div class="faq-answer">
           <div class="faq-answer-content">
-            <p>Pricing details will be announced closer to launch. We're committed to offering a fair and transparent pricing model that reflects the value of AI-powered briefings while keeping podcast listening accessible.</p>
-            <p>Stay tuned for updates on our pricing structure and any free tier or trial options.</p>
+            <p>PodBrief offers both a free tier and premium subscription options:</p>
+            <ul>
+              <li><strong>Free Tier:</strong> Access to core podcast listening features with limited AI briefings</li>
+              <li><strong>Premium Monthly:</strong> $4.99/month for unlimited AI briefings</li>
+              <li><strong>Premium Annual:</strong> $35.99/year (save 40% vs monthly)</li>
+            </ul>
+            <p>Premium subscribers get unlimited access to AI-generated briefings for all their podcasts, plus priority access to new features. <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" style="color: #6366f1;">Download and try it free →</a></p>
           </div>
         </div>
       </div>
