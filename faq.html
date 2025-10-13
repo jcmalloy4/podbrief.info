@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - PodBrief</title>
+  
+    <!-- Open Graph for rich previews -->
+    <meta property="og:title" content="PodBrief FAQ - Your Questions Answered">
+    <meta property="og:description" content="Learn more about PodBrief's AI-powered podcast briefings, features, and how it works.">
+    <meta property="og:image" content="https://podbrief.info/Assets/podbrief_preview.png">
+    <meta property="og:url" content="https://podbrief.info/faq.html">
+    <meta property="og:type" content="website">
+  
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PodBrief FAQ">
+    <meta name="twitter:description" content="Learn more about PodBrief's AI-powered podcast briefings.">
+    <meta name="twitter:image" content="https://podbrief.info/Assets/podbrief_preview.png">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#10101e">
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .faq-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .faq-header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #fff, #a0a0a0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .faq-header p {
+        font-size: 1.1rem;
+        color: #888;
+        line-height: 1.6;
+      }
+
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .faq-item {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .faq-question {
+        padding: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+      }
+
+      .faq-question h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #fff;
+        margin: 0;
+        flex: 1;
+      }
+
+      .faq-toggle {
+        font-size: 1.5rem;
+        color: #6366f1;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+        margin-left: 1rem;
+      }
+
+      .faq-item.active .faq-toggle {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .faq-answer-content {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+        color: #ccc;
+        line-height: 1.8;
+      }
+
+      .faq-answer-content p {
+        margin: 0 0 1rem 0;
+      }
+
+      .faq-answer-content p:last-child {
+        margin-bottom: 0;
+      }
+
+      .faq-answer-content ul {
+        margin: 0.5rem 0 1rem 1.5rem;
+        padding: 0;
+      }
+
+      .faq-answer-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      .faq-category {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .faq-category h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+      }
+
+      .contact-section {
+        margin-top: 4rem;
+        padding: 2rem;
+        background: rgba(99, 102, 241, 0.1);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .contact-section h2 {
+        font-size: 1.5rem;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+
+      .contact-section p {
+        color: #ccc;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-section a {
+        color: #6366f1;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .contact-section a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .faq-header h1 {
+          font-size: 2rem;
+        }
+
+        .faq-question h3 {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+<body>
+  <header class="navbar">
+    <div class="navbar-content">
+      <div class="navbar-logo">
+        <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo" />
+          <span>PodBrief</span>
+        </a>
+      </div>
+      <nav class="navbar-links">
+        <a href="/#Overview">Overview</a>
+        <a href="/#Features">Features</a>
+        <a href="/faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="faq-container">
+    <div class="faq-header">
+      <h1>Frequently Asked Questions</h1>
+      <p>Everything you need to know about PodBrief and AI-powered podcast briefings</p>
+    </div>
+
+    <!-- General Questions -->
+    <div class="faq-category">
+      <h2>General</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>What is PodBrief?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>PodBrief is an AI-powered podcast app that helps you stay on top of your favorite shows with smart, concise briefings. Instead of spending hours listening to every episode, you can quickly read AI-generated summaries that capture the key insights, main topics, and important takeaways.</p>
+            <p>Our app combines a modern podcast player with intelligent briefing technology, so you can decide what to listen to and what to skip—saving you time while keeping you informed.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>How does PodBrief work?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>PodBrief uses advanced AI technology to analyze podcast episodes and create comprehensive briefings. Here's how it works:</p>
+            <ul>
+              <li><strong>Subscribe to podcasts:</strong> Add your favorite shows to your feed</li>
+              <li><strong>Daily feed:</strong> See all new episodes in one scrollable feed</li>
+              <li><strong>AI briefings:</strong> Get instant summaries with key insights and topics</li>
+              <li><strong>Smart listening:</strong> Decide what to listen to based on the brief, or skip ahead</li>
+            </ul>
+            <p>The AI analyzes the full episode content to deliver accurate, meaningful summaries that respect the original context and intent of the hosts.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Is PodBrief available now?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>PodBrief is currently in development and will be launching soon. We're working hard to perfect the experience and ensure our AI briefings deliver maximum value to podcast listeners.</p>
+            <p>Want to be notified when we launch? Follow us on social media or reach out to <a href="mailto:john@podbrief.info" style="color: #6366f1;">john@podbrief.info</a> to join our early access list.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Briefings -->
+    <div class="faq-category">
+      <h2>AI Briefings</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>What information is included in a briefing?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Each PodBrief briefing includes:</p>
+            <ul>
+              <li><strong>Executive Summary:</strong> A quick overview of the episode in 2-3 sentences</li>
+              <li><strong>Key Insights:</strong> The most important takeaways and learnings</li>
+              <li><strong>Main Topics:</strong> The core subjects discussed in the episode</li>
+              <li><strong>Notable Quotes:</strong> Memorable statements from the hosts or guests</li>
+              <li><strong>Action Items:</strong> Practical advice or recommendations mentioned</li>
+            </ul>
+            <p>Our AI focuses on what matters most, so you can quickly decide if an episode is worth your time.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>How accurate are the AI briefings?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Our AI briefings are designed to be highly accurate and faithful to the original content. We use state-of-the-art language models that have been specifically tuned for podcast content analysis.</p>
+            <p>However, AI-generated summaries should be viewed as helpful guides rather than perfect transcriptions. They capture the essence and key points of episodes, but may not include every detail. We recommend listening to the full episode for topics that require deep understanding or nuanced context.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Are briefings available for all podcasts?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>PodBrief works with any publicly available podcast. Our system can generate briefings for episodes from any podcast feed, whether it's a popular show or a niche podcast with a smaller audience.</p>
+            <p>Briefing generation may take a few minutes for newly released episodes, but once generated, they're instantly available for all users who subscribe to that podcast.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Can I share briefings with friends?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Yes! PodBrief makes it easy to share episode briefings with friends, colleagues, or on social media. When you share a briefing link, it displays a rich preview with the podcast artwork, episode title, and a snippet of the brief—perfect for iMessage, Twitter, or any other platform.</p>
+            <p>Recipients can click the link to view the full briefing or open the episode directly in the PodBrief app.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features & Functionality -->
+    <div class="faq-category">
+      <h2>Features & Functionality</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Does PodBrief have a podcast player?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Yes! PodBrief includes a full-featured podcast player with all the essentials you need:</p>
+            <ul>
+              <li>Variable playback speed (0.5x to 3x)</li>
+              <li>Sleep timer for bedtime listening</li>
+              <li>Chapter markers (when available)</li>
+              <li>Skip forward/backward controls</li>
+              <li>Download episodes for offline listening</li>
+              <li>Queue management</li>
+            </ul>
+            <p>It's a complete podcast experience, enhanced with AI intelligence.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>What makes PodBrief different from other podcast apps?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>PodBrief is built for people who love podcasts but struggle to keep up with all their shows. Unlike traditional podcast apps that only organize your subscriptions, PodBrief gives you:</p>
+            <ul>
+              <li><strong>AI Briefings:</strong> Instant summaries so you know what's worth listening to</li>
+              <li><strong>Smart Feed:</strong> All your new episodes in one unified feed</li>
+              <li><strong>Time Savings:</strong> Quickly scan briefings instead of sampling every episode</li>
+              <li><strong>Better Discovery:</strong> Follow more podcasts without feeling overwhelmed</li>
+            </ul>
+            <p>We combine the best of traditional podcast players with modern AI assistance to help you get more value from every minute you spend listening.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Can I import my existing podcast subscriptions?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Yes! When PodBrief launches, you'll be able to import your subscriptions from other podcast apps using OPML file import. This makes it easy to switch to PodBrief without losing your carefully curated list of shows.</p>
+            <p>You can also search for and add new podcasts directly within the app.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Is there a desktop or web version?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>PodBrief is initially launching as a mobile app for iOS and Android, where most podcast listening happens. We're designed for on-the-go listening with smart briefings that help you make quick decisions about what to play.</p>
+            <p>Desktop and web versions may be considered based on user feedback after launch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy & Cost -->
+    <div class="faq-category">
+      <h2>Privacy & Cost</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>How much does PodBrief cost?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Pricing details will be announced closer to launch. We're committed to offering a fair and transparent pricing model that reflects the value of AI-powered briefings while keeping podcast listening accessible.</p>
+            <p>Stay tuned for updates on our pricing structure and any free tier or trial options.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Is my listening data private?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Yes. We take your privacy seriously. Your listening history, subscriptions, and personal data are protected and never sold to third parties. We only use your data to improve your experience within PodBrief—like recommending podcasts you might enjoy or generating personalized briefings.</p>
+            <p>You can read our full <a href="/privacy.html" style="color: #6366f1;">Privacy Policy</a> for detailed information about how we handle your data.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <h3>Do podcast creators get compensated?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>PodBrief respects and supports the podcast creator community. Our briefings are designed to enhance, not replace, the listening experience. By helping listeners discover which episodes interest them most, we aim to increase engagement with podcast content.</p>
+            <p>We preserve all original ads and monetization within episodes, and we're exploring additional ways to support creators as we grow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+      <h2>Still have questions?</h2>
+      <p>We're here to help! If you couldn't find the answer you were looking for, reach out to us directly.</p>
+      <p>Email: <a href="mailto:john@podbrief.info">john@podbrief.info</a></p>
+      <p>Follow us on <a href="https://twitter.com/podbrief_ai">Twitter</a>, <a href="https://www.linkedin.com/company/podbrief-ai">LinkedIn</a>, or <a href="https://instagram.com/podbrief.ai">Instagram</a> for updates.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <p><a href="mailto:john@podbrief.info">john@podbrief.info</a></p>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://twitter.com/podbrief_ai">Twitter</a>
+          <a href="https://www.linkedin.com/company/podbrief-ai?trk=blended-typeahead">LinkedIn</a>
+          <a href="https://instagram.com/podbrief.ai">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFAQ(element) {
+      const faqItem = element.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const answerContent = faqItem.querySelector('.faq-answer-content');
+      
+      // Close all other items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem && item.classList.contains('active')) {
+          item.classList.remove('active');
+          item.querySelector('.faq-answer').style.maxHeight = '0';
+        }
+      });
+      
+      // Toggle current item
+      if (faqItem.classList.contains('active')) {
+        faqItem.classList.remove('active');
+        answer.style.maxHeight = '0';
+      } else {
+        faqItem.classList.add('active');
+        answer.style.maxHeight = answerContent.scrollHeight + 'px';
+      }
+    }
+  </script>
+</body>
+</html>
+
