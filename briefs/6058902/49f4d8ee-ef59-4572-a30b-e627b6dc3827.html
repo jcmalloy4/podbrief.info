@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After LLMs: Spatial Intelligence and World Models — Fei-Fei Li & Justin Johnson, World Labs | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for After LLMs: Spatial Intelligence and World Models — Fei-Fei Li & Justin Johnson, World Labs from Latent Space: The AI Engineer Podcast. Fei-Fei Li and Justin Johnson are cofounders of World Labs, who have recently launched Marble (https://marble.worldlabs.ai/), a new kind of generative “world model” that can create editable 3D environ">
+    <meta property="og:title" content="After LLMs: Spatial Intelligence and World Models — Fei-Fei Li & Justin Johnson, World Labs | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/49f4d8ee-ef59-4572-a30b-e627b6dc3827.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/49f4d8ee-ef59-4572-a30b-e627b6dc3827.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">After LLMs: Spatial Intelligence and World Models — Fei-Fei Li & Justin Johnson, World Labs</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h2>Key Takeaways</h2><ul><li>World Labs, founded by Fei-Fei Li and Justin Johnson, focuses on spatial intelligence and world models.</li><li>Marble, their first product, generates editable 3D environments from various inputs using Gaussian splats.</li><li>Spatial intelligence is positioned as the next frontier beyond language models, crucial for 3D world understanding.</li><li>The discussion probes whether AI models genuinely understand physics or merely fit patterns in data.</li><li>Academia is severely under-resourced compared to industry, hindering foundational AI research.</li><li>Transformers are clarified as set models, not sequence models, impacting future architectural designs.</li><li>Marble enables use cases from game environments and VFX to architectural design and robotics training.</li><li>Future AI systems aim to integrate spatial and language intelligence for multimodal capabilities.</li><li>A millionfold increase in compute since Li's PhD enables processing of large spatial datasets.</li></ul><h2>Deep Dive</h2><h3></h3><ul><li>AlexNet's reliance on ImageNet, GPUs, and neural networks is paralleled with necessary components for world models.</li><li>Data availability and a millionfold increase in compute power since Fei-Fei Li's PhD enable processing larger spatial and world datasets.</li></ul><h3></h3><ul><li>Fei-Fei Li expresses concern about academia's under-resourcing compared to industry, advocating for public sector AI work and a national AI compute cloud.</li><li>Academia's role should focus on exploring new algorithms, architectures, and theoretical underpinnings, rather than training the largest models.</li><li>Limits of current GPU scaling, like performance per watt between Hopper and Blackwell generations, suggest a need for long-term academic research into new approaches.</li></ul><h3></h3><ul><li>Fei-Fei Li and Andrej Karpathy's early work combined CNNs for image representation with LSTMs for language generation.</li><li>Their CVPR 2015 paper used a CNN-LSTM to generate a single descriptive sentence for an image.</li><li>The team advanced to 'dense captioning' in a 2016 CVPR paper, describing multiple objects within a scene using a complex neural network.</li><li>A real-time captioning demo streamed from California to Santiago, Chile, showcased the system's functionality at one frame per second.</li></ul><h3></h3><ul><li>A Harvard paper showed an LLM could predict orbital patterns but not force vectors, highlighting a gap between pattern-fitting and causal physics.</li><li>The debate centers on whether AI can achieve genuine causal reasoning or merely pattern fitting from data.</li><li>For applications like virtual backdrops, plausible rendering suffices, but for architectural design, understanding physical properties is crucial, posing a challenge for current models.</li></ul><h3></h3><ul><li>World Labs, co-founded by Fei-Fei Li and Justin Johnson, introduced Marble as their first product.</li><li>Marble is an in-class model generating high-fidelity 3D worlds from multimodal inputs with interactive editing capabilities.</li><li>The system uses Gaussian splats for real-time rendering on various devices and offers precise camera control, differentiating it from frame-by-frame generation models.</li></ul><h3></h3><ul><li>While Marble currently uses individual Gaussian splats, future architectures could integrate physics by attaching physical properties or using spring-like couplings.</li><li>Methods explored for dynamics include predicting physical properties or regenerating entire scenes.</li><li>The discussion considers computational demands and the role of classical physics engines versus learned simulations in 3D scene generation.</li></ul><h3></h3><ul><li>Spatial intelligence is defined as a distinct form of intelligence from linguistic intelligence, inspired by Howard Gardner's theory.</li><li>It is crucial for interacting with the 3D world, exemplified by tasks like deducing DNA structure or grasping a mug.</li><li>Language is presented as a low-bandwidth channel for describing the rich 3D/4D world, contrasted with high-bandwidth visual and spatial perception optimized over millions of years.</li></ul><h3></h3><ul><li>LLMs excel at abstract language tasks but may bypass crucial embodied, spatial understanding, as shown by benchmarks requiring physical reasoning.</li><li>Multimodal approaches, where language models accept spatial inputs like those used by World Labs' Marble, are a viable path forward.</li><li>Future AI systems aim to converge spatial and language intelligence, with language interaction remaining pragmatically useful.</li></ul><h3></h3><ul><li>The discussion clarifies that transformers are fundamentally set models, not sequence models.</li><li>Their operations are token-wise or permutation-equivariant through the attention mechanism.</li><li>Order is typically injected into transformers via positional embeddings.</li></ul>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

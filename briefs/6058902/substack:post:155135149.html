@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everything you need to run Mission Critical Inference (ft. DeepSeek v3 + SGLang) | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for Everything you need to run Mission Critical Inference (ft. DeepSeek v3 + SGLang) from Latent Space: The AI Engineer Podcast. <p><a href="https://apply.ai.engineer/" target="_blank"><strong><em>Sponsorships and applications</em></strong></a><strong><em> for the </em></strong><a href="https://www.latent.space/p/2025-summit" t">
+    <meta property="og:title" content="Everything you need to run Mission Critical Inference (ft. DeepSeek v3 + SGLang) | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:155135149.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:155135149.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">Everything you need to run Mission Critical Inference (ft. DeepSeek v3 + SGLang)</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><ul><li>DeepSeq V3 represents a significant advancement in open-weights models with its 671 billion parameter Mixture of Experts (MOE) architecture, though its massive size creates substantial <strong>inference challenges</strong> requiring specialized hardware like H200 clusters and approximately 71GB just for weights.</li>
+</ul>
+<ul><li>Organizations adopt models like DeepSeq V3 not just for performance but to address practical concerns including API rate limiting, high pricing from existing services, specific latency requirements, and the desire for <strong>complete model control</strong> without being subject to unexpected API changes.</li>
+</ul>
+<ul><li>Base10's inference approach prioritizes dedicated resources and customer-specific needs over generic shared endpoints, avoiding unilateral model quantization decisions while supporting advanced techniques like <strong>native FP8 quantization</strong> during training.</li>
+</ul>
+<ul><li>Mission-critical AI inference requires excellence across three pillars: model-level performance optimization, sophisticated horizontal scaling infrastructure beyond simple Kubernetes, and developer experience supporting <strong>complex multi-model workflows</strong>.</li>
+</ul>
+<ul><li>The SGLang framework has rapidly evolved since 2023 to address limitations in existing frameworks, offering innovations like Radex prefix caching and jump-forward decoding that significantly improve performance for real-world applications requiring <strong>structured outputs and low latency</strong>.</li>
+</ul>
+<h1>Content</h1><h2>DeepSeq V3 Model and Industry Context</h2><ul><li>The podcast begins as the first Latent Space episode of 2025, featuring Amir (Base10 co-founder) and Yining Zhang (model performance engineer).</li>
+</ul>
+<ul><li>DeepSeq V3 is discussed as a 671 billion parameter Mixture of Experts (MOE) model trained with 15 trillion tokens, including synthetic reasoning data.</li>
+</ul>  - Currently ranked 7th on LM Arena leaderboard with a score of 1319
+  - Considered the best open weights model as of January 2025
+  - Uses native FP8 mixed precision training
+  - Features multi-head latent attention and a new multi-token prediction objective
+  - Contains 256 experts</p><ul><li>Inference challenges for DeepSeq V3 are significant:</li>
+</ul>  - Extremely large model size makes serving difficult
+  - Requires specialized hardware (H200 clusters)
+  - Needs ~71 GB for weights plus additional KV cache memory
+  - Cannot be effectively run on standard H100 GPUs</p><ul><li>The model is part of a trend of Chinese labs releasing large open weights models, including Tencent's HunYuan and Hyluo's Minimax.</li>
+</ul>
+<ul><li>Base10 was first to get DeepSeq v3 online, using H200 clusters and SGLang.</li>
+</ul>
+<h2>Model Performance and Customer Considerations</h2><ul><li>Despite larger models being available, LAMA 70B is currently more common than the 405B model as users generally find the performance gains at inference time are not significant.</li>
+</ul>
+<ul><li>Organizations adopt models like DeepSync V3 for several reasons:</li>
+</ul>  - Rate limiting from cloud providers
+  - High pricing from existing services
+  - Specific latency or time-to-first-token requirements
+  - Desire for full model control
+  - Avoiding potential API model changes</p><ul><li>Customers typically focus on performance requirements (latency, throughput, cost) rather than specifying particular GPU models.</li>
+</ul>
+<ul><li>Technical challenges include:</li>
+</ul>  - Large models having long loading times
+  - Difficult debugging due to model size
+  - Limited support for FP8 quantization in current frameworks</p><ul><li>There's an emerging trend of training with native quantization, with companies like Together releasing quantized model versions.</li>
+</ul>
+<h2>Base10's Approach and MOE Architecture</h2><ul><li>Base10's inference approach:</li>
+</ul>  - Focuses on customers with custom models and specific workflow requirements
+  - Provides dedicated inference resources
+  - Prioritizes customer needs over generic shared endpoints
+  - Avoids unilateral model quantization without customer collaboration</p><ul><li>Quantization trends show emerging interest in FP8 training for large models:</li>
+</ul>  - Potential benefits of quantization up to 6-bit during training
+  - Challenges in implementing block-wise FP8 kernels
+  - Promising benchmark results with quantized models (e.g., GSM8K score of 94.6)</p><ul><li>Mixture of Experts (MOE) architecture is discussed as a potential emerging trend in 2024:</li>
+</ul>  - Some companies like Baidu already using internal MOE models
+  - Interesting that major AI labs haven't widely adopted MOE
+  - Speculation that Gemini 1.5 Pro might be an MOE model
+  - LAMA potentially didn't open-source an MOE model due to training challenges
+  - MOE models are perceived as potentially underperforming compared to other model types
+  - Benchmark scores for MOE models are lower than some alternative models</p><h2>Pricing and Infrastructure</h2><ul><li>D6 API pricing strategy is based on consumption of resources, not per token:</li>
+</ul>  - Pricing for models running on their infrastructure
+  - Pricing for customers using their own cloud resources
+  - Multi-cloud capabilities allowing horizontal scaling across different clouds
+  - Flexible approach enabling customers to use their committed cloud resources efficiently</p><ul><li>Technical infrastructure leverages:</li>
+</ul>  - Trust, an open-source model packaging and deployment library
+  - Deep support for TensorRTLM framework
+  - Custom versions of Triton inference server for performance
+  - SGLang for improved developer experience
+  - Framework-agnostic approach supporting multiple deployment options
+  - NVIDIA CUDA kernels for high-performance computing</p><h2>Trust Platform and Customer Priorities</h2><ul><li>Trust Platform design philosophy:</li>
+</ul>  - Initial goal was to make "easy things easy, hard things possible"
+  - Started with simple model serving requiring just two functions
+  - Evolved to handle more complex use cases over time</p><ul><li>Trust Chains innovation:</li>
+</ul>  - Developed to handle multi-model, multi-step inference workflows
+  - Enables low-latency processing by streaming data between models
+  - Example use case: AI phone calls with sub-400 millisecond latency
+  - Requires all models to be hosted on Base10 platform</p><ul><li>Customer priorities include:</li>
+</ul>  - Transparency in platform operations
+  - Maintaining model output quality
+  - Performance metrics (latency, time to first token, throughput consistency, P95/P99)
+  - Security and compliance considerations
+  - Geographical data restrictions</p><h2>Framework Comparison and Mission-Critical Inference</h2><ul><li>Framework comparison reveals:</li>
+</ul>  - SGLang has better performance than VLLM for common use cases
+  - SGLang offers better usability compared to TRT-LLM
+  - SGLang uniquely supports optimizations like multi-latent attention (MLA), DP attention for DeepSeq, and BlockWise FP8 kernel</p><ul><li>Three pillars of mission-critical inference workloads:</li>
+</ul>  1. Performance at Model Level (single GPU model performance, speculative decoding, framework-specific optimizations)
+  2. Horizontal Scaling Infrastructure (beyond simple Kubernetes autoscaling, scaling across multiple replicas)
+  3. Developer Experience (supporting complex, multi-step, multi-model workflows)</p><ul><li>The discussion emphasizes that serving frameworks are only part of the production inference solution.</li>
+</ul>
+<h2>SGLAN Framework Development</h2><ul><li>SGLAN framework development timeline:</li>
+</ul>  - Created around August 2023 as a new LLM inference engine
+  - January 2024: Introduced Radex prefix caching technology
+  - February 2024: Added concentrated decoding and jump forward capabilities
+  - Mid-2024: Positioned as a full LLM inference engine</p><ul><li>Key technical innovations include:</li>
+</ul>  - Radex Attention/KVCache using block size of 1 (vs. typical block size of 32)
+  - Higher cache hit rates, particularly beneficial for scenarios with shared system prompts
+  - Initially claimed performance 3x faster than VLM</p><ul><li>SGLAN was created to address limitations in existing frameworks:</li>
+</ul>  - VLM: Easy to use but poor performance, messy code
+  - TensorFlow RT: High performance but difficult to extend</p><h2>Advanced Techniques and Future Outlook</h2><ul><li>Structured output and decoding techniques:</li>
+</ul>  - Jump forward decoding using tools like Outline and Xgrammar
+  - Ability to constrain output structure and potentially improve decoding speed
+  - Xgrammar (from MLC AI) preferred over Outlines for better performance</p><ul><li>SG Lang context:</li>
+</ul>  - Created by members of XAI (Elon Musk's AI company)
+  - Offers API speculative execution and front-end language control flow
+  - Rapid growth from 2,000 to 7,000 GitHub stars
+  - Maintains a public roadmap and hosts bi-weekly community meetings</p><ul><li>Speculative decoding and model training:</li>
+</ul>  - Eagle is a speculative coding technique now supported in some frameworks
+  - Training of draft models is crucial for performance
+  - Growing interest in RL trainers for Large Language Models
+  - Current RL approaches may be limited by base model architectures</p><ul><li>Practical applications and future outlook:</li>
+</ul>  - Fine-tuning examples in healthcare (medical document extraction, jargon understanding)
+  - Skepticism that fine-tuning will completely disappear
+  - Changing prompts might be easier than full fine-tuning in many cases
+  - Cost-effectiveness of advanced reasoning models remains a question</p><h2>Production AI Model Deployment Requirements</h2><ul><li>Production AI model deployment requires three key pillars:</li>
+</ul>  1. Model Performance (frameworks, training/fine-tuning draft models, server reliability)
+  2. Infrastructure Scaling (horizontal scaling, distribution across regions/clouds, resource availability)
+  3. Workflow Enablement (multi-step/multi-model inference, low latency, reliable workflows)</p><ul><li>Critical considerations for mission-critical inference:</li>
+</ul>  - Strict latency requirements
+  - Large throughput support
+  - Prevention of performance interference between customers
+  - Compliance (HIPAA, SOC)
+  - Geo-aware traffic routing
+  - Minimal latency impact (50-100 milliseconds matters)</p><ul><li>The speakers suggest creating a manifesto/framework similar to Heroku's 12-factor app to outline requirements for mission-critical AI applications.</li>
+</ul>
+<ul><li>The podcast concludes with expressions of gratitude and appreciation to Amir, with references to other participants named Alessio and Sean, suggesting ongoing collaboration.</li></ul>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

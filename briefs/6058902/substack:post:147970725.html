@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is finetuning GPT4o worth it? — with Alistair Pullen, Cosine (Genie) | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for Is finetuning GPT4o worth it? — with Alistair Pullen, Cosine (Genie) from Latent Space: The AI Engineer Podcast. <p><a href="https://en.wikipedia.org/wiki/Betteridge%27s_law_of_headlines" target="_blank">Betteridge's law</a> says no: with seemingly infinite flavors of RAG, and >2million token context + prompt ca">
+    <meta property="og:title" content="Is finetuning GPT4o worth it? — with Alistair Pullen, Cosine (Genie) | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:147970725.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:147970725.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">Is finetuning GPT4o worth it? — with Alistair Pullen, Cosine (Genie)</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><p>* Cosign's Genie represents a <strong>breakthrough in autonomous software engineering</strong>, achieving top scores on industry benchmarks (50% on SWE Bench Lite, 30% on full SWE Bench) by using a unique four-part workflow that mimics human problem-solving: finding files, planning action, writing code, and running tests.</p><p>* The team developed an <strong>innovative training methodology</strong> that captures the full reasoning process behind code changes rather than just final diffs, using "perfect information lineage" and self-improvement loops where the model learns from its own mistakes through synthetic data generation.</p><p>* Technical innovations include a <strong>novel code retrieval approach</strong> that generates hypothetical code snippets from English queries and combines multiple heuristics, achieving 66% retrieval accuracy and overcoming the limitations of traditional embedding methods for code semantics.</p><p>* Cosign's vision suggests a future where <strong>developer work is abstracted to a higher level</strong>, with AI handling coding tasks while humans provide guidance, potentially transforming the fundamental nature of software development beyond conventional IDE paradigms.</p><h1>Content</h1><h2>Background and Early Career</h2><p>* Ali Pullen, co-founder and CEO of Cosign, studied computer science at Exeter University.
+* Started a small consultancy with co-founder Sam while in university, working as mobile developers (iOS and Android).
+* Moved to London near the end of COVID and worked at a startup called Fancy for about 1.5 years.
+* At Fancy, they built multiple core systems including:
+  - Mobile client apps
+  - Backend systems
+  - Stock management system
+  - Driver routing algorithms
+* The company was later acquired by GoPuff, after which they left in 2022.</p><h2>Discovery of AI and Initial Experiments</h2><p>* Key discovery moment: Learning about GPT-3 through Reddit and experimenting in the OpenAI playground.
+* First experiments included writing "hello world" and generating JSON.
+* Experimental project: Attempting to use AI (Codex) to automatically build mobile apps:
+  - Used complex prompt chaining with 4,000 token context windows
+  - Aimed to generate entire app stacks from scratch
+  - Sometimes successfully generated functional code
+* Met their co-founder Yang through this process, who was impressed by their early AI experiments.</p><h2>Company Formation and Early Development</h2><p>* The founders applied to Y Combinator (YC) with an initial idea that was initially rejected.
+* During the YC interview, they pivoted to exploring a B2B startup focused on code automation.
+* First MVP was a CLI tool that they considered "horrendous".
+* Initial goal was to build something that could "do their jobs" through automation.
+* Recognized technological limitations with early Large Language Models (LLMs).
+* Focused on building a code base retrieval tool as a foundational technology.
+* Started as a two-person team, initially named "Build" (which was difficult to pronounce).
+* Later changed name to "Cosign".</p><h2>Technical Challenges and Evolution</h2><p>* Attempted to create a semantic search engine that could run locally.
+* Wanted to avoid sending code to the cloud.
+* Worked on handling large codebases (millions of lines of code).
+* Struggled with technical constraints like limited token sizes (4K, then 16K, later 32K).
+* The team's development of Genie was significantly enabled by OpenAI's 128K context window model.
+* Progression through model iterations: GPT-3.5 16K → GPT-4 8K → 4 Turbo fine-tuning.
+* Maintained communication with OpenAI's DevRel team throughout development.
+* Gained experimental access to 4 Turbo fine-tuning.</p><h2>Genie Development and Training Approach</h2><p>* Launched Genie, a state-of-the-art autonomous software engineering AI.
+* First trained version of Genie was "a disaster" but provided critical learning.
+* Needed sufficient context window to trace model outputs and prevent hallucinations.
+* Early iterations revealed data set biases and required iterative refinement.
+* Focused on optimizing Git diff generation and handling edge cases.
+* Pre-trained models typically only see final code diffs, which lose much of the context and reasoning behind changes.
+* Goal was to extract as much signal as possible about how humans actually solve problems.
+* Focus on capturing human software engineering decision-making.
+* Training on "perfect information lineage" and step-by-step reasoning.
+* Moving beyond random code generation to human-like problem solving.</p><h2>Data Training Challenges</h2><p>* Significant effort required to clean and filter training data.
+* Open source repositories are often dominated by readme updates and documentation changes.
+* Initial models showed unintended behaviors like arguing or being "insubordinate" when receiving feedback.
+* Data collection approach focused on extracting forensic-level details about how humans solve engineering problems.
+* Used a diverse mix of languages and task types.
+* Developed a pipeline to capture the reasoning behind code changes.
+* Customer data sharing willingness varies by sector, with growing concerns about sharing internal workflow data.</p><h2>Genie's Workflow and Technical Approach</h2><p>* The AI coding tool has a four-part workflow:
+  - Finding files
+  - Planning action
+  - Writing code
+  - Running tests
+* Regarding code retrieval and search:
+  - Semantic code search is a challenging problem
+  - Simple embedding approaches (chunking code and doing cosine similarity) are ineffective
+  - Code semantics differ significantly from natural language
+* Developed an innovative code retrieval approach:
+  - Train a model to generate hypothetical code snippets based on English queries
+  - Embed these generated snippets
+  - Use cosine similarity for more accurate retrieval
+  - Combine multiple heuristics (semantic, keyword) in their search engine
+* Uses a self-play approach to code retrieval, mimicking how a human developer would navigate a codebase.
+* The model learns to search through file systems, use language servers, and traverse code.
+* Achieved approximately 66% retrieval accuracy, improved from 54% to 60% by enhancing language server protocol capabilities.</p><h2>Model Architecture and Reasoning</h2><p>* The team is model-agnostic and willing to adapt to new foundational models quickly.
+* They can potentially fine-tune on new models like Gemini 1.5 with relative ease.
+* Current foundational models' step-by-step reasoning is insufficient based on benchmark performance.
+* Their goal is to make AI reasoning emulate human problem-solving approaches.
+* They view model development as iterative, with the ability to "bootstrap" and improve reasoning data.
+* Recognize current language models as auto-regressive and fundamentally limited in "thinking".
+* Interested in features like planners that can modify plans during execution and fully editable system components.</p><h2>Performance Characteristics</h2><p>* Genie is most confident when writing code compared to other tasks in its workflow.
+* The model is trained to write code diffs/patches, which is slightly different from how most models approach code editing.
+* Performance degrades linearly as context length increases:
+  - Around 60k tokens, the probability of solving a SWE bench issue drops to 0.5
+  - Beyond 60k tokens, the likelihood of failure increases
+* Language coverage includes approximately 15 programming languages with current data composition:
+  - 21% JavaScript
+  - 21% Python
+  - 14% TypeScript
+  - 14% TSX
+* Language selection was based on internal usage and popularity.</p><h2>CI/Test Running and Interaction Modes</h2><p>* Genie uses GitHub Actions and Checks API to run tests.
+* Model does not directly set up or configure code repositories.
+* Leverages existing CI pipelines for test execution.
+* Two primary modes of operation:
+  - Fully autonomous mode (assigns task, works independently)
+  - Interactive mode (can ask clarifying questions)
+* Design philosophy prioritizes asking questions over making potentially incorrect assumptions.
+* Trained to respond like a software engineering colleague.
+* Designed to be less "snarky" than human colleagues.</p><h2>Fine-Tuning Process and Synthetic Data</h2><p>* Collaborating closely with OpenAI on cutting-edge fine-tuning techniques.
+* Trained on billions of tokens (beyond typical millions range).
+* Working with experts using larger LoRa adapters than publicly available.
+* Exploring scaling laws for data and adapter performance.
+* Developed a unique self-improvement loop for code generation:
+  - Generating runtime errors intentionally
+  - Creating synthetic data in batches
+  - First batch: perfect examples
+  - Subsequent batches: model attempts to solve problems, learns from mistakes
+* Current data generation is primarily limited by available capital.</p><h2>Benchmarking and Results</h2><p>* Achieved top scores on SWE Bench:
+  - 50% on SWE Bench Lite
+  - 30% on full SWE Bench
+  - 44% on OpenAI's SWE Bench Verified
+* Significantly outperformed previous leaders like Amazon Q and others.
+* Recently changed submission requirements to include "model trajectories" (reasoning process).
+* The company chose not to submit full trajectories to protect their training data methodology.
+* Original Sweebench dataset has 2,294 examples, is expensive to run (approximately $8,000), and has a slow iteration process.
+* GPT-4 reportedly gets around 33% on the same benchmark, showing significant improvement from original Sweebench results (which were around 2%).</p><h2>Future Plans and Vision</h2><p>* Plan to improve Genie by:
+  - Analyzing failed attempts more granularly
+  - Understanding where and how models diverge from correct solutions
+  - Making the dataset larger
+  - Fine-tuning on specific codebases
+* Creating specialized Genie versions, including one named after an employee ("John") and versions fine-tuned on specific codebases.
+* The founder believes developer work will be abstracted to a higher level, with AI models doing coding while humans guide them.
+* Their product (Genie UX) aims to change how coding is approached, different from conventional IDEs.
+* The company is in an early stage (about 8 months old) with ambitions to build something potentially massive.</p><h2>Target Customers and Team Building</h2><p>* Ideal customers include people willing to try something new, preferably working with TypeScript, JavaScript, Python, Java.
+* No strict company size limitations and open to working with various code base sizes.
+* Looking for passionate individuals obsessed with pushing technological boundaries.
+* Seeking team members interested in both traditional tech product development and AI/machine learning.
+* Want people excited about experimental work that gets shipped to users.</p>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

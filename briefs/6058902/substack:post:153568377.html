@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 in Agents [LS Live! @ NeurIPS 2024] | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for 2024 in Agents [LS Live! @ NeurIPS 2024] from Latent Space: The AI Engineer Podcast. <p><em>Happy holidays! We’ll be sharing snippets from </em><a href="https://lu.ma/LSLIVE" target="_blank"><em>Latent Space LIVE!</em></a><em> through the break bringing you the best of 2024! We want t">
+    <meta property="og:title" content="2024 in Agents [LS Live! @ NeurIPS 2024] | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:153568377.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:153568377.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">2024 in Agents [LS Live! @ NeurIPS 2024]</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><p>* <strong>AI agents are rapidly evolving</strong> with major companies focusing on consumer coding agents, vision-based computer-using agents, and multi-agent systems, positioning 2025 as the potential "year of agents" with applications spanning coding, developer tools, customer support, and search.</p><p>* The most effective agent designs use a <strong>minimalist toolset approach</strong> (5-6 core tools including bash execution, file editing, and web browsing) rather than numerous specific API calls, prioritizing powerful programming capabilities while maintaining flexibility to adapt to different tasks.</p><p>* Current agent performance reaches <strong>30-40% full autonomy</strong>, with Claude leading among models, though agents still struggle with information gathering, complex tasks, and thorough investigation of problems before attempting solutions.</p><p>* The field is moving toward <strong>democratized AI access</strong> through open-source solutions and more affordable models, while facing challenges in authentication, effective memory systems, and creating self-improving agents that learn from past experiences.</p><p>* Research innovations like <strong>workflow memory</strong> (showing 22.5% performance improvement after learning from 40 examples) and hybrid web interaction approaches (combining screenshots with textual summaries) represent promising directions for enhancing agent capabilities.</p><h1>Content: State of LLM Agents in 2024 (NeurIPS Recap)</h1><h2>Introduction and Context</h2>
+* This is a recap of the Latent Space Live mini-conference at NeurIPS 2024 in Vancouver
+* The episode features Professor Graham Newbig from CMU, who is also Chief Scientist at All Hands AI and maintainer of Open Hands (open-source coding agent framework)
+* 2025 is predicted to be the "year of agents" with major AI companies (OpenAI, DeepMind, Anthropic) focusing on consumer encoding agents, vision-based computer-using agents, and multi-agent systems</p><h2>Notable Agent Developments in 2024</h2>
+* Open Hands (formerly Open Devon) leads the SWE bench leaderboard
+* Significant agent innovations across domains:
+  - Coding: Devon, Cursor Composer, Codium's Windsurf
+  - Developer Tools: StackBlitz's Bolt, Vercel's V0
+  - Customer Support: Sierra ($4B valuation)
+  - Search: Perplexity ($9B valuation)</p><h2>Agent Capabilities and Use Cases</h2>
+* The speaker demonstrates using agents for data science tasks, creating new software, and improving existing software
+* Uses coding agents 5-10 times daily
+* Demonstrated using an AI agent to analyze GitHub repository data and create visualizations
+* Agents can interact with GitHub API (checking issue comments, GitHub actions)
+* Python agents can leverage ecosystem libraries for tasks like data visualization</p><h2>Agent-Computer Interface Design</h2>
+* Two main approaches to providing tools for agents:
+  - Granular, specific API calls (many individual tool calls)
+  - Providing coding capability to call arbitrary Python code (more flexible)</p><p>* Open Hands approach uses a limited set of approximately 5-6 core tools:
+  1. Bash program execution
+  2. Jupyter notebook execution
+  3. File editing (browsing/reading/overwriting)
+  4. Global search and replace
+  5. Web browsing (with sub-capabilities like scrolling, text input, clicking)</p><p>* Philosophy: Focus on giving agents powerful, flexible programming capabilities while minimizing the number of specific tools</p><h2>Human-Agent Interface Principles</h2>
+* Present actions in clear English descriptions
+* Show high-level summaries with option to explore details
+* Integrate into user's existing interaction settings
+* Adapt interface based on specific use case (e.g., coding vs. insurance)</p><h2>Language Model Requirements and Evaluation</h2>
+* Requirements for effective agents:
+  - Excellent instruction following ability
+  - Strong tool use and coding capabilities
+  - Environment understanding
+  - Error awareness and recovery</p><p>* Current evaluation results:
+  - Claude currently considered the best agent language model
+  - Strengths include good error recovery and adaptability
+  - Evaluation compared Claude, GPT-4O, O1 Mini, Lama, and others
+  - Open-source Lama 3.1 (405B) performed best among open models
+  - Evaluation is a few months old and rapidly evolving</p><h2>Problem-Solving Approaches for Agents</h2>
+* Recommended workflow for coding:
+  - Write tests to reproduce an issue
+  - Run tests to confirm they fail
+  - Fix the tests
+  - Verify tests now pass</p><p>* Two main approaches to structuring agent tasks:
+  - Explicit structure (multi-agent systems with defined roles)
+  - Implicit structure (single prompt with sequential instructions)</p><p>* Preference for single-agent systems due to flexibility to deviate from original plan and better instruction-following capabilities</p><h2>Research and Innovation in Agent Workflows</h2>
+* Notable research papers and approaches:
+  - COACT: Generating and fixing plans dynamically
+  - STEP: Manual workflow creation for web navigation
+  - Agent Workflow Memory: Self-improving agents learning from past successes (demonstrated 22.5% performance increase after 40 examples)
+  - Agent Lists: Creating repository maps for better navigation
+  - Bagel: Web agent exploration through random tasks
+  - Tree Search for Language Agents: Exploring multiple solution paths</p><h2>Web Agent Interaction Methods</h2>
+* Three main ways agents interact with websites:
+  1. Screenshot pixel clicking (currently not very reliable)
+  2. HTML/accessibility tree element identification
+  3. Hybrid approach using screenshot and textual summary (most promising)</p><p>* Current implementation details:
+  - Currently using text-based web interaction
+  - Recently implemented two web browsing modalities:
+    - Full website interaction with clickable elements
+    - Markdown conversion for easier information gathering</p><p>* Agent architecture insights:
+  - Using a general coding and browsing agent with broad instructions
+  - Implemented "micro agents" - specialized prompt additions triggered by specific keywords
+  - Current micro agents include GitHub and NPM interaction instructions</p><h2>Evaluation and Benchmarks</h2>
+* Two main approaches to evaluation:
+  - Fast, cheap sanity checks (e.g., mini world of bits, AIDR code editing benchmark)
+  - Highly realistic evaluations (e.g., WebArena for web navigation, Sweebench for coding)</p><p>* Benchmark evolution cycle:
+  - 2023: Benchmarks too easy
+  - 2024: Agents too weak
+  - 2025: Anticipating more challenging benchmarks</p><p>* Suggestions for composite benchmarks testing multiple coding-related abilities
+* Concerns about benchmark data leakage in language model training</p><h2>Current Performance and Limitations</h2>
+* Agent performance currently around 30-40% full autonomy
+* Main failure points:
+  - Insufficient information gathering before task solving
+  - Struggle with more complex tasks
+  - Failure to understand GitHub workflows before attempting to solve problems
+  - May not thoroughly investigate potential causes of bugs</p><p>* Performance improves when explicitly instructed to gather information or generate multiple hypotheses</p><h2>Predictions for AI Agents</h2>
+* By mid-2025:
+  - Every large language model will focus on agent training
+  - Competition will increase, prices will decrease
+  - Smaller models will become competitive as agents</p><p>* Improvements expected in:
+  - Instruction following abilities
+  - Error correction
+  - Reduced tendency to get stuck in loops</p><h2>Accessibility and Democratization of AI</h2>
+* Strong emphasis on making powerful AI tools:
+  - Affordable
+  - Accessible to more people
+  - Not limited to a select group</p><p>* Strategies for democratization:
+  - Use open source solutions
+  - Contribute to open source projects
+  - Train affordable, strong open source models
+  - Create models that help people improve economic opportunities</p><h2>Future Developments and Challenges</h2>
+* Authentication challenges for AI agents:
+  - Current solutions are limited in scope
+  - GitHub fine-grained authentication tokens suggested as a potential model
+  - Most APIs lack granular authentication controls
+  - Need to "prepare the world" for agent interactions</p><p>* Self-improving agents approach:
+  - Using powerful language models with infinite context
+  - Ability to review past experiences
+  - Mechanism to filter out negative past experiences
+  - Workflow memory concept showing incremental improvement</p><p>* Current challenges include:
+  - Large model size
+  - High cost of infinite context
+  - Lack of effective indexing methods
+  - Retrieval-augmented generation (RAG) not working well for code</p><p>* The speaker believes AI progress will accelerate rapidly, with agents building better agents</p>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

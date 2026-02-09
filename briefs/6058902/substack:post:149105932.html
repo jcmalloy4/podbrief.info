@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Guide to Prompting | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for The Ultimate Guide to Prompting from Latent Space: The AI Engineer Podcast. <p><em>Noah Hein from Latent Space University is finally launching with </em><a href="https://maven.com/p/933f3d" target="_blank"><em>a free lightning course this Sunday</em></a><em> for those new to ">
+    <meta property="og:title" content="The Ultimate Guide to Prompting | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:149105932.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:149105932.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">The Ultimate Guide to Prompting</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><p>* The Prompt Report represents a <strong>landmark systematic review</strong> of prompting techniques, created by a 30-person research team who analyzed thousands of papers and developed a formal taxonomy organizing techniques by problem-solving strategy rather than application.</p><p>* Effective few-shot prompting hinges on six critical design elements, with <strong>exemplar ordering and formatting</strong> being particularly crucial - randomizing example order is recommended while clustering similar examples should be avoided.</p><p>* Chain of Thought (CoT) prompting and its variations remain among the most effective techniques, while role-based prompting (pretending to be experts) and emotional appeals show limited effectiveness for accuracy-based tasks.</p><p>* The field is moving beyond simple "prompt engineering" toward more comprehensive "AI engineering" that combines prompting skills with coding, using tools like DSPy for optimization while managing computational costs.</p><p>* Security challenges in AI systems include distinct vulnerabilities like prompt injection and jailbreaking, with competitions like AcroPrompt and the upcoming HackerPrompt 2.0 ($500,000 prize) helping identify novel attack vectors and defense strategies.</p><h1>Content</h1><h2>Introduction and Background</h2>
+<ul><li>Podcast is Latent Space, hosted by Alessio and Swix, with guest Sander Schulhoff, author of the Prompt Report</li>
+<li>Sander's AI journey began in high school after seeing a YouTube video, which led him to study deep reinforcement learning in college</li>
+<li>He worked on several research projects including:</li>
+</ul>  - A Diplomacy project with Professor Jordan Boydgraver
+  - The MineRL (Minecraft Reinforcement Learning) competition
+<ul><li>His first exposure to prompting came while working on a translation task using GPT-3</li>
+</ul>
+<h2>Major Projects and Achievements</h2>
+<ul><li>Created learnprompting.org initially as an English class project in October 2022 (before ChatGPT)</li>
+<li>Organized Hack-a-Prompt competition in May 2023, collecting 600,000 malicious prompts</li>
+<li>Co-authored the Prompt Report, released approximately two months before this discussion:</li>
+</ul>  - Led a 30-person research team from major tech companies and universities
+  - Reviewed thousands of papers on prompting
+  - Produced an 80-page comprehensive summary document
+  - Received millions of views across social media platforms
+  - Used by some companies for job interview assessments
+<ul><li>Paper accepted at EMNLP (top NLP conference), selected as one of three best papers</li>
+<li>Presented research to approximately 2,000 researchers</li>
+</ul>
+<h2>Research Methodology and Systematic Review</h2>
+<ul><li>The team used the PRISMA methodology, a standard approach for comprehensive literature reviews</li>
+<li>They employed AI to help screen and evaluate paper relevance, carefully testing AI's accuracy against human evaluation</li>
+<li>Sander noted that many papers claim to be "systematic" without following proper systematic review techniques</li>
+<li>The researchers discovered and reported AI-generated papers on arXiv, noting that the archive does not allow fully AI-generated papers without disclosure</li>
+</ul>
+<h2>Prompting Techniques Taxonomy</h2>
+<ul><li>A key contribution of their paper was creating a formal taxonomy of prompting techniques</li>
+<li>The taxonomy was organized by problem-solving strategy rather than by application or field</li>
+<li>Major categories included:</li>
+</ul>  - Generating thought/reasoning steps (e.g., chain of thought)
+  - Ensemble approaches
+  - Self-criticism approaches
+  - Decomposition
+  - Zero-shot and few-shot prompting
+<ul><li>Techniques can be applied across different problems and some belong to multiple categories</li>
+</ul>
+<h2>Critical Analysis of Prompting Techniques</h2>
+<ul><li>Sander expressed skepticism about certain prompting techniques, particularly for accuracy-based tasks:</li>
+</ul>  - Role prompting (e.g., telling AI to act like a math professor) does not significantly improve performance on accuracy tasks
+  - In a mini-study testing role prompts on MMLU, the "genius" math professor prompt performed poorly
+  - Surprisingly, the "idiot" prompt sometimes outperformed the expert prompt
+<ul><li>Emotion-based prompting techniques (like "I'll tip you $10" or dramatic threats) are likely overhyped</li>
+<li>Sander's preferred prompting approaches include:</li>
+</ul>  - Few-shot prompting
+  - Chain of thought
+  - Providing detailed problem information</p><h2>Few-Shot Prompting Best Practices</h2>
+<ul><li>Six key design considerations were identified for creating effective few-shot prompts:</li>
+<li>Exemplar ordering is critically important:</li>
+</ul>  - Can dramatically impact accuracy (potentially from 0% to 90%)
+  - Randomizing example order is recommended
+  - Clustering similar examples should be avoided
+<ul><li>Formatting matters:</li>
+</ul>  - Common input/output formats (e.g., Q: A:, input: output) work best
+  - Formats most likely seen in training data are preferred
+  - "Prompt mining" can identify common dataset formatting
+<ul><li>Quantity and quality of examples:</li>
+</ul>  - Multiple examples help prevent direct repetition
+  - Pairing good/bad examples can be effective
+  - There's a risk of examples "leaking" into output
+<ul><li>Structure of exemplars matters more than their exact content</li>
+<li>Incorrect labels in exemplars can slightly reduce performance, but models focus more on output structure</li>
+<li>Zero-shot approach using generic templates can sometimes work better than few-shot</li>
+</ul>
+<h2>Chain of Thought and Reasoning Techniques</h2>
+<ul><li>Chain of thought (CoT) prompting involves step-by-step reasoning</li>
+<li>Multiple variations of CoT exist, including:</li>
+</ul>  - Thread of Thought: More complex problem-solving approach
+  - Uncertainty-routed CoT: Selects reasoning paths based on complexity
+  - Autocot: Automated chain of thought generation
+<ul><li>Sander created a custom prompting technique (autodicot) for a specialized dataset:</li>
+</ul>  - Used GPT-4 to generate chains of thought
+  - Validated generated reasoning by checking correctness
+  - If initial reasoning was incorrect, requested a rewrite with opposite approach
+<ul><li>Some models (like Sonnet 3.5) generate chain of thought reasoning naturally</li>
+<li>Prompt engineering helps "shock" language models into specific reasoning frames</li>
+<li>Tree of Thought was mentioned as a state-of-the-art decomposition approach</li>
+</ul>
+<h2>Decomposition and Problem-Solving Strategies</h2>
+<ul><li>Simple decomposition strategies include:</li>
+</ul>  - Breaking problems into sub-problems
+  - Solving sub-problems individually
+  - Potentially integrating API calls for complex problem-solving
+<ul><li>The discussion distinguished between thought generation and decomposition:</li>
+</ul>  - Thought generation: Writing intermediate reasoning steps
+  - Decomposition: Breaking problems into sub-problems and solving individually</p><h2>Ensembling and Self-Criticism Techniques</h2>
+<ul><li>Ensembling involves generating multiple responses to the same prompt</li>
+<li>There was debate about whether it's truly an "ensemble" method</li>
+<li>Performance of this technique has dropped as models have improved</li>
+<li>Variations include:</li>
+</ul>  - Taking majority response
+  - Having model analyze multiple reasoning paths for a more nuanced final answer
+<ul><li>Self-criticism involves having the model critique its own initial response</li>
+</ul>
+<h2>Cost Considerations and Practical Implementation</h2>
+<ul><li>Significant computational costs remain a concern in AI research</li>
+<li>Example of accidentally incurring a $150 bill from GPT-4 overnight</li>
+<li>GPT-4.0 costs $5 per million input tokens vs. GPT-4.0 Mini at $15</li>
+<li>Cost-saving strategies include using cheaper models for drafting and iterative tasks</li>
+<li>DSPy was highlighted as a useful Python library for prompt optimization</li>
+</ul>
+<h2>Prompt Engineering as a Profession</h2>
+<ul><li>Sander argued that prompt engineering is a skill everyone should have, not necessarily a specialized job</li>
+<li>He suggested that true AI work requires coding beyond just prompting</li>
+<li>Introduced the concept of an "AI engineer" as more valuable than a pure "prompt engineer"</li>
+<li>Recommended prompting platforms/tools: PromptLayer, Brain Trust, Prompt Foo, Human Loop</li>
+<li>Noted OpenAI Playground as a consistently used tool</li>
+</ul>
+<h2>Security Challenges: Prompt Injection and Jailbreaking</h2>
+<ul><li>Sander discussed the nuanced differences between terms:</li>
+</ul>  - Prompt injection: Occurs when both developer and user inputs are present in a prompt
+  - Jailbreaking: Involves only user and model interaction, with no developer instructions
+  - He prefers "prompt hacking" as a catch-all term due to definitional inconsistencies
+<ul><li>The AcroPrompt competition:</li>
+</ul>  - Goal was to get ChatGPT to say exactly "I have been pwned"
+  - Discovered a new attack technique called "context overflow"
+  - Demonstrated the value of competitions for discovering novel techniques
+<ul><li>Technical challenges included preventing additional punctuation or text around target phrases</li>
+</ul>
+<h2>Multimodal Prompting Challenges</h2>
+<ul><li>Discussion of challenges in prompting across different modalities (text, video, audio)</li>
+<li>Speakers discussed experiences with AI-generated music (Suno, Udio)</li>
+<li>Video model prompting was noted as particularly challenging:</li>
+</ul>  - Video models have more "axes of freedom" and are harder to control precisely
+  - Creating specific animations with current video AI models is difficult
+<ul><li>Structured output prompting is complex:</li>
+</ul>  - Getting models to produce structured outputs like Likert scale scores is challenging
+  - Models tend to generate most likely tokens rather than strictly following structured output instructions</p><h2>Future Work: HackerPrompt 2.0</h2>
+<ul><li>Fundraising for a $500,000 prize competition</li>
+<li>Goals include:</li>
+</ul>  - Creating a dataset exploring model vulnerabilities
+  - Investigating potential AI-generated harms
+  - Examining security risks with AI agents
+<ul><li>Focus areas include misinformation generation, harassment potential, and agent security vulnerabilities</li>
+<li>Planning to engage with major LLM companies</li>
+<li>Expecting around 10,000 hackers to participate</li>
+</ul>
+<h2>Closing Thoughts</h2>
+<ul><li>The hosts thanked Sander for participating in the podcast</li>
+<li>They expressed appreciation for the diverse perspectives and experiences shared</li>
+<li>The discussion concluded with anticipation for future developments with HackerPrompt 2.0</li></ul>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

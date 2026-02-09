@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmarks 201: Why Leaderboards > Arenas >> LLM-as-Judge | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for Benchmarks 201: Why Leaderboards > Arenas >> LLM-as-Judge from Latent Space: The AI Engineer Podcast. <p><em>The first AI Engineer World’s Fair talks from </em><a href="https://x.com/aiDotEngineer/status/1811093507463074018" target="_blank"><em>OpenAI</em></a><em> and </em><a href="https://x.com/aiDot">
+    <meta property="og:title" content="Benchmarks 201: Why Leaderboards > Arenas >> LLM-as-Judge | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:146497374.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:146497374.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">Benchmarks 201: Why Leaderboards > Arenas >> LLM-as-Judge</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><ul><li>The OpenLLM Leaderboard has evolved from an internal research project to a community-driven platform evaluating over 7,400 models, providing <strong>transparent, independent assessment</strong> that contrasts with previous non-reproducible self-reported evaluations.</li>
+</ul>
+<ul><li>Current benchmarks face significant limitations including dataset quality issues, contamination concerns, and rapid obsolescence as models improve, with many reaching "saturation" scores that suggest gaming rather than true capability improvements.</li>
+</ul>
+<ul><li>Human evaluations exhibit inherent biases, with users preferring models that are <strong>assertive but potentially incorrect</strong> or that agree with their existing beliefs, highlighting the need for more diverse and multi-turn evaluation approaches.</li>
+</ul>
+<ul><li>Evaluation methodology details matter significantly—prompt structure can cause 30-point performance variations, and computational constraints (up to $100/hour for H100 nodes) force strategic benchmark selection.</li>
+</ul>
+<ul><li>Future leaderboard developments will likely focus on <strong>reasoning capabilities</strong>, long context understanding, coding abilities, and model calibration (correlation between confidence and correctness), with an emphasis on models being truthful rather than merely confident.</li>
+</ul>
+<h1>Content: Hugging Face OpenLLM Leaderboard and Model Evaluation</h1><h2>Background and Professional Journey</h2><ul><li>Clémentine Fourier is a research scientist at Hugging Face and maintainer of the OpenLM leaderboard</li>
+<li>Originally trained as a geologist (graduated in 2015) before transitioning to computer science</li>
+<li>Completed her PhD at Inria with funding from the organization</li>
+<li>Professional experience includes:</li>
+</ul>  - Working on illness prediction in brain research
+  - NLP research
+  - Joining Hugging Face after being contacted by Meta
+  - Initially working on pre-trained graph transformer models before shifting to model evaluation
+<ul><li>Draws interesting parallels between geology and machine learning as experimental sciences</li>
+<li>Appreciates the vast time scales in geological research, seeing human existence as a "significant blink" in Earth's long history</li>
+</ul>
+<h2>Hugging Face OpenLLM Leaderboard Evolution</h2><ul><li>Started as an internal research project by the reinforcement learning team to compare published paper results</li>
+<li>Quickly gained community engagement and momentum</li>
+<li>Currently evaluates 7,400 community-submitted models</li>
+<li>Has received around 800 discussion threads and several million visitors</li>
+<li>Some startups have credited leaderboard rankings with helping secure funding rounds</li>
+<li>Represents a shift from non-reproducible, self-reported model evaluations to transparent, independent assessment</li>
+</ul>
+<h2>Benchmark Selection Process</h2><ul><li>V1 benchmarks (GSM 8K, MMLU, ARC Challenge) chosen based on standard metrics in research papers at the time</li>
+<li>V1.5 involved community interaction to identify missing evaluation capabilities</li>
+<li>Ongoing collaboration with reinforcement learning teams to refine benchmark selection</li>
+<li>Iterative improvement based on community feedback</li>
+<li>Recent increased scrutiny of benchmark limitations as model performance improves</li>
+</ul>
+<h2>Dataset and Benchmark Quality Issues</h2><ul><li>Many early AI datasets were created through "turking" - using underpaid workers, often with non-native English skills</li>
+<li>When benchmarks reach "saturation" (human-level or above performance), it often indicates model contamination rather than true capability</li>
+<li>MMLU benchmark shows models achieving high 80s scores, suggesting the test is becoming less challenging</li>
+<li>Benchmarks quickly become outdated due to rapid AI progress</li>
+<li>Leaderboards drive performance improvements by motivating researchers to climb scores</li>
+</ul>
+<h2>Evaluation Methods and Challenges</h2><ul><li>Three types of human evaluations identified:</li>
+</ul>  1. "Vibe check" evaluations
+  2. Human-based ratings (like LMSys chatbot arena)
+  3. Paid human expert evaluations
+<ul><li>Performance benchmarking framework:</li>
+</ul>  - 25% - Random chance
+  - 50% - Average human performance
+  - 75% - Expert human performance
+  - 90% - Potential cheating/gaming the system
+<ul><li>Using large language models like GPT-4 for evaluation is not recommended due to:</li>
+</ul>  - Closed source nature
+  - Lack of reproducibility
+  - Tendency towards verbose and biased responses
+<ul><li>Recommended evaluation approaches:</li>
+</ul>  - Use smaller models like Prometheus or Judge LM for rankings
+  - Avoid asking models for precise numerical scores
+  - Conduct personal "Vibe checks" for specific use cases</p><h2>Human Evaluation Limitations</h2><ul><li>Wisdom of the crowd approaches work best for quantifiable tasks</li>
+<li>Human feedback has significant inherent biases:</li>
+</ul>  - Preference for models that agree with them (Anthropic's psychophancy paper)
+  - Favoring assertive (but potentially false) answers (COHEAR/University of Edinburgh research)
+  - Limited demographic diversity of annotators
+<ul><li>Most current evaluations (like chatbot arenas) are:</li>
+</ul>  - Single-turn interactions
+  - Lack diversity
+  - Do not adequately test multi-turn capabilities
+<ul><li>Relying solely on human evaluation can lead to models that are psychophantic rather than factually accurate</li>
+</ul>
+<h2>Notable Benchmarks and Evaluation Resources</h2><ul><li>MMLU Pro: Top headline benchmark with 10 choices instead of 4, expert-reviewed</li>
+<li>GPQA: PhD-level questions in scientific domains, written by experts</li>
+<li>IFEval: Unique benchmark focused on instruction following</li>
+</ul>  - Described as "unit tests, but for language"
+  - Evaluates precise instruction understanding
+  - Uses strict instruction formatting
+<ul><li>Other resources mentioned:</li>
+</ul>  - Open Router for trending bots
+  - Ravenwolf on Hugging Face, known for detailed LLM evaluation threads</p><h2>Evaluation Methodology Details</h2><ul><li>Prompt structure significantly impacts model performance (up to 30-point variation)</li>
+<li>Most complex format (choices enumerated with letters in parentheses) performs best in MMLU</li>
+<li>Log likelihood method used for evaluation instead of generative approach due to:</li>
+</ul>  - Lower computational cost
+  - Easier parallelization
+<ul><li>Computational constraints are significant:</li>
+</ul>  - H100 nodes cost around $100/hour
+  - Evaluating a 7b model can take up to 20 hours
+  - Compute limitations force strategic benchmark selection</p><h2>Hardest Benchmarks</h2><ul><li>Math benchmark (level 5 questions) - most challenging</li>
+<li>MUSR (Multi-Step Soft Reasoning) - difficult due to long context and complex reasoning</li>
+</ul>  - Murder mystery scenarios
+  - Few models perform better than random</p><h2>Leaderboard Implementation Details</h2><ul><li>Hugging Face team spent about a month carefully evaluating models</li>
+<li>Focused on ensuring fair, accurate, and stable evaluations</li>
+<li>Thoroughly checked implementation details like tokenization, formatting, and token handling</li>
+<li>Removed evaluations with implementation errors (e.g., V1 drop evaluation)</li>
+<li>Uses Hugging Face's research cluster with lowest priority for leaderboard jobs</li>
+<li>Currently no direct community compute donation mechanism</li>
+</ul>
+<h2>Future Plans for the Leaderboard</h2><ul><li>Considering adding an option for community to run evaluations on inference endpoints</li>
+<li>Want to integrate with Eleusora AI harness</li>
+<li>Have existing evaluation library (Lightable) with potential functionality</li>
+<li>Engineering challenges currently prevent immediate implementation</li>
+<li>Committed to scientific objectivity and transparency</li>
+</ul>
+<h2>Long Context and Agent Benchmarks</h2><ul><li>Long context benchmarks highlighted:</li>
+</ul>  - A linguistics benchmark using a grammar book for a low-resource language (Calamang)
+  - An Allen AI benchmark using recent novels, with questions requiring full book comprehension
+<ul><li>Critique of existing agent benchmarks as too artificial</li>
+<li>Gaia benchmark developed as a more realistic approach to testing AI agent capabilities:</li>
+</ul>  - Tests models on real-world tasks
+  - Uses multiple tools and reasoning across different modalities
+  - Provides a replicable methodology for creating similar benchmarks</p><h2>Benchmark Quality Assessment ("Vibe Check")</h2><ul><li>Key evaluation criteria include:</li>
+</ul>  - Data set origin (human vs. model generated)
+  - Annotator quality and compensation
+  - Underlying assumptions of the dataset
+  - Prompt quality and consistency
+  - Testing across different model sizes
+  - Examining generation quality
+  - Assessing evaluation metrics
+<ul><li>GSM 8K is praised for constrained output format</li>
+<li>Drop benchmark criticized for using bag-of-words metric</li>
+</ul>
+<h2>Model Calibration</h2><ul><li>Defined as correlation between log probability and answer correctness</li>
+<li>Represents a model's "self-confidence"</li>
+<li>Would enable providing confidence intervals for model responses</li>
+<li>Base models are currently better calibrated than instruction-tuned models</li>
+<li>Identified as an important area for future benchmarks</li>
+</ul>
+<h2>Predictions for Next Leaderboard (v3)</h2><ul><li>Focus areas likely to include:</li>
+</ul>  - Reasoning capabilities
+  - Mass evaluations
+  - Long context understanding
+  - Coding abilities
+  - Potential psychofancy evaluation
+<ul><li>Models expected to quickly improve in areas like instruction following</li>
+<li>Acknowledgment of potential contamination of certain evaluation datasets (e.g., GPQA)</li>
+<li>Emphasis on models being assertive about factual truths and avoiding creating "thought bubbles" for users</li></ul>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

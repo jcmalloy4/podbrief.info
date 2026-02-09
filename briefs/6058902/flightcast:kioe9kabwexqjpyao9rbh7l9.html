@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡️The Rise and Fall of the Vector DB Category | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for ⚡️The Rise and Fall of the Vector DB Category from Latent Space: The AI Engineer Podcast. Note from your hosts: we were off this week for ICLR and RSA! This week we’re bringing you one of the top episodes from our lightning podcast series, the shorter format, Youtube-only side podcast we d">
+    <meta property="og:title" content="⚡️The Rise and Fall of the Vector DB Category | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/flightcast:kioe9kabwexqjpyao9rbh7l9.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/flightcast:kioe9kabwexqjpyao9rbh7l9.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">⚡️The Rise and Fall of the Vector DB Category</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><ul><li>The <strong>vector database category</strong> is evolving rapidly, with many traditional databases now incorporating vector search capabilities, suggesting a market consolidation similar to what happened with NoSQL databases after MongoDB's emergence.</li>
+</ul>
+<ul><li>Effective search and RAG systems require <strong>hybrid approaches</strong> rather than relying solely on embeddings—combining keyword matching (BM25), semantic search, and re-ranking layers produces superior results for most applications.</li>
+</ul>
+<ul><li>When building search infrastructure, developers should <strong>start simple</strong> (clean data, use BM25) and progressively add complexity, while maintaining modular, separately scalable components rather than tightly coupling ML models with databases.</li>
+</ul>
+<ul><li>Despite expanded context windows in LLMs, <strong>RAG remains essential</strong> for most applications, though implementation approaches vary based on scale—small datasets might fit in a single database while large-scale systems benefit from specialized vector search solutions.</li>
+</ul>
+<ul><li>The future of embeddings points toward <strong>domain-specific models</strong> (legal, finance, health) and multimodal capabilities, with growing interest in visual language models as embedding backbones.</li>
+</ul>
+<h1>Content</h1><h2>Background and Context</h2>
+<ul><li>Joe Christian Burgum is from Trondheim, Norway with 20 years of experience in search infrastructure</li>
+<li>His background includes work at Yahoo and Fast Search and Transfer</li>
+<li>He was an early investor and contributor to Chroma, writing their example in the OpenAI cookbook</li>
+</ul>
+<h2>Vector Databases and Market Evolution</h2>
+<ul><li>Post-ChatGPT (November 2022), developers saw vector embeddings as the primary way to do search and RAG</li>
+<li>Pinecone was an early pioneer in positioning vector databases as a new infrastructure category</li>
+</ul>  - Rapidly grew to around $100 million ARR
+  - Recently repositioned to be more developer-focused
+  - Shifted away from initial "memory for AI" enterprise messaging
+<ul><li>The vector database "category" is now declining, though not necessarily the companies themselves</li>
+<li>Significant fundraising has occurred in vector databases (around $230 million)</li>
+<li>The market is likely unsustainable with too many players</li>
+<li>This pattern resembles MongoDB's NoSQL database emergence and subsequent market convergence</li>
+</ul>
+<h2>Search Technology Integration</h2>
+<ul><li>Vector search capabilities are now integrated into many database technologies</li>
+<li>Traditional databases like Postgres (PG vector), Elasticsearch, and Solr now offer vector search</li>
+<li>Burgum argues these technologies should be viewed more as "search engines" rather than a separate database category</li>
+<li>Companies like Turbopuffer are emerging with developer-focused approaches</li>
+<li>Search can involve multiple approaches: grep, semantic search, keyword search, web search</li>
+<li>Embeddings are important but not the only solution for search</li>
+<li>Embeddings went mainstream after OpenAI's APIs, previously limited to big tech companies</li>
+</ul>
+<h2>Embedding Insights and Applications</h2>
+<ul><li>Embeddings are valuable for representing multimodal data, not just for similarity search</li>
+<li>Effective search requires additional signals like freshness and authority</li>
+<li>Hybrid query approaches are recommended for most applications</li>
+<li>For smaller scale operations, using a single database system might be practical</li>
+<li>Large-scale applications may require specialized vector search solutions</li>
+</ul>
+<h2>Recommender Systems and Search Convergence</h2>
+<ul><li>Embedding-based retrieval is common in large-scale recommender systems like TikTok</li>
+<li>Typical large-scale systems use a cascade approach:</li>
+</ul>  - First, retrieve from candidate pool using embedding-based retrieval
+  - Then use re-ranking layers to narrow down to final candidates</p><h2>Recommended Approach for Building RAG Applications</h2>
+<ul><li>Start by cleaning and preparing data</li>
+<li>Use BM25 (keyword matching) as a strong baseline algorithm</li>
+<li>Progressively add complexity:</li>
+</ul>  - Use off-the-shelf embedding models
+  - Leverage hybrid search capabilities
+  - Consider adding re-ranking layer if budget and latency allow</p><h2>Technology Stack Considerations</h2>
+<ul><li>Potential progression: </li>
+</ul>  - Transactional database (Postgres/MongoDB)
+  - Vector store
+  - Elasticsearch/Vespa/Redis
+  - Add recommendation system
+<ul><li>Key recommendations:</li>
+</ul>  - Prefer offline/batch processing when possible
+  - Be cautious about adding external API dependencies at high query volumes
+  - Keep infrastructure components somewhat separate due to different scaling properties
+<ul><li>Skeptical of tightly coupling machine learning models with databases</li>
+<li>Prefers keeping infrastructure components modular and separately scalable</li>
+</ul>
+<h2>Clarifications on RAG and Vector Databases</h2>
+<ul><li>RAG is NOT dead; augmenting AI with retrieval/search will remain relevant for a long time</li>
+<li>Some people are incorrectly claiming long context models eliminate the need for RAG</li>
+<li>Context windows have expanded dramatically (from 4K to 10 million tokens)</li>
+<li>Not all use cases require vector databases</li>
+<li>Some scenarios (like 300 articles) can now fit within a single model's context window</li>
+</ul>
+<h2>Knowledge Graphs and Graph Databases</h2>
+<ul><li>Building a knowledge graph is more challenging than using a graph database</li>
+<li>People often mistakenly link a concept directly to a specific technology</li>
+<li>Graph exploration can be done through various methods, not just graph databases</li>
+<li>Graph retrieval might be better than vector retrieval in some cases</li>
+<li>LLMs now make generating entity triplets easier, creating potential for improved knowledge graph development</li>
+</ul>
+<h2>Future Directions and Innovation</h2>
+<ul><li>Growing interest in domain-specific embedding models (legal, finance, health)</li>
+<li>Desire for visual language models as embedding model backbones</li>
+<li>Potential to use screenshot-based embeddings to avoid complex processing</li>
+<li>Embedding model business challenges:</li>
+</ul>  - API service requirements
+  - Compute costs
+  - Uncertain customer willingness to pay
+<ul><li>Notable companies/developments:</li>
+</ul>  - Voyage (acquired by NVIDIA)
+  - GINA (European RAG startup)
+  - Focus on specialized, domain-specific embedding approaches</p><h2>Personal Networking</h2>
+<ul><li>Speaker recommends connecting on Axe (social platform)</li>
+<li>Highlights Axe as a high-quality AI community platform</li>
+<li>Mentions also growing presence on LinkedIn and YouTube</li></ul>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

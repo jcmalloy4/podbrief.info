@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State of the Art: Training >70B LLMs on 10,000 H100 clusters | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for State of the Art: Training >70B LLMs on 10,000 H100 clusters from Latent Space: The AI Engineer Podcast. <p><strong>It’s return guest season here at Latent Space!</strong> We last talked to <a href="https://www.latent.space/p/imbue" target="_blank"><strong>Kanjun in October</strong></a> and <a href="http">
+    <meta property="og:title" content="State of the Art: Training >70B LLMs on 10,000 H100 clusters | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:145986807.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:145986807.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">State of the Art: Training >70B LLMs on 10,000 H100 clusters</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><p>* <strong>Databricks' acquisition of Mosaic</strong> has led to significant developments including DBRX, a text-to-image model trained exclusively on Shutterstock's dataset with full provenance transparency—addressing a critical industry concern about training data origins.</p><p>* Imbue is releasing three key resources: <strong>infrastructure training scripts</strong> for managing hardware failures, <strong>evaluation resources</strong> including cleaned benchmarks with 450,000 human judgments, and <strong>CARBS</strong> (Cost-Aware Hyperparameter Optimizer) for efficient experimentation across model scales.</p><p>* The teams operate a massive <strong>4,092 H100 GPU cluster</strong> with custom infrastructure, taking a "full stack approach" by co-designing hardware with providers and developing lightweight, debuggable tools rather than relying on complex cloud services.</p><p>* Both companies emphasize <strong>practical AI evaluation</strong> over abstract reasoning benchmarks, focusing on code understanding, retrieval-augmented generation, and capabilities that translate to real-world utility for enterprise customers.</p><p>* Future work will focus on <strong>code capabilities as a versatile "god tool"</strong> for problem-solving, with upcoming releases including a small model called "Abra" and continued development of internal product prototypes.</p><h1>Content</h1><h2>Databricks/Mosaic Acquisition and Recent Developments</h2><ul><li>John Franco is now Chief AI Scientist at Databricks following the Mosaic acquisition</li>
+<li>Most recent significant announcement is a new text-to-image model called DBRX (pronounced "D-V-R-X")</li>
+</ul>  - Developed in collaboration with Shutterstock
+  - Trained exclusively on Shutterstock's dataset with known provenance of every image
+  - Designed with enterprise customer transparency in mind
+  - Features a new dinosaur mascot and plush toy to make the model name more memorable
+<ul><li>Industry context: Shutterstock's dataset is highly valuable, with multiple major tech companies (OpenAI, Google, Meta, Apple) reportedly using Shutterstock data</li>
+<li>The model addresses concerns about image model training data transparency</li>
+</ul>
+<h2>Imbue's Three Main Categories of Releases</h2><ul><li>Josh, CTO of Imbue, introduces three main categories of releases:</li>
+</ul>
+1. Infrastructure and Training Scripts
+   - Scripts for managing hardware and hardware failures
+   - Enables more efficient and stable model training
+   - Addresses challenges of training foundation models, especially for smaller companies</p><p>2. Evaluation Resources
+   - New benchmark for code reasoning understanding
+   - Cleaned versions of 11 open-source benchmarks
+   - 450,000 human judgments about ambiguity and question quality
+   - Aims to prevent data contamination and improve evaluation accuracy</p><p>3. CARBS (Cost-Aware Hyperparameter Optimizer)
+   - Helps experiment at smaller scales and scale up precisely
+   - Enables tuning of hyperparameters across different model sizes
+   - Allows more efficient learning of scaling laws</p><ul><li>The speakers emphasize the critical but often overlooked challenges of cluster management, software deployment, fault tolerance during training, and GPU communication performance</li>
+<li>Context includes a brief mention of DVRX's model (132 billion total parameters, 36 billion active parameters, trained on 12 trillion tokens)</li>
+<li>The release focuses on sharing tools and insights, not model weights</li>
+</ul>
+<h2>Technical Infrastructure and Challenges</h2><ul><li>Discussing a massive GPU cluster with 4,092 H100 GPUs across 511 computers</li>
+<li>The cluster uses a non-standard three-tier network architecture (typically clusters are two-tier with around 1,024 GPUs)</li>
+<li>Worked closely with Voltage Park to design and set up the infrastructure</li>
+</ul>
+<ul><li>Experienced numerous technical difficulties, including:</li>
+</ul>  - InfiniBand cables stolen from data center
+  - GPU memory correction issues causing job delays
+  - Potential GPU computational errors (incorrect math calculations)</p><ul><li>Took a "full stack approach" by co-designing hardware with providers like Dell and NVIDIA</li>
+<li>Used Metal as a Service to automate operating system installation across hundreds of machines</li>
+<li>Each machine costs hundreds of thousands of dollars and has multiple networking interfaces</li>
+</ul>
+<ul><li>Challenges in hardware deployment:</li>
+</ul>  - Expected failures when bringing machines online, especially with early hardware builds
+  - Worked closely with manufacturers to identify and fix firmware-level issues
+  - At large scale, even rare problems (1 in 1000) become likely to occur</p><ul><li>Motivation for custom approach rather than using cloud providers:</li>
+</ul>  - Cloud providers offer limited visibility and debugging capabilities
+  - Direct relationship with hardware manufacturers allows for collaborative troubleshooting, custom firmware updates, and greater control</p><h2>Infrastructure Management Insights</h2><ul><li>Most AI companies rely on cloud providers to handle infrastructure complexities</li>
+<li>Direct engagement with hardware providers (NVIDIA, Dell) can be more efficient than multi-layered communication</li>
+<li>Infrastructure management involves intricate details like power contracts, InfiniBand cable quality, firmware updates, and physical security</li>
+</ul>
+<ul><li>Reliability expectations:</li>
+</ul>  - Approximately 3% of machines are expected to break every week
+  - This implies a potential full machine turnover within a year</p><ul><li>The team has achieved a lower than expected failure rate due to proactive root cause analysis</li>
+<li>Developed detailed health checks that:</li>
+</ul>  - Examine every boot log line
+  - Check if log lines are expected and in the correct order
+  - Create a triage process for potential issues</p><ul><li>Infrastructure team is very small (3-6 people) but accomplishes significant work through high skill level</li>
+<li>Relies on collaboration with vendors like Dell, H5, and NVIDIA</li>
+<li>Emphasizes learning and documenting processes for future reference</li>
+</ul>
+<h2>Hardware Setup and Debugging Challenges</h2><ul><li>Massive infrastructure setup involving 12,000 cables (24,000 connection points)</li>
+<li>Significant complexity in hardware installation and maintenance</li>
+<li>Collaborative effort involving teams from Dell, NVIDIA, and H5</li>
+</ul>
+<ul><li>Technical performance and debugging insights:</li>
+</ul>  - Unusual performance patterns observed during training, such as gradual decline in Machine Utilization (MFU)
+  - Unexpected performance degradation
+  - Root causes often traced to technical issues like memory fragmentation, garbage collection timing, and CPU throttling</p><ul><li>Debugging approach:</li>
+</ul>  - Emphasized importance of having good diagnostic tools
+  - Ability to trace and identify performance bottlenecks
+  - Potential solutions include turning off garbage collection, manually scheduling it, and monitoring CPU and heat metrics</p><ul><li>Open source contributions:</li>
+</ul>  - Leveraged libraries and implementations from NVIDIA's Megatron and DeepSpeed
+  - Appreciated existing open-source tuning examples
+  - Noted lack of standardized file system solutions in the ecosystem</p><h2>Infrastructure and Tooling Philosophy</h2><ul><li>Preference for simple, lightweight tools that are easy to debug</li>
+<li>Avoid complex infrastructure with multiple layers of abstraction</li>
+<li>Use basic tools like Bash, Python, SSH, and Docker</li>
+<li>Aim to keep systems straightforward to minimize maintenance overhead</li>
+</ul>
+<ul><li>Specific infrastructure approaches:</li>
+</ul>  - Created a local, simple file storage solution instead of using complex cloud services
+  - Developed a custom data loader with standardization across different infrastructure
+  - Use Kubernetes as a hardware abstraction layer
+  - Built a custom, simpler alternative to Kubernetes tailored for running experiments</p><ul><li>Notable tools:</li>
+</ul>  - Kraken (from Uber): Distributed Docker registry using BitTorrent for efficient image transfer
+  - Advantages: Fast, robust, and efficient image distribution across multiple machines</p><ul><li>Currently running on 6-7 different cloud providers</li>
+<li>Standardize on commodity infrastructure where possible</li>
+<li>Design infrastructure with failure and infrastructure upgrades as expected scenarios</li>
+</ul>
+<h2>Advanced Infrastructure Challenges</h2><ul><li>The speaker emphasizes avoiding unnecessary complexity in deep learning projects, advising to use only the minimum tools and strategies required</li>
+</ul>
+<ul><li>Key infrastructure challenges include:</li>
+</ul>  - Network bandwidth limitations
+  - Data transmission complexities
+  - Parallelism strategies (FSTP, HSTP)</p><ul><li>Comparative infrastructure insights:</li>
+</ul>  - Google's TPUs have different compute-to-bandwidth ratios compared to commodity hardware
+  - Google uses unique network architectures like three-dimensional Taurus ring reduces
+  - NVIDIA's upcoming hardware (GH200, GB200) introduces hybrid networking with GPU blocks</p><ul><li>Scaling challenges emerge as model sizes increase:</li>
+</ul>  - Larger systems experience more frequent hardware failures
+  - Need for built-in redundancy becomes critical
+  - Restarting becomes less feasible with massive infrastructure</p><h2>Storage Challenges and Current Focus</h2><ul><li>Large-scale AI training encounters significant storage challenges, especially with multi-petabyte datasets</li>
+<li>Data center storage limitations can force data to be stored in different regions</li>
+<li>Cheap, fast storage is crucial for effective checkpointing and training</li>
+</ul>
+<ul><li>Imbue's current focus:</li>
+</ul>  - Developing a text-only model
+  - Prioritizing core reasoning and coding capabilities
+  - Not currently pursuing vision/multimodal models
+  - Open to partnering with other teams developing image and multimodal models
+  - Working across the AI stack (infrastructure, pre-training, RL, fine-tuning, products)</p><h2>CARBS and Model Scaling Approach</h2><ul><li>CARBS (Cost Aware Pareto Region Bayesian Search):</li>
+</ul>  - A hyperparameter tuning approach that considers computational cost
+  - Unlike traditional methods, CARBS models the expense of different configuration samples
+  - Allows exploration of performance across varying data and compute scales
+  - Can test model performance with partial data (e.g., 1/10th or 1/100th of full dataset)
+  - Aims to understand performance scaling with increased data and computational resources</p><ul><li>Model scaling and performance:</li>
+</ul>  - Discussing how network performance changes as models scale up
+  - Exploring scaling laws for various parameters like number of layers, learning rate, and regularization techniques
+  - Used a custom tokenizer and investigated how to scale it effectively</p><ul><li>Evaluation metrics:</li>
+</ul>  - Most researchers typically use loss as an evaluation metric
+  - Loss provides precise, fine-grained differences between hyperparameters
+  - This team developed a more nuanced approach focused on perplexity for multiple-choice questions
+  - Used a held-out evaluation dataset independent of training data</p><ul><li>Data mix experiments:</li>
+</ul>  - Investigated changing data mix during training
+  - Hoped to see models progressively learn more complex skills
+  - Experimental results showed only tiny performance improvements from changing data mix
+  - Not considered a promising research direction</p><h2>Research Insights and Evaluation Challenges</h2><ul><li>Researchers are exploring various techniques to improve language models, including data set modifications and parameter tuning</li>
+<li>Different labs have unique approaches to mitigating model challenges, leading to seemingly contradictory but actually complementary research</li>
+</ul>
+<ul><li>Emergence and evaluation metrics:</li>
+</ul>  - Key discussion around the concept of "emergence" in language models
+  - Referenced a paper suggesting emergent behavior might be an artifact of evaluation metrics
+  - Accuracy improvements often appear more dramatic when viewed on a logarithmic scale
+  - Models can appear to improve by becoming less confident in incorrect predictions</p><ul><li>Methodological insights:</li>
+</ul>  - Importance of careful metric selection
+  - Understanding log-scale representations
+  - Checking for potential test set memorization
+  - Suggested randomizing multiple-choice question order as a way to test model genuine understanding</p><h2>Evaluation Methodology and Dataset Quality</h2><ul><li>The speakers took a meticulous approach to evaluating natural language understanding and reasoning datasets:</li>
+</ul>  - Carefully examined existing datasets for quality and coherence
+  - Identified many datasets have messy, potentially incoherent examples
+  - Recognized that dataset creation often involves human errors and ambiguities
+  - Developed a detailed process to assess what constitutes a "good" question and answer</p><ul><li>Data preparation steps:</li>
+</ul>  - Reproduced 500-1000 examples for each dataset
+  - Ensured training data was completely separate from testing data
+  - Aimed to increase confidence in model performance measurements</p><ul><li>Interesting observations about dataset performance:</li>
+</ul>  - Many benchmark performance metrics are based on ambiguous or nonsensical questions
+  - When using clear, unambiguous examples, model performance tends to converge
+  - Noted interesting trend in ethics datasets where models are overly cautious to avoid potential controversies</p><h2>Code Understanding Evaluation</h2><ul><li>The discussion focuses on new evaluation methods for AI models, particularly in code understanding</li>
+<li>They are releasing a code understanding evaluation benchmark that can generate infinite data programmatically</li>
+</ul>
+<ul><li>Current focus is on low-level code understanding (variable-level context)</li>
+<li>Goal is to enable smaller scale models to perform code-related tasks</li>
+<li>They've created an internal version of the MBPP dataset, carefully reviewing each example to remove ambiguity</li>
+</ul>
+<ul><li>Challenges in advanced evaluations:</li>
+</ul>  - Higher-level evaluations (like assessing code architecture) become increasingly difficult
+  - Realistic code tasks reveal nuanced challenges in benchmark testing
+  - Example: Some benchmark solutions pass tests but might not represent optimal real-world implementations</p><ul><li>Emerging datasets:</li>
+</ul>  - Mentioned SweetBench as a new, more challenging code-related dataset
+  - Discussed bug-fixing tasks as an example of complex evaluation scenarios
+  - Referenced AgentBench paper, highlighting limitations in current benchmark methodologies</p><h2>Philosophical Approach to Evaluation</h2><ul><li>Evaluation of AI models is extremely challenging and complex</li>
+<li>Imperfection is inherent in deep learning and model assessment</li>
+</ul>
+<ul><li>Evaluation challenges:</li>
+</ul>  - Current evaluation benchmarks are consistently disappointing
+  - Despite imperfections, benchmarks provide useful progress indicators
+  - Models seem to be incrementally improving year-to-year</p><ul><li>Philosophical approach to imperfection:</li>
+</ul>  - Successful researchers must be comfortable operating in an inherently broken system
+  - Ability to make progress despite incomplete information is crucial
+  - Finding a balanced approach between perfectionism and chaos is key</p><ul><li>More valuable to have a model that can communicate its uncertainties</li>
+<li>Preference for a model that acknowledges potential errors over one that confidently provides incorrect solutions</li>
+</ul>
+<h2>Perspectives on Abstract Reasoning Benchmarks</h2><ul><li>The conversation focuses on AI evaluation methods, specifically discussing Arc AGI and abstract reasoning benchmarks</li>
+</ul>
+<ul><li>Perspectives on Arc AGI and abstract reasoning:</li>
+</ul>  - Arc AGI is described as attempting to measure reasoning through an abstract IQ test
+  - The speakers are cautious about over-emphasizing abstract reasoning benchmarks
+  - They argue that such tests may not directly translate to real-world utility</p><ul><li>Evaluation approach:</li>
+</ul>  - Prioritize evaluations that test basic model functionality
+  - Prefer direct, quick-answer assessments without complex reasoning chains
+  - Skeptical of benchmarks that can be optimized without improving general capabilities</p><ul><li>Practical considerations:</li>
+</ul>  - Databricks' customers are more interested in practical AI applications
+  - Real-world use cases are more valuable than abstract reasoning tests
+  - Example of a useful AI: a model that can converse about data and run SQL queries</p><h2>Retrieval-Augmented Generation and Long Context</h2><ul><li>Retrieval-Augmented Generation (RAG):</li>
+</ul>  - Considered "the world's simplest agent"
+  - Allows models to decide when to retrieve data from context/database
+  - Represents an early form of agent-like capability</p><ul><li>Long context considerations:</li>
+</ul>  - Long contexts are not inherently problematic
+  - Potential benefits include thousand-shot tasks as alternative to fine-tuning, pulling large amounts of data into context
+  - Inevitable in multimodal scenarios</p><ul><li>Challenges with long context evaluation:</li>
+</ul>  - Annotating long context is extremely difficult and expensive
+  - Requires human reading of massive token sets
+  - "Needle in a haystack" tests are problematic because they don't measure holistic context usage and can be gamed</p><ul><li>Practical long context applications:</li>
+</ul>  - Coding scenarios: Filtering relevant repository context
+  - Sorting contextual information by importance
+  - Avoiding computational waste during inference</p><h2>Code and Tool Use Approach</h2><ul><li>Focus on robust code writing, execution, and debugging rather than hard-coded agents with limited tools</li>
+<li>Believe that improving code capabilities will dramatically expand potential actions and API interactions</li>
+<li>View code as a versatile "god tool" for solving complex problems</li>
+</ul>
+<ul><li>Structured data interaction:</li>
+</ul>  - Tool use is fundamentally about helping models interact effectively with structured data
+  - Recommend continuing to use structured data APIs and languages instead of flattening everything into an LLM context
+  - Text-to-SQL and backend SQL calls are particularly useful for practical applications</p><ul><li>Challenges with current LLM approaches:</li>
+</ul>  - Frustration with LLMs treating complex systems (like programming languages) as simple token streams
+  - Despite decades of understanding programming language structures, models are forced to relearn everything from scratch
+  - Current approach loses nuanced structural knowledge</p><ul><li>Data representation considerations:</li>
+</ul>  - Different tools suit different problems: SQL for tabular data, knowledge graphs for complex entity relationships
+  - Acknowledge knowledge graphs have limitations in handling messy, ambiguous real-world relationships
+  - No single universal data representation tool exists</p><h2>Future Plans and Closing Thoughts</h2><ul><li>Databricks team is focused on:</li>
+</ul>  - Making AI capabilities practically useful for real-world workflows
+  - Improving code generation, understanding, testing, and verification
+  - Serving their 12,000 customers</p><ul><li>Upcoming activities:</li>
+</ul>  - Writing and sharing more blog posts about their scientific work
+  - Potentially releasing new models (including a teased small model called "Abra")
+  - Continuing to develop internal product prototypes</p><ul><li>Calls to action and opportunities:</li>
+</ul>  - Upcoming release at AI Engineer World's Fair (ai.engineer live stream)
+  - Job opportunities for those interested in coding reasoning, understanding hardware and model mechanics, and designing practical AI systems</p><ul><li>Motivational message:</li>
+</ul>  - Encouragement for those feeling exhausted or overwhelmed in the AI field
+  - Reminder that even in seemingly well-understood domains (like cluster setup or evaluations), there are still more insights to discover and substantial work left to do
+  - Despite feeling like the AI field is crowded and resource-intensive, there remains enormous potential for impactful work, significant unexplored areas, and opportunities for fresh perspectives</p>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

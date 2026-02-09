@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Magic: Shipping 1000s of successful products with no managers and a team of 12 — Jeremy Howard of Answer.ai | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for AI Magic: Shipping 1000s of successful products with no managers and a team of 12 — Jeremy Howard of Answer.ai from Latent Space: The AI Engineer Podcast. <p><em>Disclaimer: We recorded this episode ~1.5 months ago, timing for the FastHTML release. It then got bottlenecked by </em><a href="https://www.latent.space/p/llama-3" target="_blank"><em>Llama3.1">
+    <meta property="og:title" content="AI Magic: Shipping 1000s of successful products with no managers and a team of 12 — Jeremy Howard of Answer.ai | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:147753766.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:147753766.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">AI Magic: Shipping 1000s of successful products with no managers and a team of 12 — Jeremy Howard of Answer.ai</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><ul><li><strong>Multi-phase training approaches</strong> are evolving beyond rigid pre-training/fine-tuning distinctions toward more continuous, flexible parameter scheduling that incorporates original datasets into later training stages, challenging the necessity of random initialization.</li>
+</ul>
+<ul><li>Answer AI exemplifies a <strong>non-traditional organizational structure</strong> with no management hierarchy, emphasizing talent over credentials and operating as "a large yard with narrow fences" - giving team members flexibility while maintaining a shared vision for more practical, accessible AI research.</li>
+</ul>
+<ul><li>The team advocates for <strong>encoder-decoder architectures</strong> for their superior feature representation capabilities, while developing techniques to fine-tune large language models with limited computational resources through approaches like FSDP, QLora, and adapter-based fine-tuning.</li>
+</ul>
+<ul><li>Projects like <strong>Fast HTML</strong> (creating web applications in a single Python file) and "Dialogue Engineering" aim to bridge gaps in current development and AI interaction paradigms, moving beyond both ChatGPT-style interfaces and traditional coding environments.</li>
+</ul>
+<ul><li>Future research focuses on helping people <strong>learn to maintain AI-generated code</strong>, optimizing model inference through adapter distribution rather than full model merging, and exploring conceptual innovations like models that develop "sketches" before generating tokens.</li>
+</ul>
+<h1>Content</h1><h2>Podcast Context and Introduction</h2>
+<ul><li>This is an episode of the "Late in Space" podcast featuring Jeremy Howard</li>
+<li>Hosts are Alessio and SWIX</li>
+<li>This is Jeremy Howard's second or third appearance on the podcast</li>
+<li>Episode was recorded over a month ago and delayed due to Llama 3 and SAM 2 paper releases</li>
+</ul>
+<h2>Evolving Perspectives on Model Training</h2>
+<ul><li>Jeremy Howard discusses evolving perspectives on model training approaches</li>
+<li>Training steps (pre-training, instruction tuning, task training) are not as separate as originally thought</li>
+<li>These steps should be treated more as a continuum</li>
+<li>Howard advocates for incorporating original dataset into later training stages</li>
+<li>He highlights the ability to significantly modify model behavior without starting from random weights</li>
+<li>Howard is skeptical of starting model training from random weights</li>
+<li>Argues there's likely always some data similarity that makes random initialization unnecessary</li>
+</ul>
+<h2>Multi-Phase Pre-Training and Optimization</h2>
+<ul><li>Snowflake released a model called Snowflake Arctic with a three-phase training approach</li>
+<li>Training phases involved gradually reducing web text and increasing code percentage</li>
+<li>Discussion suggests multi-phase training is becoming more explicitly discussed in research</li>
+<li>Preference for flexible parameter scheduling rather than rigid schedules</li>
+<li>Mention of Meta's work on "schedule-free" optimizers</li>
+<li>Emphasis on having configurable hyperparameters with good default settings</li>
+</ul>
+<h2>OpenAI Governance and Organizational Design</h2>
+<ul><li>Critique of OpenAI's governance structure before Sam Altman's firing</li>
+<li>Observation that the non-profit/for-profit hybrid model was fundamentally flawed</li>
+<li>Argument that financial incentives (equity) made the governance model unsustainable</li>
+<li>Reflection on how companies tend to become "sociopathic" and devour their original mission</li>
+</ul>
+<h2>Creating Better Company Structures</h2>
+<ul><li>Discussion focuses on creating companies that are less "sociopathic" and more aligned with founders' intentions</li>
+<li>Key strategies for maintaining company values include:</li>
+</ul>  - Setting up legal structures that enforce long-term value principles
+  - Using specific legal mechanisms like voting agreements
+  - Becoming a Public Benefit Corporation (PBC)
+<ul><li>PBC Benefits:</li>
+</ul>  - Allows companies to reject acquisition offers that conflict with their stated public benefit
+  - Provides legal protection against being forced to make decisions solely for short-term financial gain
+  - Can be implemented with minimal legal complexity</p><h2>Hiring Philosophy and Team Building</h2>
+<ul><li>Emphasis on talent and potential over traditional institutional credentials</li>
+<li>Interest in candidates with non-traditional backgrounds</li>
+<li>Recognition that exceptional work often comes from people with unique life experiences</li>
+<li>Valuing people who:</li>
+</ul>  - Succeed despite constraints
+  - Take risks
+  - Are creative
+  - Are tenacious
+  - Are open-minded
+<ul><li>At Answer AI, many team members experience imposter syndrome</li>
+<li>Mutual intimidation between developers and researchers, who each view the other group as impressive</li>
+<li>Key philosophical points:</li>
+</ul>  - It's unreasonable to expect to be the best at everything
+  - Being in an environment where you're not the best at everything can be healthy
+  - The goal is collective learning and bringing different skills together</p><h2>Answer AI's Organizational Approach</h2>
+<ul><li>Brief mention of Answer AI, Howard's startup</li>
+<li>Noted for shipping multiple open-source projects quickly</li>
+<li>Small team (maximum 12 members)</li>
+<li>No traditional management hierarchy:</li>
+</ul>  - No managers telling people what to do
+  - Collaborative, experimental approach
+  - Focus on learning from each other
+<ul><li>Specific collaborative examples:</li>
+</ul>  - Ben Clavier initiating a new Bert project by gathering experts
+  - Benjamin Warner creating a hackable Transformers implementation
+  - Organic, self-driven collaboration without top-down direction
+<ul><li>No required meetings, but regular meetings across time zones</li>
+<li>Everyone is interviewed by the entire company during recruitment</li>
+<li>Nearly all candidates in the recruiting pipeline have been hired</li>
+<li>"A large yard with narrow fences" - giving team members flexibility while maintaining a shared vision</li>
+</ul>
+<h2>Research and Technical Focus</h2>
+<ul><li>The group shares a common vision and critique of current AI research</li>
+<li>They believe current research is:</li>
+</ul>  - Too expensive
+  - Too complicated
+  - Focused on unnecessary foundation models
+<ul><li>They prioritize practical research with real-world outcomes</li>
+<li>Technical improvements like:</li>
+</ul>  - Transitioning from LORA to DORA
+  - Creating VLLM extensions
+  - Exploring quantized model training
+  - Improving web GPU programming</p><h2>Notable Team Members and Talent</h2>
+<ul><li>Examples of standout people include:</li>
+</ul>  - Ben Clavier: Writes distinctive, high-quality code
+  - Vic (ex-DataQuest CEO): Successful startup founder, won Kaggle NLP competition
+  - Karim: Created state-of-the-art Turkish language model independently
+  - Jono Whittaker (creative tinkerer)
+  - Benjamin (strong community contributor without formal qualifications)
+  - Austin (experienced AI leader with diverse background)</p><h2>Model Architecture Perspectives</h2>
+<ul><li>Discussion of encoder-decoder vs. decoder-only model paradigms</li>
+<li>Key arguments for encoder-decoder models:</li>
+</ul>  - Better feature representation of input information
+  - More effective for tasks requiring context understanding
+  - Critical for translation and complex encoding tasks
+<ul><li>Model architecture observations:</li>
+</ul>  - Encoder-only models work well for classification tasks
+  - Decoder-only models require more training resources and larger model sizes to be competitive
+<ul><li>Current research trend tends to focus on incremental improvements rather than exploring promising approaches</li>
+<li>Renewed interest in BERT models, particularly BERT24</li>
+<li>Growing interest in state-based models (RNNs, LSTMs, XLSTM)</li>
+</ul>
+<h2>Technical Development Challenges</h2>
+<ul><li>Developing techniques for fine-tuning large language models with limited computational resources</li>
+<li>Key techniques mentioned include:</li>
+</ul>  - FSDP (Fully Sharded Data Parallel)
+  - QLora (Quantized Low-Rank Adaptation)
+  - Adapter-based fine-tuning
+<ul><li>The development process was extremely complex and challenging</li>
+<li>Significant obstacles included:</li>
+</ul>  - Poorly documented libraries
+  - Complicated CUDA code
+  - Interconnected Hugging Face ecosystem components
+  - Lack of clear, minimal working examples
+<ul><li>The goal was to prove it's possible to fine-tune large models (like 70b) on more modest hardware (e.g., 4090 GPU)</li>
+</ul>
+<h2>Performance and Validation Challenges</h2>
+<ul><li>Significant challenges in the open source AI ecosystem with performance evaluation</li>
+<li>Many claims about model capabilities don't hold up under actual testing</li>
+<li>Developing AI models requires extensive "janitorial work" and tenacious effort</li>
+<li>Systems implementation is complex, not just theoretical mathematics</li>
+</ul>
+<h2>Inference and Model Optimization</h2>
+<ul><li>Working on inference performance optimization</li>
+<li>Goals include:</li>
+</ul>  - Avoiding model merging
+  - Promoting quantized models with adapters
+  - Making model downloads and inference faster
+<ul><li>Collaborating with communities like CUDA Mode, PyTorch team, and HQQ quantization library</li>
+<li>Recommendation is to distribute merged adapters, not full merged models</li>
+<li>Merging adapters can often produce better results</li>
+<li>Adapter-based approach allows smaller downloads, faster inference, and more efficient customization</li>
+</ul>
+<h2>Fast HTML Web Development Project</h2>
+<ul><li>Working on a new web development tool called Fast HTML</li>
+<li>Fast HTML allows creating complete web applications in a single Python file</li>
+<li>Unlike Streamlit and Gradio, it works directly with web foundations</li>
+<li>Built on top of Starlette and closely matches Fast API's interface</li>
+<li>Key features:</li>
+</ul>  - No separate template, CSS, or JavaScript files
+  - Can create components using libraries like Daisy UI, Bootstrap, Shoelace
+  - Provides built-in session and security features
+  - Designed to be easy to use "out of the box"
+<ul><li>Received support from developers like Sebastian (Fast API creator), Carson (HTMX), and Django community</li>
+</ul>
+<h2>AI Interaction and "Dialogue Engineering"</h2>
+<ul><li>Developing a new approach called "Dialogue Engineering"</li>
+<li>Created a system named "AI Magic" that increases personal productivity</li>
+<li>Compares current AI interfaces to 1970s teletype interactions</li>
+<li>Different approaches to AI interaction:</li>
+</ul>  - ChatGPT-style chat interface (beginner-friendly)
+  - Traditional coding environments like Visual Studio Code
+  - A proposed middle ground focused on interactive dialogue
+<ul><li>Developed libraries to improve AI API interactions:</li>
+</ul>  - Claudette: A library specifically optimized for Claude
+  - Cosette: A library optimized for OpenAI APIs</p><h2>Future Projects and Research Directions</h2>
+<ul><li>Planned "How to Solve It with Code" course:</li>
+</ul>  - Aimed at people learning to code through AI tools
+  - Helps learners understand how to maintain and extend AI-generated code
+<ul><li>Exploring emerging application strategies:</li>
+</ul>  - Comparing and combining Retrieval-Augmented Generation (RAG), in-context learning, prompt engineering
+  - KV cache creation and persistent context storage
+<ul><li>Interest in conceptual model innovations:</li>
+</ul>  - JEPA and diffusion models as potential solutions for generative processes
+  - Models that can develop a conceptual "sketch" before generating tokens
+  - Gradually refine solutions and update state dynamically
+<ul><li>Determining optimal use cases for different approaches and how various model architectures can complement each other</li></ul>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

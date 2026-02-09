@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beating Google at Search with Neural PageRank and $5M of H200s — with Will Bryk of Exa.ai | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for Beating Google at Search with Neural PageRank and $5M of H200s — with Will Bryk of Exa.ai from Latent Space: The AI Engineer Podcast. <p><strong><em>Applications close Monday</em></strong><em> for the </em><a href="https://www.latent.space/p/2025-summit" target="_blank"><em>NYC AI Engineer Summit</em></a><em> focusing on AI Leadersh">
+    <meta property="og:title" content="Beating Google at Search with Neural PageRank and $5M of H200s — with Will Bryk of Exa.ai | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:154427658.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:154427658.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">Beating Google at Search with Neural PageRank and $5M of H200s — with Will Bryk of Exa.ai</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><ul><li>Exa AI (formerly Metaphor Systems) is building a <strong>fundamentally new search engine</strong> that uses neural networks to predict relevant documents rather than relying on traditional keyword matching, with the goal of creating "perfect search" that truly understands user queries.</li>
+</ul>
+<ul><li>The company's technology combines <strong>document prediction</strong> (training models to predict links based on surrounding text) with comprehensive infrastructure including URL discovery, web crawling, and AI processing—all designed to deliver more precise, high-quality results than conventional search engines.</li>
+</ul>
+<ul><li>Exa's approach allows for <strong>variable compute allocation</strong> to searches, enabling more complex semantic queries and comprehensive results gathering that would be impossible with traditional search methods, though this sometimes requires longer processing times.</li>
+</ul>
+<ul><li>The future of search likely involves <strong>LLM-based interfaces</strong> combined with powerful backend search capabilities, creating more collaborative "agentic" search experiences that balance automation with user involvement rather than full autonomy.</li>
+</ul>
+<ul><li>Exa faces significant challenges including web scraping difficulties, training data quality control, and managing computational costs, but believes rapidly decreasing LLM costs (potentially 200x reduction in coming years) will create new opportunities for innovative search technologies.</li>
+</ul>
+<h1>Content</h1><h2>Background and Origins</h2>
+<ul><li>Will Brick is the CEO and co-founder of Exa AI (previously Metaphor Systems)</li>
+<li>Has been interested in search and high-quality information since childhood</li>
+<li>Built a mini search engine in college</li>
+<li>Founded Exa with the goal of creating a fundamentally better search engine</li>
+<li>Professional background includes:</li>
+</ul>  - Interned at SpaceX (was a big Elon Musk fan)
+  - Also worked at Zoox in robotics
+  - Believed in self-driving technology, didn't learn to drive until recently</p><h2>Early Company Vision and Evolution</h2>
+<ul><li>Entered Y Combinator in summer 2021 with the pitch of "Google 2.0"</li>
+<li>Inspired by GPT-3's language understanding capabilities</li>
+<li>Aimed to create a search engine that truly understands user queries</li>
+<li>Believed Google hadn't meaningfully improved in a decade</li>
+<li>Always focused on building a better search algorithm</li>
+<li>Started as a research endeavor with the potential to become a significant business</li>
+<li>Initially released an early search engine as a "research preview"</li>
+<li>Transitioned from a research to a product-focused company</li>
+<li>Core mission: Create "perfect search" over the web, with downstream use cases to be determined later</li>
+</ul>
+<h2>Exa's Technology and Approach</h2>
+<ul><li>Describes itself as the "open AI of search" - a research startup focused on fundamental AI research for search</li>
+<li>Originated with a unique approach to link/document prediction using a transformer-inspired model</li>
+<li>Initial training involved predicting links/documents based on surrounding text</li>
+<li>Process involves:</li>
+</ul>  - Finding links on the web
+  - Taking text surrounding the link
+  - Hiding the link
+  - Training the model to predict the hidden link/document
+<ul><li>More accurately described as "document prediction" rather than link prediction</li>
+<li>Similar to language model training, with potential for further refinement through synthetic data and supervised fine-tuning</li>
+</ul>
+<h2>Exa's Current Components and Infrastructure</h2>
+<ul><li>Comprehensive search engine built from scratch</li>
+<li>Major subsystems include:</li>
+</ul>  - URL discovery
+  - Web crawling
+  - AI document processing
+  - High-throughput, low-latency serving system (vector database)
+<ul><li>Relatively small teams compared to large tech companies like Google</li>
+<li>Name "Exa" means 10 to the 18th power (contrasts with Google's name which references 10 to the 100th)</li>
+<li>Core philosophy: Smaller, more precise results (10^18) are better than massive, unfocused result sets (10^100)</li>
+</ul>
+<h2>Key Features and Capabilities</h2>
+<ul><li>Ability to create complex, semantic queries</li>
+<li>Find comprehensive lists of results (e.g., "startups working on hardware in SF")</li>
+<li>Handle semantic variations (robotics, wearables, hardware)</li>
+<li>Search can take varying amounts of time (from milliseconds to hours)</li>
+<li>Some search platforms offer previews and allow scaling of compute resources</li>
+<li>Complex searches might require longer processing times</li>
+<li>Fully neural-based search engine not relying on traditional keyword algorithms</li>
+<li>End-to-end neural search methodology</li>
+<li>"Link prediction objective" serves as a neural equivalent to PageRank</li>
+<li>Can capture content references in multiple ways, making it more powerful than traditional search methods</li>
+</ul>
+<h2>Exa's Product Offerings</h2>
+<ul><li>Search API</li>
+<li>Excel search</li>
+<li>List builder</li>
+<li>Web scraping capabilities</li>
+<li>Ability to retrieve full content for URLs, not just links</li>
+<li>Can retrieve multiple URLs simultaneously</li>
+</ul>
+<h2>Challenges in Search Technology</h2>
+<ul><li>Subjectivity of search results</li>
+<li>Comprehensiveness of results</li>
+<li>Semantic understanding</li>
+<li>Training data quality is crucial - "if you train on a bunch of crap, your prediction will be crappy"</li>
+<li>Aim to control training data to ensure high-quality content</li>
+<li>Goal is to avoid "SEO slop" and low-quality search results that plague traditional search engines</li>
+<li>Increasing difficulty accessing content due to sites blocking bots and scrapers</li>
+<li>Potential solutions include data partnerships and leveraging long-tail open sites</li>
+<li>Scraping is a challenging technical problem</li>
+<li>Difficult to create a "perfect" scraper</li>
+</ul>
+<h2>Compute-based Approach to Search</h2>
+<ul><li>More compute can be applied to increase result comprehensiveness</li>
+<li>Analogous to O1's approach of applying variable computational resources to solve problems</li>
+<li>Potential to use large language models like GPT-4 to scan and classify web content</li>
+<li>Future considerations:</li>
+</ul>  - Developing user-controllable compute budgets
+  - Creating feedback loops for refining search results
+  - Exploring the paradigm of "variable compute products"</p><h2>Business and Knowledge Implications</h2>
+<ul><li>Traditional information arbitrage is being disrupted by accessible search tools</li>
+<li>Search infrastructure enables building applications and direct user interfaces</li>
+<li>Potential to democratize access to information across industries</li>
+<li>Distinction between "super knowledge" and "super intelligence"</li>
+<li>Future AI systems may require robust search capabilities to overcome knowledge limitations</li>
+<li>Even advanced AI (like potential AGI) will need search tools to access information</li>
+</ul>
+<h2>Potential Use Cases for Exa</h2>
+1. Dating
+   - Finding potential partners based on specific criteria
+   - Matching intellectual compatibility
+   - Searching profiles across the web</p><p>2. Academic/Research
+   - Writing assistants for students
+   - Searching and summarizing research papers
+   - Helping with research paper preparation</p><p>3. Business/Investment
+   - Venture capital research
+   - Finding lists of companies in specific industries/sectors
+   - Competitor analysis
+   - Identifying potential sales targets</p><p>4. Recruiting
+   - Searching for potential candidates
+   - Finding professionals who have written about relevant topics
+   - Discovering candidates through blogs, LinkedIn, Twitter, etc.</p><p>5. Enterprise/Company Document Search (future expansion)</p><h2>Search Engine Evolution and Future Vision</h2>
+<ul><li>Google has dominated search for 30 years, conditioning people to think of search in limited ways</li>
+<li>ChatGPT has expanded people's understanding of what search can be</li>
+<li>Future search interfaces will likely involve Large Language Models (LLMs)</li>
+<li>Making oneself "discoverable" online is increasingly important</li>
+<li>Search engines fundamentally shape what content gets created</li>
+<li>Exa aims to optimize for high-quality, contextually relevant content, unlike keyword-based search engines</li>
+<li>LLMs will likely become the primary search interface</li>
+<li>Search engines should be designed to handle complex LLM-generated queries</li>
+<li>The goal is to create more intelligent, context-aware search experiences</li>
+</ul>
+<h2>Agentic Search Concept</h2>
+<ul><li>The search approach being developed is considered "agentic" - capable of taking actions and making decisions</li>
+<li>Combines algorithmic and agent-based approaches</li>
+<li>The goal is to create a search tool that feels collaborative, not completely autonomous</li>
+<li>Full autonomy (Level 5) tends to fail because users want to be involved in the process</li>
+<li>Users prefer "drive assist" models where they can influence and understand the search/research process</li>
+<li>Current AI agents are not yet advanced enough to completely replace human involvement</li>
+<li>As AI agents improve, the term "agentic" may become less meaningful because agent-like capabilities will become standard</li>
+</ul>
+<h2>AI Search and Interface Challenges</h2>
+<ul><li>Exploring new search interfaces that are iterative and allow for refinement</li>
+<li>Identifying potential failure modes in AI agents:</li>
+</ul>  - Lack of intelligence
+  - Incomplete understanding of user context
+  - Communication gaps between humans and AI
+<ul><li>Current system prompts often feel performative (e.g., "you are a helpful assistant")</li>
+<li>Users need to be part of the process, not just give high-level commands</li>
+<li>There's uncertainty about how to effectively guide AI behavior</li>
+<li>Prompting techniques currently feel more like "cargo culting" than scientific approach</li>
+</ul>
+<h2>AI Training and Model Ecosystem</h2>
+<ul><li>Discussion of creating self-training AI systems using reward signals</li>
+<li>Possibility of AI generating its own training tasks and learning from performance</li>
+<li>Belief that future AI models will be trained using this self-improvement paradigm</li>
+<li>OpenAI won't likely dominate all language model use cases</li>
+<li>Expect multiple models from different companies of varying sizes</li>
+<li>Some use cases will prioritize inference speed over complex reasoning</li>
+<li>Human labeling for search can be challenging and often keyword-based</li>
+<li>Large Language Models (LLMs) may be more effective at data labeling</li>
+<li>LLMs like GPT-4 can potentially improve search result relevance</li>
+</ul>
+<h2>Company Culture (Exa)</h2>
+<ul><li>Founded by long-time friends with a "counter consensus" approach</li>
+<li>Described as having an unconventional, meme-friendly culture</li>
+<li>Culture of fun, laughter, and unconventional problem-solving</li>
+<li>Implemented nap pods to address employee fatigue and promote creativity</li>
+<li>Purchased nap pods from China, with a humorous story about the heavy delivery</li>
+<li>Emphasis on employee well-being and providing flexible work environments</li>
+<li>Rejection of "hustle culture" in favor of enjoying work and building meaningful things</li>
+<li>Belief that building something from scratch with friends is a deeply satisfying experience</li>
+<li>Currently hiring and growing rapidly</li>
+</ul>
+<h2>Technical Infrastructure and Economics</h2>
+<ul><li>Purchased a $5 million H200 compute cluster</li>
+<li>Use a mix of their own cluster and AWS for inference and training</li>
+<li>Considering the economic constraints of AI search and inference costs</li>
+<li>Managing computational costs is a key challenge</li>
+<li>Strategically allocating compute resources</li>
+<li>Pre-processing and indexing to reduce real-time computational expenses</li>
+<li>Technical approach involves:</li>
+</ul>  - Front-loading computation through periodic indexing
+  - Limiting full LLM processing to smaller, manageable subsets of data
+  - Using re-ranking techniques with different transformer model sizes
+<ul><li>LLM costs are rapidly decreasing (potentially 200x reduction in a few years)</li>
+<li>This cost reduction creates new opportunities for rethinking search algorithms</li>
+<li>Suggests potential for more innovative and cost-effective search technologies</li></ul>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

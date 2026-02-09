@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production AI Engineering starts with Evals — with Ankur Goyal of Braintrust | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for Production AI Engineering starts with Evals — with Ankur Goyal of Braintrust from Latent Space: The AI Engineer Podcast. <p><em>We are in 🗽 NYC this Monday! Join </em><a href="https://partiful.com/e/htJ2FvhYrV8XApYYQ8pv?" target="_blank"><em>the AI Eng NYC meetup</em></a><em>, bring demos and vibes!</em></p><p>It is a b">
+    <meta property="og:title" content="Production AI Engineering starts with Evals — with Ankur Goyal of Braintrust | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:150108358.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:150108358.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">Production AI Engineering starts with Evals — with Ankur Goyal of Braintrust</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><ul><li><strong>BrainTrust emerged from lessons learned</strong> at Impira, where Ankur Goyal discovered the power of evaluation systems to resolve technical disagreements about AI approaches, leading to his current company that raised a $36M Series A at a $150M valuation.</li>
+</ul>
+<ul><li>The platform evolved from an <strong>evaluation dashboard to a comprehensive AI development environment</strong>, offering features like simplified data collection, logging functionality, playground testing, and custom tool creation—all designed specifically for software engineers building AI products.</li>
+</ul>
+<ul><li>Despite initial VC skepticism about their hybrid on-premises approach, BrainTrust's strategic early bets on TypeScript SDK and evaluation-focused tools have attracted major customers like Stripe, Zapier, and Vercel.</li>
+</ul>
+<ul><li>Current AI implementation trends show approximately <strong>50% of use cases involve single prompt manipulations</strong>, 25% use simple agents (often RAG-based), and 25% employ advanced agents—with successful implementations focusing on user experience rather than complex technical architectures.</li>
+</ul>
+<ul><li>The AI model landscape has shifted from OpenAI's near-total dominance to increased competition from Anthropic's Claude models, though OpenAI maintains significant advantages in infrastructure reliability and production deployments.</li>
+</ul>
+<h1>Content</h1><h2>Early Career and Background</h2><ul><li>The podcast features Ankur Goyal, founder of BrainTrust, which recently raised $36 million Series A at a $150 million valuation.</li>
+</ul>
+<ul><li>Ankur's early background:</li>
+</ul>  - First-generation Indian immigrant with doctor parents
+  - Explored career paths after rejecting traditional routes (big tech, academia)
+  - Sought a high-impact, creative work environment</p><ul><li>Career journey highlights:</li>
+</ul>  - Internships at Microsoft working on Bing distributed compute infrastructure
+  - Felt unsatisfied with low-intensity work at large companies and academic research
+  - Moved to San Francisco and connected with a recruiter
+  - Joined MemSQL (now SingleStore) as employee #2
+    - Joined despite thinking he failed the interview
+    - Dropped out of school to pursue the opportunity
+    - Worked there for almost six years
+    - Ran the engineering team</p><h2>SingleStore Experience and Technology Insights</h2><ul><li>SingleStore (database technology) observations:</li>
+</ul>  - Not suitable for small weekend projects due to hardware and software costs
+  - More expensive than alternatives but still cheaper than Oracle Exadata or SAP HANA
+  - Limited adoption due to complexity and pricing model
+  - Founder Nikita Shamgunov is now pursuing a different strategy with Neon (offering free/inexpensive Postgres)</p><ul><li>Technology adoption insights:</li>
+</ul>  - Advanced technology doesn't guarantee widespread usability
+  - Pricing and packaging can significantly limit technology adoption
+  - Some technologies have excellent technical capabilities but are constrained by economic/deployment limitations</p><ul><li>Database technology observations:</li>
+</ul>  - Discussed variant types in technologies like Snowflake, Redshift, ClickHouse
+  - Snowflake's variant type is considered an engineering marvel for semi-structured data storage
+  - DuckDB's struct type has limitations compared to variant types</p><h2>Impera Journey and Challenges</h2><ul><li>Original vision for Impera:</li>
+</ul>  - Make unstructured data as easy to use as structured data, leveraging machine learning
+  - Pre-LLM models and limited data collection made the initial concept challenging
+  - Worked with top financial services and public enterprises</p><ul><li>Sales and business learnings:</li>
+</ul>  - Initially misunderstood his own sales capabilities
+  - Realized the complexity of getting initial meetings, closing deals at scale, and managing revenue retention
+  - Received guidance from his father-in-law (a seasoned sales leader at Cloudflare/Palo Alto Networks)
+  - Hired Jason, an exceptional account executive who closed 90-95% of Impera's business</p><ul><li>Key insight on customer understanding:</li>
+</ul>  - Shifted from selling to technical customers (like at MemSQL) to selling to line-of-business customers
+  - Discovered that lacking a deep, intuitive understanding of customers makes everything more challenging</p><ul><li>Market insights on unstructured to structured data:</li>
+</ul>  - The fundamental challenge is not technological, but organizational prioritization
+  - CEOs/CTOs are more likely to prioritize projects that create new user experiences rather than solving existing inefficient processes
+  - Unstructured data solutions often remain a second or third-tier priority for large organizations</p><h2>Impira's Technical Evolution and Acquisition</h2><ul><li>Impira's technical journey:</li>
+</ul>  - Prior to acquisition, Impira's key advantage was extracting data from PDF documents with minimal training examples
+  - Their approach was primarily computer vision-based, leveraging visual signals in documents
+  - The emergence of advanced language models like BERT and ChatGPT dramatically changed the landscape
+  - Text-based extraction techniques began to outperform previous computer vision methods</p><ul><li>Technological shift and realization:</li>
+</ul>  - The speaker had difficulty convincing his team about the potential of new AI technologies like Layout LM and GPT-3
+  - Became a top non-employee contributor to Hugging Face
+  - Experimented with Layout LM and GPT-3
+  - Noticed GPT-3 significantly outperformed their existing technology
+  - Recognized emerging AI models were rapidly improving and could potentially "cannibalize" their existing technology</p><ul><li>Acquisition context:</li>
+</ul>  - Acquisition by Figma occurred in December 2022
+  - Received inbound interest due to growing AI awareness
+  - Worked closely with an investor (Ilad) during the process
+  - Ultimately chose to be acquired by Figma (before Adobe's acquisition)</p><ul><li>Emotional impact:</li>
+</ul>  - Found the process of shutting down the company "extremely devastating"
+  - Experienced significant sadness for 3-4 months
+  - Recognized the emotional complexity of shutting down a startup and letting customers down</p><h2>Figma Experience and Startup Closure</h2><ul><li>Startup closure and decision-making:</li>
+</ul>  - Worked to provide generous refunds and support for customers during the closure
+  - Emphasized making difficult but right entrepreneurial decisions, even when uncomfortable</p><ul><li>Figma insights:</li>
+</ul>  - Figma was in a unique position, dealing with an acquisition, exploring identity beyond a design tool, and maintaining an annual release cycle
+  - Introducing AI into Figma was complex due to high product quality standards, challenges with visual AI, and technical difficulties in applying AI to design formats</p><ul><li>Design and AI perspectives:</li>
+</ul>  - Designers are generally skeptical of AI replacing design work
+  - Potential AI value for designers lies in code generation, bridging UI engineering and design, and enhancing collaboration</p><ul><li>Personal reflection:</li>
+</ul>  - Found Figma's slower iteration pace challenging
+  - Appreciated the company and people, but preferred a more rapid shipping environment</p><h2>Birth of BrainTrust</h2><ul><li>At Impira, the founders experienced challenges in deciding between different AI model approaches, leading to prolonged debates</li>
+</ul>  - Developed an evaluation (eval) system that helped resolve technical disagreements
+  - The eval system transformed discussions from hypothetical to more scientific and data-driven</p><ul><li>Motivation for BrainTrust:</li>
+</ul>  - Transformers and large language models have made AI development more accessible to software engineers
+  - Existing ML tools are difficult for software engineers to use
+  - Need for evaluation tools designed specifically for software engineers' workflows</p><ul><li>BrainTrust overview:</li>
+</ul>  - An end-to-end developer platform for building AI products
+  - Core belief: Embrace evaluation as a central workflow in AI engineering
+  - Started by creating a highly regarded evaluation product, initially targeting software engineers</p><ul><li>Platform evolution:</li>
+</ul>  - Began as an evaluation dashboard
+  - Evolved into a debugger-like tool
+  - Progressing towards becoming an integrated development environment (IDE)</p><h2>BrainTrust Platform Features</h2><ul><li>Key features:</li>
+</ul>  - Simplified data collection and ETL process
+  - Logging functionality that automatically captures data in eval-ready format
+  - Allows users to analyze eval results, investigate performance variations, compare metrics, and modify prompts or models for quick re-testing
+  - Offers a collaborative, save-friendly environment for working with AI prompts and models
+  - Users can compare multiple prompts and models side-by-side
+  - Recently added capability to run evaluations directly in the playground</p><ul><li>Playground functionality:</li>
+</ul>  - Allows testing prompts against different models, including fine-tuned models
+  - Enables creating custom evaluations with scoring mechanisms
+  - Supports running pre-built and user-created evaluations
+  - Demonstrates evaluating summary quality of press release documents</p><ul><li>New tool capabilities:</li>
+</ul>  - Support for defining custom tools using TypeScript
+  - Integration of external APIs (like EXA search) directly into the platform
+  - Ability to run tool-augmented prompts in the playground environment
+  - Dynamic code evaluation in a sandbox environment
+  - Granular comparison of different AI-generated outputs
+  - Easy deployment of custom tools via a simple command</p><h2>Technical Approach and API Integration</h2><ul><li>Evaluation (Evals) approach:</li>
+</ul>  - Developed a novel syntax for running evaluations without complex for loops
+  - Eval consists of an argument with data, a task function, and one or more scoring functions
+  - Enables parallel and efficient eval running
+  - Supports caching and async processing
+  - Provides consistent interfaces across Python and TypeScript
+  - Converts evals into a declarative data structure</p><ul><li>API and integration:</li>
+</ul>  - Provides a REST API endpoint for each prompt
+  - Allows users to spend more time crafting use cases and reusing tools
+  - Integrates development process tightly with evaluation</p><ul><li>Collaboration features:</li>
+</ul>  - Allows sharing and publishing eval histories
+  - Enables team discussions around evaluation results
+  - Provides interactive debugging of task and scoring functions</p><h2>Development Journey and Strategy</h2><ul><li>Early development insights:</li>
+</ul>  - Worked closely with early users like Brian from Zapier for critical feedback
+  - Iteratively improved the product based on user suggestions
+  - Developed features like prompt rerunning, model comparison, and token count correlation</p><ul><li>Hybrid on-premises model:</li>
+</ul>  - Initially considered "stupid" by many VCs and industry observers
+  - Deemed necessary by early customers like Zapier, Coda, and Airtable who wanted data to remain in their cloud
+  - Supported by some investors who saw value in the approach
+  - Compared to Databricks' similar hybrid model
+  - Leveraged serverless technology as a key unlock</p><ul><li>Strategic early bets:</li>
+</ul>  - Hybrid on-premises approach
+  - Prioritizing TypeScript SDK (now used by ~75% of users)
+  - Focusing initially on evaluations (evals) as a critical pain point</p><ul><li>Market validation:</li>
+</ul>  - Initially, some VCs were skeptical, comparing the market to CICD
+  - Subsequent market interest validated their approach
+  - Impressive customer logos including Stripe and Vercel
+  - Notable quote from Malta (former Google search team member) praising BrainTrust's workflow transformation</p><h2>Market Insights and Technology Perspectives</h2><ul><li>Market and technology dynamics:</li>
+</ul>  - Parallels between the current AI market and the early cloud computing era
+  - The market is highly dynamic, with significant technological shifts happening rapidly
+  - Companies are treating AI as an existential question fundamentally changing software development</p><ul><li>Vector search and database technology:</li>
+</ul>  - Vector Search is not typically a storage or performance bottleneck
+  - The real challenge is integrating Vector Search with other data systems
+  - Databases are not just storage, but also compilers
+  - Examples of innovative database approaches include Snowflake separating storage from compute and Databricks making arbitrary code a first-class citizen</p><ul><li>Fine-tuning discussion:</li>
+</ul>  - Fine-tuning is not necessarily a business in itself
+  - The core goal is "automatic optimization" of use cases
+  - Alternative optimization methods include DSPY-style prompt optimization, hand-crafting prompts, and in-context learning
+  - Very few customers are currently fine-tuning models in production
+  - The landscape of model optimization is rapidly changing</p><h2>AI Model Landscape and Trends</h2><ul><li>Model market share and trends:</li>
+</ul>  - Pre-Claude 3, OpenAI dominated nearly 100% of the market
+  - Post-Claude 3, customers are now evaluating both OpenAI and Anthropic
+  - Anthropic's Haiku was particularly notable for being cheap, fast, and supporting tool calling
+  - Sonnet is now seen as both affordable and capable
+  - OpenAI remains the overwhelming majority choice in production environments</p><ul><li>OpenAI's infrastructure advantages:</li>
+</ul>  - Excels in model availability, rate limits, and reliability
+  - Their single endpoint approach is a significant engineering achievement
+  - Managing multiple cloud endpoints is complex and requires substantial engineering effort</p><ul><li>Cloud and model provider landscape:</li>
+</ul>  - Big companies don't exclusively use specific cloud providers for AI models
+  - There's a diverse ecosystem with multiple options and tradeoffs
+  - Different model labs (OpenAI, Anthropic, Meta) are actively competing and innovating
+  - OpenAI's GPT-4o release is seen as potentially invigorating competition</p><h2>AI Use Cases and Future Directions</h2><ul><li>Generative AI use cases:</li>
+</ul>  - Approximately 50% involve single prompt manipulations (auto-generating ticket titles, video/document summaries)
+  - About 25% involve simple agents (prompt + tools, often RAG-based)
+  - Remaining 25% are advanced agents with more complex interactions</p><ul><li>Software development trends:</li>
+</ul>  - Initial AI integration involved complex, mathematically-oriented programming
+  - Current trend is "sprinkling intelligence" throughout applications
+  - Goal is to make AI implementation easy and low-friction
+  - Developers want AI to feel like a natural part of building software, not a separate paradigm</p><ul><li>Technical design and AI agent approaches:</li>
+</ul>  - Advocates for designing AI agents focused on user experience rather than complex technical implementations
+  - Suggests writing more UI code between LLM calls to craft user interactions
+  - Introduces the concept of "code core versus LLM core" - keeping the core system well-defined and using LLMs sparingly
+  - Highlights the Voyager agent as an innovative approach (writes and persists code for future reuse)</p><h2>Personal Reflections and Company Update</h2><ul><li>Professional reflections:</li>
+</ul>  - Acknowledges a shift in perspective about technical expertise
+  - Recognizes that practical problem understanding is as valuable as deep technical knowledge
+  - Currently in a unique position of understanding AI tools from a user's perspective</p><ul><li>Current work and team:</li>
+</ul>  - Deeply enjoying his current work environment at BrainTrust
+  - Values working with a team he respects, including his brother, Eden (head of product, first designer at Airtable and Cruise), and Albert (handles business operations)
+  - Prioritizes working on meaningful problems, enjoying his work environment, and collaborating with people he respects</p><ul><li>Hiring announcement:</li>
+</ul>  - BrainTrust is currently hiring software engineers, salespeople, DevRel, and one designer
+  - Primarily seeking San Francisco-based candidates with some flexibility for remote candidates
+  - Building AI software and passionate about their problem space
+  - Interested in working with high-quality customers and team members</p>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

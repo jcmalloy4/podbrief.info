@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From API to AGI: Structured Outputs, OpenAI API platform and O1 Q&A — with Michelle Pokrass & OpenAI Devrel + Strawberry team | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for From API to AGI: Structured Outputs, OpenAI API platform and O1 Q&A — with Michelle Pokrass & OpenAI Devrel + Strawberry team from Latent Space: The AI Engineer Podcast. <p><em>Congrats to Damien on successfully running </em><a href="https://x.com/maximelabonne/status/1834573217475744160" target="_blank"><em>AI Engineer London</em></a><em>! See our </em><a href="https">
+    <meta property="og:title" content="From API to AGI: Structured Outputs, OpenAI API platform and O1 Q&A — with Michelle Pokrass & OpenAI Devrel + Strawberry team | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:148799668.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:148799668.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">From API to AGI: Structured Outputs, OpenAI API platform and O1 Q&A — with Michelle Pokrass & OpenAI Devrel + Strawberry team</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><ul><li><strong>OpenAI's API evolution</strong> reflects a strategic shift from basic completions to sophisticated structured outputs, with JSON Mode and structured outputs addressing developers' needs for reliable, format-constrained responses that integrate seamlessly with applications.</li>
+</ul>
+<ul><li>The company's <strong>product development philosophy</strong> balances engineering and research approaches, focusing on the "80/20 principle" to deliver maximum value while maintaining a clear distinction between function calling (for tool invocation) and structured outputs (for response formatting).</li>
+</ul>
+<ul><li><strong>Model selection strategy</strong> follows a tiered approach—start with GPT-4.0 Mini for most use cases, upgrade to GPT-4.0 for better performance, and consider fine-tuning (now generally available) for specialized applications, with as few as 100 high-quality examples potentially yielding significant improvements.</li>
+</ul>
+<ul><li>The new <strong>O1 model</strong> represents a parallel development path focused on complex reasoning rather than replacing the GPT series, with GPT-4.0 remaining the "workhorse" for standard tasks while O1 handles more reasoning-intensive problems, demonstrating OpenAI's commitment to specialized models for different use cases.</li>
+</ul>
+<ul><li><strong>API features and roadmap</strong> include significant improvements to file handling (supporting 10,000 files per assistant), enhanced semantic search capabilities, batch processing with 50% cost savings, and ongoing development of vision, video, and speech capabilities, all designed to make complex AI implementation more accessible.</li>
+</ul>
+<h1>Content</h1><h2>Background and Career Journey</h2><ul><li>Michelle Pope is a Canadian engineer who graduated from the University of Waterloo</li>
+<li>She completed six internships during her degree, including:</li>
+</ul>  - A bank (working with Visual Basic)
+  - Google
+  - Coinbase (during 2018-2020 crypto era)
+<ul><li>Waterloo has a strong startup culture that influenced her career path</li>
+<li>Her internship at Coinbase was particularly formative, where she:</li>
+</ul>  - Worked on ACH rails
+  - Learned critical engineering skills
+  - Got early production experience
+<ul><li>She tends to join companies at critical scaling moments</li>
+</ul>
+<h2>Early Career Progression</h2><ul><li>Worked internships at Stripe and Coinbase</li>
+<li>Co-founded Readwise (briefly) during entrepreneurship co-op at Waterloo</li>
+<li>Joined Clubhouse as one of the early backend engineers during its rapid growth period</li>
+<li>At Clubhouse, she tackled technical challenges including:</li>
+</ul>  - Improving notification speed (initially took 10 minutes)
+  - System reliability improvements
+  - Performance issues in Postgres
+  - Inefficient job queuing infrastructure
+  - Database scaling challenges
+<ul><li>Experienced recurring database challenges across multiple companies</li>
+<li>Returned to Coinbase to improve engineering skills</li>
+<li>Viewed early career roles as opportunities to learn and grow technically</li>
+</ul>
+<h2>Joining OpenAI</h2><ul><li>Initially excited about GitHub Copilot's capabilities</li>
+<li>Mentions DALL-E as a product that helped explain their work to family</li>
+<li>Describes early API platform as small (around 5 people working on it)</li>
+<li>Notes significant company growth since initial days</li>
+</ul>
+<h2>ChatGPT Release Challenges</h2><ul><li>Experienced scaling difficulties, particularly with:</li>
+</ul>  - Postgres authorization system issues
+  - Complex GPU resource allocation decisions
+  - Linking developer and ChatGPT accounts</p><h2>JSON Mode and Structured Outputs Development</h2><ul><li>JSON Mode was introduced at dev day last year as first step towards structured outputs</li>
+<li>Allows constraining model output to JSON format</li>
+<li>Addresses developer needs by:</li>
+</ul>  - Ensuring output always in JSON format
+  - Attempting to match specified schemas
+<ul><li>Motivated by consistent customer feedback over past year</li>
+</ul>
+<ul><li>The team took a collaborative approach between engineering and research with key distinctions:</li>
+</ul>  - Engineering approach: Constraining model outputs through token masking
+  - Modeling approach: Training the model to better follow desired formats</p><ul><li>Structured Outputs Features:</li>
+</ul>  - Designed for developers who need precise, system-compatible function calls
+  - Uses tools like Pydantic or Zod objects
+  - Eliminates manual serialization complexities
+  - Allows easy parsing of model responses</p><ul><li>JSON Mode vs. Structured Outputs:</li>
+</ul>  - JSON mode is better for more creative, open-ended JSON generation
+  - Most developers likely to prefer structured outputs</p><ul><li>Function Calling vs. Structured Outputs:</li>
+</ul>  - Function calling: Intended for actual tool/function invocation (e.g., querying databases, sending emails)
+  - Structured outputs: Focused on getting model responses in a specific format
+  - Previously, developers were "hacking" function calling to get desired response formats</p><ul><li>New Development: SDK improvements for function calling, including a "run tools" method that can automatically manage the conversation loop</li>
+</ul>
+<h2>Technical Implementation Details</h2><ul><li>The API models team focuses on improving models based on developer feedback</li>
+<li>They collaborate closely with post-training and safety systems teams</li>
+<li>Currently support JSON schema and a dialect of it</li>
+<li>Future plans may include broader grammar support</li>
+<li>Developed a solution from scratch to meet specific needs</li>
+</ul>
+<ul><li>Refusal Mechanism:</li>
+</ul>  - Implemented a "refusal field" to allow models to refuse requests that don't match policies
+  - Goals include preserving model's ability to refuse inappropriate requests
+  - Providing a clear developer experience
+  - Making it easy to programmatically handle refusals
+  - Chose a refusal field over traditional error codes due to developers paying for tokens</p><ul><li>Error Handling Considerations:</li>
+</ul>  - Discussing challenges in error handling for AI models, particularly around HTTP error codes
+  - Proposing new error code ranges (600-series) specifically for AI model errors
+  - Potential error codes could include:
+    * 601: Auto-refusal
+    * 602: Chat ML format violations</p><ul><li>API and Model Architecture:</li>
+</ul>  - OpenAI transitioned from completions endpoint to chat completions API
+  - Chat completions use Chat ML format with defined message roles (user, assistant, system)
+  - Recent improvements in structured outputs have reduced certain model errors
+  - Models can now better constrain to Chat ML format</p><h2>Evaluation (Evals) Landscape</h2><ul><li>Evals are considered the "hardest part of AI"</li>
+<li>Collaborated with BFCL (Function Calling Leaderboard)</li>
+<li>Current evals challenges:</li>
+</ul>  - Difficult to create robust evaluation pipelines
+  - Many current evals are saturated
+  - Models can often achieve high performance with different prompting
+<ul><li>Recommended evals:</li>
+</ul>  - BFCL Function Calling Leaderboard
+  - Sweetbench (tests model performance on GitHub issues)
+<ul><li>Sweetbench targets code writing and file searching capabilities</li>
+<li>Low pass rates indicating room for improvement</li>
+</ul>
+<h2>Parallel Function Calling and Latency</h2><ul><li>OpenAI supports parallel function calling in their API for newer models</li>
+<li>Currently not supported with structured outputs due to technical trade-offs</li>
+<li>Concerns about potential latency and complexity for developers</li>
+<li>First token/request has increased latency</li>
+<li>Expected to improve over time</li>
+<li>Not currently a major concern for most developers during integration</li>
+<li>Exploring potential caching solutions</li>
+</ul>
+<h2>Agents and Structured Outputs</h2><ul><li>Structured outputs and function calling seen as critical building blocks for agentic systems</li>
+<li>Goal is improving reliability from ~95% to near 100% accuracy</li>
+<li>Enables converting natural language intent into application actions</li>
+</ul>
+<h2>Assistants API</h2><ul><li>Represents a bet on:</li>
+</ul>  - Hosted tools (file search, code interpreter)
+  - Introducing statefulness to API
+<ul><li>Most developers still likely to use standard messages and completion endpoints</li>
+<li>The company has successful hosted tools, particularly a file search tool that saves time on building RAG pipelines</li>
+<li>They are iterating on making stateful tools more intuitive and easier to use</li>
+</ul>
+<h2>Structured Output and Model Capabilities</h2><ul><li>Models have varying capabilities with inherent trade-offs</li>
+<li>New response format is currently available only for GPT-4.0 Mini and new 4.0 models</li>
+<li>Function calling is enabled across all models that support it</li>
+</ul>
+<ul><li>Key Use Cases for Structured Output:</li>
+</ul>  - Extracting structured data from unstructured data
+  - Works with both text and vision inputs
+  - Dynamic UI generation
+  - Enterprise application improvements</p><ul><li>Technical Considerations:</li>
+</ul>  - Supports recursive schemas for UI generation
+  - Provides reliability gains by ensuring strict type matching
+  - Uses a custom JSON schema dialect with specific design choices:
+    * Additional properties are allowed by default
+    * Requires explicit configuration for stricter type enforcement
+    * Makes all keys required by default to match developer expectations</p><ul><li>Design Principles:</li>
+</ul>  - Aim to be explicit
+  - Provide clear definitions
+  - Allow developers to choose the most suitable model
+  - Maintain compatibility with existing schema standards</p><ul><li>Additional Features:</li>
+</ul>  - Developers can make keys nullable by using union types (e.g., int and null)
+  - Allows specifying chain of thought fields before final answers
+  - Enables step-by-step rendering of model responses (e.g., in math tutoring scenarios)</p><h2>Prompt and Instruction Strategies</h2><ul><li>Multiple places to provide instructions:</li>
+</ul>  1. System message (good for function call guidelines)
+  2. Function descriptions (best for explaining how to call a function)
+  3. Property names and descriptions can guide model behavior</p><ul><li>Practical Insights:</li>
+</ul>  - Early stage of AI means developers are still discovering best practices
+  - Renaming properties to be more descriptive can potentially improve model performance
+  - No official benchmarks for very granular instruction techniques</p><ul><li>Evaluation and Development Approach:</li>
+</ul>  - Focus on raising overall capabilities for users
+  - Recommend customers develop their own evaluations
+  - Goal is to make evaluation processes easier for developers</p><ul><li>Practical Example:</li>
+</ul>  - One developer implemented structured outputs for AI news
+  - Reduced code by 20 lines
+  - Decreased API costs by approximately 55%</p><h2>Advanced Features and Future Directions</h2><ul><li>Discussed advanced features for generating structured outputs with AI models</li>
+<li>Emphasized saving on latency and cost by generating outputs "in one shot" rather than through multiple retries</li>
+<li>Exploring potential future features like custom grammars beyond JSON schema</li>
+</ul>
+<h2>Model Selection and Fine-Tuning</h2><ul><li>Recommended model selection strategy:</li>
+</ul>  - Start with GPT-4.0 mini (cheapest, good for most use cases)
+  - Move to GPT-4.0 if more performance is needed
+  - Consider fine-tuning for advanced use cases
+<ul><li>Announced general availability of GPT-4.0 fine-tuning</li>
+<li>Offering free training tokens (1 million per day until September 23rd)</li>
+<li>Fine-tuning can be effective with as few as 100 high-quality examples</li>
+</ul>
+<ul><li>Additional Insights:</li>
+</ul>  - Discussed challenges with rating systems and structured outputs
+  - Suggested using log probabilities for more accurate classification tasks
+  - Highlighted importance of model calibration when generating structured responses</p><ul><li>Roadmap Considerations:</li>
+</ul>  - Exploring parallel function calling
+  - Interested in developer feedback on potential new features
+  - Aiming to make model migration easier for users</p><h2>Prompt Engineering and Model Performance</h2><ul><li>Prompt engineering requires creativity and persistence</li>
+<li>Not everyone finds prompting equally easy; some are naturally skilled</li>
+<li>ChatGPT has helped people develop intuition about interacting with AI models</li>
+<li>Prompt engineering likely won't disappear, as clearly explaining requirements remains crucial</li>
+</ul>
+<h2>Model Releases and Distinctions</h2><ul><li>OpenAI recently released two models: GPT-4 (20340806) and Chat GPT-4</li>
+<li>The models have different tuning focuses:</li>
+</ul>  - One is function calling-tuned (for API)
+  - One is chat-tuned (for ChatGPT interface)
+<ul><li>API models have stable weights for developer reliability</li>
+<li>ChatGPT model is a "rolling" model with potentially changing weights</li>
+</ul>
+<ul><li>Key Insights on Model Development:</li>
+</ul>  - OpenAI aims to be transparent about model capabilities
+  - They're still learning how to effectively communicate model changes
+  - The goal is to provide developers flexibility in model selection
+  - Future release notes will aim to be more comprehensive about model improvements</p><h2>OpenAI API and Strategy</h2><ul><li>The API is viewed as the broadest vehicle for distributing AGI</li>
+<li>OpenAI values working with developers who often "see the future before anyone else"</li>
+<li>The API predates ChatGPT and was their first commercialization product</li>
+<li>They aim to expose all of OpenAI's models through the API, including multi-modal models</li>
+</ul>
+<ul><li>Developer and Engineering Insights:</li>
+</ul>  - Engineering remains the primary way to access AI models
+  - There's significant potential ("alpha") in writing code and deploying AI solutions
+  - The concept of "AI engineering" is emerging as a distinct discipline</p><h2>Assistance API Development</h2><ul><li>Developed with a small team under tight deadlines</li>
+<li>Experienced technical challenges, including a brief outage just before a major launch event</li>
+<li>Made significant improvements, particularly in file search capabilities</li>
+</ul>
+<h2>API and Product Updates</h2><ul><li>Increased file handling capacity: Now supports 10,000 files per assistant</li>
+<li>Enhanced semantic search capabilities across files</li>
+<li>Introducing more advanced chunking and re-ranking options</li>
+<li>Goal is to make RAG (Retrieval-Augmented Generation) easier to implement at scale</li>
+</ul>
+<ul><li>Determinism and Technical Challenges:</li>
+</ul>  - Seed parameter is not fully deterministic
+  - More determinism in initial tokens
+  - Challenges in balancing determinism with system reliability</p><ul><li>Logit Bias Feature:</li>
+</ul>  - Primarily used for classification tasks
+  - Can help refine output by biasing towards specific tokens
+  - Considered a power user feature with limited widespread adoption
+  - Potential use cases include guiding classification outputs and controlling punctuation</p><ul><li>Tiering and Access:</li>
+</ul>  - More transparent tier system
+  - Developers can now see their current tier in dashboard
+  - Tier two and above have full access to fine-tuning
+  - Rollouts and feature access tied to tier levels</p><h2>Developer Ecosystem Strategy</h2><ul><li>Applying 80/20 principle in product development</li>
+<li>Focus on building features that provide maximum value</li>
+<li>Prioritize developments based on developer feedback</li>
+<li>Aim to make complex processes more accessible</li>
+</ul>
+<h2>Batch API Features</h2><ul><li>Offers 50% cost savings</li>
+<li>24-hour turnaround time for batch jobs</li>
+<li>Works with GPT-4 Mini</li>
+<li>Very cost-effective (around 7.5 cents per million)</li>
+<li>Potential use cases include:</li>
+</ul>  - User activation workflows
+  - Offline evaluations
+<ul><li>Potential future interest in exploring even cheaper/free GPU runtime</li>
+</ul>
+<h2>Vision API Highlights</h2><ul><li>Integrated across multiple OpenAI APIs</li>
+<li>Supports:</li>
+</ul>  - Assistance API
+  - Batch API
+  - Structured outputs
+<ul><li>Useful for complex data extraction involving spatial relationships</li>
+<li>Current limitation: primarily works with individual image frames</li>
+<li>Potential future exploration of continuous video streaming capabilities</li>
+</ul>
+<h2>Video and API Development</h2><ul><li>Discussion about potential video analysis API with frame sampling</li>
+<li>Exploring batch processing capabilities for video frames</li>
+<li>Considering sequential processing options for video analysis</li>
+</ul>
+<h2>Whisper API Insights</h2><ul><li>Whisper v3 has diarization feature, but not yet implemented in API</li>
+<li>Performance trade-offs between Whisper v2 and v3</li>
+<li>Diarization (speaker identification) is technically challenging</li>
+<li>Transcription quality is notably high, even with simple implementation</li>
+</ul>
+<ul><li>Whisper Transcription Features:</li>
+</ul>  - Supports translation in ~50 languages
+  - Prompt feature allows vocabulary bias, helpful for acronyms and specialized terms
+  - Developers use workarounds like dictionary replacement for transcription accuracy</p><ul><li>Future API Developments:</li>
+</ul>  - Exploring new API shapes for advanced voice/speech-to-speech modes
+  - Likely to use socket-based approach (like LiveKit) instead of traditional request-response
+  - Goal is to make new API paradigms easy for developers to adopt</p><h2>OpenAI Enterprise Features</h2><ul><li>Recently shipped admin and audit log APIs</li>
+<li>Improved SSO (Single Sign-On) offering</li>
+<li>Designed for enterprise users to manage API keys and projects programmatically</li>
+</ul>
+<h2>Waterloo University Insights</h2><ul><li>Co-op program provides significant practical experience</li>
+<li>Cold climate and limited entertainment encourage studying and project work</li>
+<li>Students typically graduate with two years of work experience</li>
+<li>Strong "hacker mentality" and entrepreneurial culture</li>
+</ul>
+<h2>Book Recommendations</h2><ul><li>"The Making of Prince of Persia" - inspirational book about hard work</li>
+<li>"Misbehaving" by Richard Thaler - explores behavioral economics and irrational decision-making</li>
+</ul>
+<h2>OpenAI Hiring and Team Dynamics</h2><ul><li>OpenAI is hiring across multiple teams and roles</li>
+<li>Ideal OpenAI employees are described as:</li>
+</ul>  - Low ego
+  - User-focused
+  - Driven
+  - Willing to "roll up their sleeves"
+  - Unpretentious
+<ul><li>They welcome people from diverse backgrounds</li>
+<li>No specific AI experience is required to join</li>
+<li>Hiring for engineering, research, and a "model behavior" role</li>
+</ul>
+<h2>O1 Model Release and Features</h2><ul><li>Multiple models were released (a preview and a broader model)</li>
+<li>Pricing is noted as being higher compared to previous models like Opus</li>
+<li>The model has accompanying documentation including blog posts, system cards, and technical resources</li>
+</ul>
+<ul><li>API differences from previous models include:</li>
+</ul>  - No system role
+  - No temperature setting
+  - No tool calling
+  - No streaming
+  - Limited visibility into token usage
+<ul><li>Reasoning tokens are a key feature, but can limit problem-solving complexity</li>
+</ul>
+<ul><li>Performance and Evaluation:</li>
+</ul>  - Introduces new evaluation benchmarks
+  - Highlights scaling laws for both training and test-time compute
+  - O1 Mini is notably interesting for its relative outperformance compared to larger models
+  - Trained specifically for certain domains (e.g., Mini performs better in STEM)</p><h2>OpenAI Model Strategy</h2><ul><li>O1 is a new model focused on reasoning capabilities</li>
+<li>O1 is distinct from the GPT series, but not replacing it</li>
+<li>GPT-4.0 will continue to be supported and used</li>
+<li>Developers are expected to use both O1 and GPT-4.0 for different tasks</li>
+</ul>
+<ul><li>Model Positioning:</li>
+</ul>  - GPT-4.0 remains the "workhorse" for standard tasks like summarization
+  - O1 is designed for more complex, reasoning-intensive problems
+  - The goal is for developers to use both models in complementary ways</p><ul><li>Future Development:</li>
+</ul>  - OpenAI is working on improvements to speed up reasoning processes
+  - The API is in early stages, with more features to be added over time
+  - Focus on optimizing context and processing speed
+  - Committed to continuous learning and iteration</p><h2>O1 Model Capabilities and Access</h2><ul><li>Currently in preview stage without tool support</li>
+<li>Planned future features include:</li>
+</ul>  - Function calling
+  - Code interpreter
+  - Web browsing
+  - Streaming capabilities
+<ul><li>Multimodal capabilities built-in</li>
+<li>Uses reinforcement learning for reasoning performance</li>
+</ul>
+<ul><li>Reasoning and Performance:</li>
+</ul>  - Generates hidden chains of thought during reasoning
+  - Strong performance in lateral tasks and philosophical reasoning
+  - Can creatively solve complex problems
+  - Demonstrates ability to generalize and handle challenging tasks</p><ul><li>Prompting and Usage:</li>
+</ul>  -</p>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

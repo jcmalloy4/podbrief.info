@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 in Post-Transformers Architectures (State Space Models, RWKV) [LS Live @ NeurIPS] | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for 2024 in Post-Transformers Architectures (State Space Models, RWKV) [LS Live @ NeurIPS] from Latent Space: The AI Engineer Podcast. <p><em>Happy holidays! We’ll be sharing snippets from </em><a href="https://lu.ma/LSLIVE" target="_blank"><em>Latent Space LIVE!</em></a><em> through the break bringing you the best of 2024! We want t">
+    <meta property="og:title" content="2024 in Post-Transformers Architectures (State Space Models, RWKV) [LS Live @ NeurIPS] | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:153556680.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:153556680.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">2024 in Post-Transformers Architectures (State Space Models, RWKV) [LS Live @ NeurIPS]</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><ul><li>Alternative transformer architectures are addressing the <strong>quadratic scaling problem</strong> of attention mechanisms, with innovations like State Space Models and Linear Attention achieving N log N compute complexity for long sequences while maintaining quality.</li>
+</ul>
+<ul><li>The RWKV (Receptance Weighted Key Value) architecture demonstrates that <strong>efficient models can match larger ones</strong> with significantly lower computational requirements, enabling AI deployment on low-power devices while achieving comparable performance to much larger models.</li>
+</ul>
+<ul><li>Research suggests that <strong>hybrid architectures</strong> combining traditional transformers with state-based models (like RWKV and Mamba) unexpectedly outperform baseline models, opening new avenues for model design that balances efficiency and capability.</li>
+</ul>
+<ul><li>The future of AI may not require ever-increasing context lengths, as <strong>fixed-state approaches</strong> with efficient reasoning capabilities could replace resource-intensive models for most enterprise applications while enabling new capabilities like real-time video generation.</li>
+</ul>
+<ul><li>Hardware-model co-design is emerging as a critical strategy, with innovations like the "Thunder Kittens" CUDA library optimizing for specific hardware capabilities to maximize performance of these alternative architectures.</li>
+</ul>
+<h1>Content</h1><h2>Introduction and Context</h2>
+<ul><li>The discussion takes place at Latent Space Live mini-conference at NeurIPS 2024 in Vancouver</li>
+<li>Speakers: Dan Few (Together AI, future UCSD faculty) and Eugene Chia (Featherless AI CEO)</li>
+<li>Topic: Alternative transformer architectures and scaling challenges in AI models</li>
+</ul>
+<h2>Scaling Challenges in AI Models</h2>
+<ul><li>Models have scaled dramatically in:</li>
+</ul>  - Parameter size
+  - Context length
+  - Compute requirements (both training and inference)
+<ul><li>Core technical challenge: Attention mechanisms scale quadratically with context length</li>
+<li>Current approach requires increasingly large data centers and computational resources</li>
+<li>Key research question: Can sequence models be scaled more efficiently?</li>
+</ul>
+<h2>Evolution of Attention Mechanisms</h2>
+<ul><li>Standard attention is quadratic: each token is compared to every other token</li>
+<li>This becomes computationally expensive for large inputs (like entire books)</li>
+</ul>
+<ul><li><strong>Linear Attention (circa 2020):</strong></li>
+</ul>  - Attempted to remove the softmax non-linearity
+  - Aimed to avoid the quadratic computational bottleneck
+  - Initially faced challenges with result quality and hardware inefficiency</p><ul><li><strong>State Space Models (2022):</strong></li>
+</ul>  - Breakthrough in post-transformer architectures
+  - Incorporated signal processing and dynamical systems modeling techniques
+  - Brought two significant innovations:
+    1. Improved model quality using sophisticated recurrent update models
+    2. More efficient computation methods
+  - Showed improvements in long sequence evaluations, time series analysis, and long-range arena tests</p><h2>Advances in Non-Transformer Sequence Models (2022-2023)</h2>
+<ul><li><strong>Key Breakthrough Ideas:</strong></li>
+</ul>  - Reformulating recurrent models as convolutions
+  - Computing convolutions efficiently using Fast Fourier Transform (FFT)
+  - Achieving N log N compute complexity for sequence length N</p><ul><li><strong>Performance Optimization:</strong></li>
+</ul>  - Development of specialized kernels (e.g., flash FFT conv)
+  - Focus on improving wall clock speed and hardware efficiency
+  - Creating kernels optimized for modern GPU hardware</p><ul><li><strong>Selection Mechanisms in Sequence Models:</strong></li>
+</ul>  - Introducing element-wise gates to improve model performance
+  - Examples: H3 (Hungry Hungry Hippos), Hyena models, Mamba
+  - Making state space model matrices data-dependent
+  - Allowing better selection of information from hidden states</p><ul><li><strong>Linear Attention Developments:</strong></li>
+</ul>  - Revival of linear attention techniques
+  - Example: BASE model using Taylor approximation of softmax
+  - Improving memory recall vs. recurrent state size trade-off</p><h2>Emerging Model Architectures</h2>
+<ul><li>Non-transformer architectures showing promise across various applications</li>
+<li>Notable recent developments:</li>
+</ul>  - Jamba: A hybrid Mixture of Experts (MOE) model
+  - SANA: A diffusion model using linear attention
+  - Gated State Space Models (SSM) applied to DNA modeling</p><h2>RWKV Architecture Deep Dive</h2>
+<ul><li>RWKV (Receptance Weighted Key Value) aims to:</li>
+</ul>  - Lower computational costs
+  - Enable running models on low-power devices like Raspberry Pis
+  - Break traditional RNN token flow dependencies</p><ul><li><strong>Key architectural innovations:</strong></li>
+</ul>  - Two main blocks: "time mix" and "channel mix"
+  - Time mix handles long-term memory states
+  - Channel mix handles shorter-term token interactions
+  - Iterative development (currently at version 7, codenamed "Goose")</p><ul><li><strong>QRWKV6 Development:</strong></li>
+</ul>  - Converted a 32B parameter model by:
+    * Freezing feedforward layers
+    * Removing original attention layers
+    * Replacing with RWKV linear layers
+  - Trained in stages with a custom learning rate schedule
+  - Achieved performance on par with original QN32B model after just a few hours of training
+  - MMLU score dropped to 76%, which was expected due to "brain damage" to the feedforward network</p><h2>Hybrid Model Insights</h2>
+<ul><li>Currently converting SMTP model to test attention mechanics</li>
+<li>Exploring hybrid architectures with state-based models (RWKV, Mamba)</li>
+<li>Surprisingly, hybrid models outperform baseline models, though reasons are not fully understood</li>
+<li>Conversion process may not be exclusive to RWKV and could work with other models</li>
+</ul>
+<h2>Hardware and Model Co-design</h2>
+<ul><li>Developed "Thunder Kittens", a CUDA library focused on matrix-based compute primitives</li>
+<li>Goal is to simplify CUDA development and optimize for hardware like H100's warp group matrix multiply</li>
+<li>Emphasizes designing model architectures with specific hardware capabilities in mind</li>
+</ul>
+<h2>Context and Memory in AI Models</h2>
+<ul><li>Exploring how models might handle extensive context without quadratic computational complexity</li>
+<li>Comparing AI memory to human memory (humans don't remember everything perfectly)</li>
+<li>Examining models like RWKV, state space, and XLSTM with potential for "infinite context"</li>
+<li>Proposing a fixed state size approach instead of exponentially expanding computational costs</li>
+<li>Noting state size limitations (e.g., RWKV currently at 14MB, potentially expanding to 400MB)</li>
+</ul>
+<h2>Practical Limitations of Long Context Models</h2>
+<ul><li>Long context doesn't necessarily matter as much as people think</li>
+<li>Very few people are actually using extremely long context prompts (2-3 million tokens)</li>
+<li>Big tech labs (like Google, OpenAI) are driving long context research more than others</li>
+<li>VRAM consumption is a significant bottleneck for training long context models</li>
+<li>O(1) style reasoning might be more promising than simply increasing context length</li>
+<li>Smaller, more efficient models that can reason effectively might be preferable to large, resource-intensive models</li>
+</ul>
+<h2>Future Directions</h2>
+<ul><li>Interested in scaling to 128k context length</li>
+<li>Potential to replace majority of current enterprise AI workloads</li>
+<li>Exploring next-generation models beyond language, including real-time video generation</li>
+<li>Developing models that can "watch forever" without becoming unstable</li>
+<li>Creating evaluation metrics for long-context model performance</li>
+<li>Focusing on model architectures that remain stable across varying context lengths</li>
+</ul>
+<h2>Applications and Strengths</h2>
+<ul><li>These alternative models are particularly effective for time series data modeling</li>
+<li>Especially strong in predicting future outcomes (e.g., weather forecasting)</li>
+<li>Potentially superior to transformer architectures when controlled for parameter size</li>
+<li>Promising for applications focused on predicting "what's next" rather than analyzing distant past events</li></ul>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

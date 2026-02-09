@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Engineering with Pydantic + Graphs — with Samuel Colvin | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for Agent Engineering with Pydantic + Graphs — with Samuel Colvin from Latent Space: The AI Engineer Podcast. <p><em>Did you know that </em><a href="https://x.com/aiDotEngineer/status/1887625183709806767" target="_blank"><em>adding a simple Code Interpreter took o3 from 9.2% to 32% on FrontierMath</em></a><em">
+    <meta property="og:title" content="Agent Engineering with Pydantic + Graphs — with Samuel Colvin | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:156609115.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:156609115.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">Agent Engineering with Pydantic + Graphs — with Samuel Colvin</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><p>* Pydantic has evolved from a validation library to a <strong>cornerstone of AI development</strong>, offering data coercion, type conversion, and JSON schema generation that's become essential for structured AI outputs, with nearly 300 million downloads monthly and a major Rust-based V2 rewrite.</p><p>* Samuel Colvin is launching <strong>Pydantic AI framework</strong> to address perceived engineering quality gaps in existing agent frameworks, focusing on production readiness with comprehensive testing, type safety, and a graph-based approach for complex workflows that allows resuming operations across different contexts.</p><p>* The framework implements a <strong>four-level agent interaction model</strong> (single agents, delegation, programmatic handoff, and graph-based control), with a flexible, unopinionated design that may become less necessary as AI models grow more sophisticated.</p><p>* Alongside the open-source Pydantic ecosystem, Colvin's company is developing <strong>Logfire</strong>, a for-profit observability platform with first-class AI support, and <strong>Pydantic.run</strong>, an open-source Python browser sandbox to simplify experimentation with AI code examples.</p><p>* The Pydantic ecosystem reflects a broader vision of AI becoming integrated across software development, with careful attention to model API integration challenges, evaluation methodologies, and the significant transformative potential of AI technologies.</p><h1>Content: Pydantic and Pydantic AI - Sam Colvin on the Latent Space Podcast</h1><h2>Pydantic Overview and Evolution</h2><p>* Pydantic is more than just a validation library - it performs data coercion and type conversion
+* Uses type hints to define schemas (which was controversial when first introduced in 2017)
+* Now has nearly 300 million downloads in December
+* Offers "coercion by default" - can intelligently convert input types
+* Now includes a strict mode to disable automatic type conversion
+* Generates JSON schemas, which became useful for structured AI outputs
+* Underwent a major V2 rewrite into Rust, taking 1.5 years and involving ~30,000 lines of Rust code
+* Planning a future V3 release with minimal code breakage
+* Working on significant performance improvements, potentially 3-5x speed up
+* Exploring extensions for type validation and serialization
+* Planning potential additions like binary format (CBO) for database serialization</p><h2>AI and Industry Adoption</h2><p>* Pydantic predates LLMs but has been widely adopted by the AI community
+* Recommended by OpenAI and other major tech companies
+* Increasingly seen as a standard for structured output in AI
+* Gained popularity through libraries like FastAPI
+* JSON schema implementation was originally added for OpenAPI purposes
+* Now widely used in AI library SDKs
+* One major foundational model company saw 20% reduction in time to first token after upgrading to Pydantic V2
+* Estimated 80% of new Python projects globally are using generative AI
+* AI ecosystem presents significant opportunities for tool development</p><h2>Pydantic AI Framework Development</h2><p>* Samuel Colvin is launching a new Pydantic AI framework
+* Motivated by perceived low engineering quality in existing agent frameworks
+* Recognized that early frameworks like Langchain were understandably rough
+* Surprised by low technical quality of recent agent frameworks from respected sources
+* Aims to bring Python library development best practices to AI agent frameworks
+* Focused on production readiness and addressing gaps in existing AI libraries
+* Prioritizes type checking, even if it makes usage more complex
+* Implements best practices like comprehensive testing, coverage, linting
+* Development methodology involves building based on personal vision, then iterating based on feedback</p><h2>Core Framework Components and Architecture</h2><p>* Fundamental building block is "agents" (or "agent-like" structures)
+* Agents typically include:
+  - System prompt
+  - Tools
+  - Structured return type
+* Recently developed a graph-based approach for more complex workflows
+* Initially resistant to graph-based workflows but became convinced by practical examples
+* Developed a type-safe graph system using:
+  - Data classes to define nodes
+  - Ability to introspect node return types
+  - Inherent type safety
+* Agents are now implemented as a graph under the hood
+* Graphs seen as a lower-level tool for building complex workflows
+* Graph implementation is designed to be simple: essentially calling nodes sequentially
+* Uses type hints to infer and construct graphs
+* Supports resuming workflows across time and different contexts
+* Current implementation allows restarting workflows via CLI
+* Plans to add state storage between nodes in future versions</p><h2>Four Levels of Agent Interactions</h2><p>* OpenAI reportedly suggested Pydantic AI looks like what their "swarms" would become if production-ready
+* Four levels of agent interactions are identified:
+  - Single agents
+  - Agent delegation
+  - Programmatic agent handoff
+  - Graph-based control flow
+* The current graph implementation is described as a "minimal viable graph"
+* The approach is relatively unopinionated and flexible
+* The community is still exploring different graph patterns and use cases
+* The speakers reference Anthropic's "Building Effective Agents" blog post as influential in defining agent interaction models</p><h2>Philosophical Perspectives on AI Systems</h2><p>* Believes Gen AI will become integrated across software development, similar to web development's evolution
+* Developers often go through phases of graph enthusiasm, potentially over-rotating on graph solutions
+* Graphs may provide more control and observability compared to monolithic models
+* Compound AI systems approach suggests breaking complex tasks into composable smaller models
+* Current models are not sufficiently intelligent to work without structured guidance
+* Agents and graph frameworks are compensating for models' current limitations
+* As models become more sophisticated, these abstraction layers may become less necessary
+* Metaphorical comparison to customer service training: less trusted/skilled workers need more scripted guidance
+* Acknowledges potential future impact of AGI (Artificial General Intelligence)</p><h2>Model Integration and API Challenges</h2><p>* Discussion about the complexity of integrating different AI model APIs
+* Mentioned APIs include OpenAI, Google GLA (Generative Language API), Vertex, DeepSeek, Grok
+* Noted reliability issues with some APIs (e.g., GLA1 failing tests frequently)
+* Debate around whether frameworks should build their own model adapter layers
+* Suggested potential alternatives like LiteLLM or Portkey for API normalization
+* OpenAI's API is becoming a de facto standard
+* Most new models are supporting OpenAI-like API structures
+* Authentication and model hosting platforms like Vertex and Bedrock offer partial API unification
+* Discussed support for mocking in unit tests and "test model" approach for predicting model responses</p><h2>Evals and Observability</h2><p>* No definitive consensus on how to precisely define AI model evaluations
+* Statistical significance requires careful consideration of sample sizes
+* Around 30 samples might provide most of the statistical value of 200 samples
+* Working to centralize semantic attributes for Generative AI through Open Telemetry (OTEL)
+* Aims to unify how SDKs and agent frameworks send observability data
+* Currently focused on instrumenting LLM calls and defining telemetry data structure
+* Agent-level considerations are still largely undecided
+* Pydantic AI may be the first agent framework to implement proper semantic attributes</p><h2>Logfire: Observability for AI</h2><p>* Logfire is a product of the same company as Pydantic
+* Designed with flexibility in mind, allowing users to write direct SQL queries
+* Aims to enable user innovation in data processing and analysis
+* Generative AI introduces a new level of data sensitivity in observability platforms
+* Companies like Langsmith are offering on-premises observability solutions due to data privacy concerns
+* Traditional data scrubbing methods are less effective for AI-generated content
+* Performance metrics now depend significantly on third-party AI providers (e.g., OpenAI)
+* The platform sends span data at both start and finish, unlike standard OTEL
+* This allows for better real-time visibility into long-running processes and AI calls
+* Aiming to create the first general-purpose observability platform with first-class AI support</p><h2>Database Evolution for Logfire</h2><p>* Initially started building with ClickHouse
+* Moved to Timescale (Postgres extension)
+* Currently using DataFusion, developing their own database
+* Reasons for moving away from ClickHouse:
+  - Poor JSON support at the time
+  - Problematic interval and datetime comparisons
+  - Complicated SQL operations
+  - Closed-source advanced architecture only available in hosted versions
+* Values DataFusion as a flexible "toolbox" for building databases, not a pre-built database
+* Can directly modify and improve DataFusion's code, such as optimizing string comparison kernels
+* Implemented JSON support for DataFusion using their existing parser
+* Now deeply engaged with the DataFusion community, with its maintainer as an advisor</p><h2>Licensing and Business Approach</h2><p>* Logfire is currently closed-source
+* Pydantic and Pydantic AI remain MIT-licensed
+* Chose to avoid licensing controversies experienced by other companies like Sentry
+* Views their open-source contributions (Pydantic) as significant
+* Logfire is explicitly a for-profit product with potential future open-source considerations
+* Despite being a startup, the company is currently not hiring new employees
+* Reasons for not hiring include:
+  - Desire to establish more commercial traction and revenue first
+  - Preference for maintaining a longer runway (several years) rather than quickly expanding the team
+  - Current team is already working intensively, handling multiple startup projects simultaneously</p><h2>Pydantic.run and Developer Experience</h2><p>* Pydantic.run is an open-source Python browser sandbox created to:
+  - Demonstrate Logfire and Pydantic AI
+  - Allow easy code running and experimentation in the browser
+  - Reduce user drop-off by making it simple to try out code examples
+* Key features planned for Pydantic.run:
+  - Proxy for OpenAI and other AI models
+  - Button to run code examples directly from documentation
+  - Potential integration with Logfire
+  - Spending limits for AI model usage
+* Inspired by challenges of running open-source project examples
+* Builds on previous work with PyTest examples to keep documentation code current
+* Chose a terminal-like interface to avoid being perceived as notebook-only</p><h2>Broader Perspectives</h2><p>* The speakers are excited about Cloudflare workers potentially running Python
+* Pyodide (Python in browser) is now supported by Cloudflare
+* The speaker was invited to an AI event at 10 Downing Street
+* Acknowledges the UK is behind the US and China in AI development
+* Sees AI as an opportunity, not just a risk
+* Emphasizes the significant potential of AI, comparing its impact to transformative technologies like Excel, the Internet, or the industrial revolution
+* Pydantic AI acknowledged as not yet feature-complete but committed to deliberate, careful development</p>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

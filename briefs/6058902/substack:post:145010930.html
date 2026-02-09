@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICLR 2024 — Best Papers & Talks (Benchmarks, Reasoning & Agents) — ft. Graham Neubig, Aman Sanger, Moritz Hardt) | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for ICLR 2024 — Best Papers & Talks (Benchmarks, Reasoning & Agents) — ft. Graham Neubig, Aman Sanger, Moritz Hardt) from Latent Space: The AI Engineer Podcast. <p><em>Our second wave of speakers for </em><a href="https://www.ai.engineer/worldsfair" target="_blank">AI Engineer World’s Fair</a><em> were </em><a href="https://x.com/swyx/status/17976548259682918">
+    <meta property="og:title" content="ICLR 2024 — Best Papers & Talks (Benchmarks, Reasoning & Agents) — ft. Graham Neubig, Aman Sanger, Moritz Hardt) | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:145010930.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:145010930.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">ICLR 2024 — Best Papers & Talks (Benchmarks, Reasoning & Agents) — ft. Graham Neubig, Aman Sanger, Moritz Hardt)</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><ul><li><strong>Language model agents</strong> are making progress in complex tasks like web navigation and social interactions, but still fall significantly behind human performance, with Web Arena showing improvement from 14% to 30% success rate over six months through better agent design rather than just LLM improvements.</li>
+</ul>
+<ul><li>Academic AI research has <strong>shifted focus from architecture innovation</strong> to benchmarking, evaluation, and identifying model limitations, with researchers developing novel benchmarks like SWEbench and GAIA that reveal substantial gaps between current AI capabilities and human performance.</li>
+</ul>
+<ul><li><strong>Self-improvement techniques</strong> like Self-RAG and performance conditional generation are showing promise, allowing models to determine when to retrieve information, evaluate document relevance, and generate higher-quality outputs without requiring larger model sizes.</li>
+</ul>
+<ul><li>The <strong>compute gap between academia and industry</strong> presents significant challenges, with universities struggling to access modern GPU hardware while developing specialized resource allocation systems and focusing on open-source contributions that make incremental but meaningful improvements.</li>
+</ul>
+<ul><li><strong>Test set contamination</strong> remains a concern in AI evaluation, though research suggests popular benchmarks aren't extensively duplicated in training data, with new statistical methods able to detect contamination when examples are duplicated 10+ times.</li>
+</ul>
+<h1>Content: Latent Space Podcast ICLR Coverage (Part 2)</h1><h2>Podcast Introduction and Context</h2>
+* This is part two of the Latent Space Podcast's ICLR (International Conference on Learning Representations) coverage
+* Hosted by Charlie, with a special interview featuring Graham Newbig from Carnegie Mellon University
+* Amon Sanger from Cursor AI joins as the first guest co-host</p><h2>Graham Newbig Interview</h2><h3>Background and Experience</h3>
+* Professor at Carnegie Mellon University
+* Has taught advanced NLP course for 7 years
+* Spent 11 years in Japan as a language teacher and grad student
+* Actively involved in open source AI software ecosystem (e.g., OpenDevon)</p><h3>Teaching Approach</h3>
+* Completely revised NLP course after ChatGPT
+* Focuses on providing practical, cutting-edge knowledge
+* Aims to prepare students for research and innovation
+* Prioritizes modern model-building techniques over older algorithmic approaches
+* Still teaches Ngram language models as foundational concepts, with potential comeback for speculative decoding</p><h3>Research Focus</h3>
+* Shifted focus to benchmarking in 2022, motivated by pushing boundaries of language model capabilities
+* Goal is to create rigorous, meaningful academic benchmarks demonstrating real capabilities
+* Mentioned three poster presentations: Web Arena, Zootopia, and performance-improving code edits</p><h2>Web Arena Project</h2><h3>Concept and Motivation</h3>
+* A "mini internet" sandbox for testing language model agents
+* Originated from interest in creating agents that can perform real-world tasks
+* Explores long-horizon planning and world knowledge application
+* Robotics was seen as a current bottleneck for practical agent implementation</p><h3>Benchmark Design</h3>
+* Created using production-grade open source sites mimicking real platforms:
+  - One Stop Shop (mimicking Amazon)
+  - Postmill (mimicking Reddit)
+  - GitLab (mimicking GitHub)
+* Tasks derived from researchers' actual browsing histories
+* Aimed to create a realistic evaluation environment for web browsing tasks
+* Example tasks include calculating monthly food expenses</p><h3>Performance and Challenges</h3>
+* Initial model performance was under 15%, while humans achieved around 78% success
+* Performance has increased from 14% to 25-30% in six months
+* Improvements primarily from agent design, not just LLM advancements
+* Models struggle with:
+  - Web navigation
+  - Filtering information
+  - Mathematical tasks
+  - Recognizing clickable elements like dropdown menus
+  - Planning and navigation challenges
+  - Common sense reasoning</p><h3>Key Agent Improvement Strategies</h3>
+* Optimizing prompts and action spaces
+* Implementing self-refinement/self-reflection mechanisms
+* Creating "documentation" or "world knowledge" about website interactions
+* Dynamically feeding site-specific information to agents</p><h3>Web Interaction Methods</h3>
+* Most websites do not have APIs, making point-and-click navigation crucial
+* Current approaches include:
+  - Accessibility tree representations
+  - Visual understanding of websites
+* Multimodal approaches (visual + text) are seen as potentially more effective</p><h3>Future Work</h3>
+* Exploring web browsing tasks in professional contexts (e.g., software engineering scenarios)
+* Investigating improvements through:
+  - Synthetic data training
+  - Reinforcement learning methods
+  - Alternative website interaction methods</p><h2>Zootopia Project</h2><h3>Concept and Focus</h3>
+* Simulates social interactions between AI agents
+* Explores AI's capability in socially complex scenarios
+* Examines six interaction types:
+  - Negotiation
+  - Exchange
+  - Competition
+  - Collaboration
+  - Accommodation
+  - Persuasion</p><h3>Research Methodology</h3>
+* Conducted experiments with language models interacting with:
+  - Language models talking to other language models
+  - Language models talking to humans
+* Evaluation methods included:
+  - Human evaluation
+  - Language model-based evaluation
+  - Measuring correlation between evaluation methods</p><h3>Key Findings</h3>
+* Language models are "okay" at navigating and evaluating social situations
+* Correlation between evaluation methods was around 74%
+* Performance variations in interactions:
+  - GPT-4 with GPT-4: Score of 3.3/7
+  - GPT-4 with humans: Score of 4.8/7
+  - Humans with humans: Score of 6.15/7
+* Research evaluates agents based on:
+  - Goal achievement
+  - Social interaction believability
+  - Adherence to social rules
+  - Secret preservation</p><h3>Follow-up Research</h3>
+* Training better evaluators for social skills
+* Improving models' ability to navigate social situations
+* Trained a Mistral 7b model using:
+  - Behavior cloning
+  - Self-reinforcement
+* Discovered models can optimize for machine judgments but still fall short in human evaluations</p><h2>Code Optimization Research</h2><h3>Paper Focus and Methodology</h3>
+* Improving program efficiency using large language models
+* Used competitive programming problems
+* Compared slow and fast implementations
+* Created evaluation harness with virtualized CPUs
+* Claimed "superhuman performance" in program optimization, with caveats</p><h3>Performance Conditional Generation</h3>
+* Used technique of prefixing generated sequences with performance tags (0-10 scale)
+* Goal is to fine-tune models to generate both slow and fast implementations
+* At test time, they always append the "fastest" tag
+* Similar technique used in other domains like generating non-toxic text
+* Potentially provides benefits similar to reinforcement learning by learning from both good and bad examples</p><h3>Challenges in Real-World Applications</h3>
+* Difficult to isolate code performance in real-world environments
+* No optimized sandbox for performance measurement
+* Requires good test coverage to prevent models generating overly simplistic solutions
+* Current approach relies on user providing performance information</p><h2>OpenDevin Project</h2><h3>Origins and Development</h3>
+* Inspired by Devin's demo and community excitement
+* Jun Yang from Alibaba's Quen team created a GitHub repo that quickly gained 1,000 stars
+* Initial development was experimental, with a non-functional React-like interface
+* Community interest came from both developers and non-developers</p><h3>Current Implementation and Performance</h3>
+* Achieves 21% on SweetBench Lite without explicit planning
+* Planning is not necessarily a "secret sauce"
+* Agents generate and adapt plans during execution
+* Running full benchmarks can be expensive (e.g., $6,000 per SweetBench run with GPT-4)</p><h3>Agent Capabilities and Limitations</h3>
+* Challenging for agents to handle complex software engineering projects
+* Potentially more useful for smaller tasks like setting up simple web apps
+* Not seen as an immediate threat to developer jobs
+* Could be helpful for routine, low-complexity tasks that take minimal developer time
+* Managing an AI agent feels similar to managing junior developers</p><h3>Future Vision</h3>
+* Goal is to create "agentic" coding assistants that can:
+  - Spawn off complex work units in the background
+  - Implement helper functions automatically
+  - Preserve human workflow and control
+* Expect performance improvements with:
+  - More advanced models (GPT-5, Llama 3)
+  - Scaled inference time compute
+  - Potentially smarter model chaining/looping</p><h3>Project Focus</h3>
+* Started as a Devin clone
+* Now focused on:
+  - Open-source approach
+  - Pluggable agent system
+  - Ability to use different language models
+  - Plans to incorporate multiple evaluation benchmarks (SweetBench, WebArene, BrowserGem)</p><h2>Code Search and Retrieval</h2>
+* Different approaches to code search and context retrieval
+* Mentioned tools like Morph (by Jesse Han) for code indexing and searching
+* Current methods include:
+  - Embedding-based retrieval
+  - Re-rankers
+  - Occasionally using LSP (Language Server Protocol) information</p><h2>Benchmarking and Evaluation</h2><h3>SWEbench (Software Engineering Benchmark)</h3>
+* Designed to evaluate AI's ability to solve real-world software problems
+* Involves giving language models:
+  * A full code base
+  * A problem statement (bug fix or feature request)
+  * Task of generating appropriate code edits
+* Uses real open-source GitHub repositories as source material
+* Scrapped 12 popular Python repositories
+* Collected over 2,000 verified task instances
+* Represents approximately 3,000 files on average
+* Includes problem statements, gold patches, and test patches</p><h3>Performance Insights</h3>
+* Current state-of-the-art models perform poorly, with the best model (Claude 3 Opus) resolving only 3.8% of issues
+* Performance challenges include:
+  - Weak retrieval systems
+  - Context length negatively correlating with performance
+  - Models generating simpler, more primitive code compared to gold patches
+* Researchers fine-tuned Code Llama to create SWI Llama 7b and 13b models
+* These are the first open-source models with non-zero performance on SWI Bench
+* A follow-up work called SWI Agent explores an interactive agent-computer interface
+* SWI Agent improved performance to 12.5% issue resolution</p><h3>SweetBench Light</h3>
+* Created a subset with 300 task instances, filtered from 2,294 original instances
+* Filtering aimed to focus on more reproducible, single-file change scenarios</p><h3>Evaluation Challenges</h3>
+* Questioning the definition of "human performance"
+* Recognizing complexity in measuring difficulty of code changes
+* Exploring ways to categorize issues by difficulty (easy/medium/hard)
+* High evaluation costs, especially for RAG (roughly 20 cents per instance)
+* Cost can quickly add up, potentially reaching $100 or more per benchmark run</p><h2>Academic Research Landscape</h2><h3>Shifting Dynamics</h3>
+* Academic leadership in research peaked around 2010-2013
+* Compute requirements increasingly challenging for academic institutions
+* Post-ChatGPT, initial academic uncertainty about research relevance</p><h3>Adaptation Strategies</h3>
+* Focusing on model evaluation and identifying current AI model limitations
+* Emergence of open-source models and training frameworks (e.g., DeepSpeed, Lama Factory)
+* Universities investing in GPU clusters and specialized computing infrastructure
+* Developing new systems for computational resource allocation</p><h3>Compute Resources Challenges</h3>
+* Limited availability of modern GPU hardware in academic and national supercomputing centers
+* Most centers have older V100 or limited A100 GPUs
+* Some potential compute resource providers mentioned:
+  - Luther (compute grants)
+  - Andromeda (potential research compute)
+  - Crusoe Energy
+  - Strong Compute
+  - RunPod and NetMind</p><h3>Industry-Academia Interaction</h3>
+* Industry has become more secretive about large language model developments
+* Less transparency makes it difficult for academics to showcase their contributions
+* Example: Matryoshka embeddings from UW used by OpenAI with minimal acknowledgment
+* Potential disincentive for grad students due to reduced visibility of their work</p><h3>Academic Research Perspectives</h3>
+* Preference for simple, incremental improvements that demonstrably work
+* Values papers that make small but meaningful tweaks (e.g., DPO method)
+* Emphasizes importance of open-source contributions
+* Recognizes Hugging Face as a committed open-source organization
+* Identifies lack of organization and focus as a challenge for academic open-source efforts</p><h2>Model Architecture Insights</h2><h3>Current State</h3>
+* Most current models use similar architectures (Llama-based)
+* Architecture engineering has reached a "local optimum"
+* Common architectural elements include:
+  - RoPE
+  - SwiGLU
+  - Small incremental improvements</p><h3>Key Observations</h3>
+* Data and training methods now matter more than architecture
+* Some architectural innovations (like predicting next 4 tokens) only show benefits at larger scales
+* Alternative architectures like Mamba and RWKV are promising but have limitations
+* Hybrid architectures (mixing linear and transformer layers) might address recall issues</p><h3>Future Directions</h3>
+* Interest in alternative linear architectures
+* Exploration of hybrid model designs
+* Continued focus on improving model performance through data and training techniques
+* Potential innovations like:
+  - Sublinear retrieval-based attention
+  - K-nearest neighbors operators for more efficient token processing</p><h2>Test Set Contamination Research</h2><h3>The Problem</h3>
+* Modern pre-training datasets are massive (trillions of tokens)
+* It's difficult to verify if benchmarks are truly independent from training data
+* Example: Code Forces benchmark potentially included in web-crawled training data</p><h3>Contamination Evidence</h3>
+* GPT-4 scoring 100% on pre-2021 Code Forces problems, but 0% on recent problems
+* Phi 1.5 perfectly completing math problem examples
+* Limited transparency in industry about pre-training data sources</p><h3>Research Approach</h3>
+* Goal: Develop a statistical method to detect test set contamination
+* Proposed method leverages the concept of "exchangeability" in test sets
+* Key insight: Models trained on a test set would show preference for specific example ordering</p><h3>Methodology</h3>
+* Treat contamination as a statistical dependence between model and test set
+* Use a permutation test comparing likelihood of original vs. randomly shuffled test set orderings
+* Aim to prove contamination with statistical guarantees and low false positive rate</p><h3>Findings</h3>
+* Can detect test set contamination with 100% accuracy when duplicated 10+ times
+* Detection becomes progressively more challenging at lower duplication counts
+* At 4 duplications, can detect contamination about 50% of the time
+* Detection at single duplication count remains very difficult
+* Tested several popular language models for benchmark data contamination
+* Found mild evidence of contamination only for Mistral 7B and Arcez
+* Results suggest popular benchmarks are likely not extensively duplicated in training data</p><h2>GAIA (General AI Assistant) Benchmark</h2><h3>Overview</h3>
+* Created by Meta AI to test AI assistants' capabilities
+* Designed to evaluate models on complex, multi-step reasoning tasks
+* Aims to identify where current AI models are failing</p><h3>Characteristics</h3>
+* Tasks range from level 1 (1-2 reasoning steps) to level 3 (10-20 complex steps)
+* Requires open-world browsing and information processing
+* Tasks are designed to have zero ambiguity for automated evaluation</p><h3>Performance Insights</h3>
+* Random humans achieve ~90% success
+* GPT-4 only achieves ~10% success on level 1 tasks
+* Recent agent systems (like Friday, Copilot, Autogen) have improved to 10-40% performance</p><h3>Anti-Cheating Strategies</h3>
+* Keeping test sets private
+* Requiring manual verification of answers
+* Asking participants to provide answer traces
+* Creating questions that can't be solved by simple memorization</p><h2>Benchmarking Theory and Evolution</h2><h3>Four Eras of Benchmarking</h3>
+1. DARPA Era (1980s): Comparing scientists' contributions
+2. MNIST Era: Academic adoption of public leaderboards
+3. ImageNet Era: Deep learning revolution and dominant benchmark
+4. Polymorphic Era (current): Radical plurality of benchmarks</p><h3>Benchmark Challenges</h3>
+* Traditional view: Benchmarks as simple "holdout method"
+* Reality: Machine learning community continuously uses test sets
+* Example: MMLU benchmark with 14,000 data points and 5 million downloads monthly
+* Consequences: Reduces test set "longevity" from exponential to linear</p><h3>Multitask Benchmarks</h3>
+* Fundamental trade-off between diversity and sensitivity
+* As benchmark diversity increases, sensitivity to irrelevant changes also increases
+* Some benchmarks like Big Bench Heart and MMLU show extreme sensitivity
+* Researchers can potentially skip up to 80% of ranks through irrelevant metric transformations</p><h3>Dynamic Benchmarks</h3>
+* Proposed as an evolving, time-dependent benchmarking approach
+* Involves iterative process of building models, finding failure cases, and adding to benchmark
+* Standard design involves alternating between model building and adversarial data collection
+* Theorem suggests progress can stall after a small number of rounds
+* More sophisticated "hierarchical dynamic benchmarks" with parallel threads potentially guarantee more progress</p><h2>Self-RAG (Retrieval-Augmented Generation)</h2><h3>Framework Innovations</h3>
+* Introduces special tokens for:
+  - Deciding when to retrieve
+  - Evaluating document relevance
+  - Generating responses
+  - Self-evaluating output</p><h3>Key Features</h3>
+* Allows language models to:
+  - Determine if retrieval is necessary
+  - Select only helpful documents
+  - Skip retrieval for queries not requiring factual grounding
+  - Improve answer reliability and efficiency</p><h3>Training Approach</h3>
+* Uses a "critic language model" to teach generation
+* Generates synthetic training data via GPT-4
+* Created 150,000 instruction training data points
+* Enables training without extensive manual annotations</p><h3>Performance</h3>
+* Significantly outperforms baseline models, especially on knowledge composition and citation precision tasks
+* Matches ChatGPT performance on 5 out of 6 tasks, despite being a smaller model (7-13B parameters)
+* Has been widely adopted in academic and industry applications (e.g., LangChain, Lama Index)</p><h2>Process Supervised Reward Models</h2><h3>Concept and Approach</h3>
+* Break down solution verification into individual step evaluations
+* Trained using human annotators who label each step as correct, incorrect, or neutral
+* Allows more granular assessment of solution quality
+* Process supervision provides more direct feedback compared to outcome supervision
+* With process supervision, researchers can more precisely reinforce specific behaviors</p><h3>Mathematical</h3>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

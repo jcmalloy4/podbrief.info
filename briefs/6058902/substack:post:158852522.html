@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡️The new OpenAI Agents Platform | Latent Space: The AI Engineer Podcast Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for ⚡️The new OpenAI Agents Platform from Latent Space: The AI Engineer Podcast. <p>While everyone is now repeating that <a href="https://youtu.be/5N33E9tC400" target="_blank"><strong>2025 is the “Year of the Agent”,</strong></a> OpenAI is heads down building towards it. In the fi">
+    <meta property="og:title" content="⚡️The new OpenAI Agents Platform | Latent Space: The AI Engineer Podcast Brief">
+    <meta property="og:description" content="AI-generated podcast brief with key takeaways and insights.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://podbrief.info/briefs/6058902/substack:post:158852522.html">
+    <link rel="canonical" href="https://podbrief.info/briefs/6058902/substack:post:158852522.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">Latent Space: The AI Engineer Podcast</p>
+            <h1 class="episode-title">⚡️The new OpenAI Agents Platform</h1>
+        </div>
+        
+        <article class="brief-content">
+            <h3>Overview</h3><ul><li>OpenAI introduced the new <strong>Responses API</strong> to unify and simplify complex agentic workflows, while maintaining the Chat Completions API and sunsetting the Assistance API by 2026, giving developers a full year to transition.</li>
+</ul>
+<ul><li>Three powerful built-in tools were announced: a <strong>web search tool</strong> with 90% accuracy (up from 38%), an improved file search tool with expanded file support and metadata filtering, and a computer use tool enabling AI to interact with screens.</li>
+</ul>
+<ul><li>The <strong>web search capability</strong> allows real-time data structuring from web sources with citations, costing approximately $30 per 1,000 queries, with various strategies available for managing search costs.</li>
+</ul>
+<ul><li>OpenAI's <strong>Agents SDK</strong> now supports types, guard railing, and tracing capabilities viewable in the dashboard, enabling more modular agent design with easier monitoring and visualization of workflow steps.</li>
+</ul>
+<ul><li>With these developments, OpenAI is positioning <strong>2025 as "the year of agents"</strong> with a strategy to gradually merge successful preview models into the main branch, similar to how vision capabilities were integrated into GPT-4o.</li>
+</ul>
+<h1>Content</h1><h2>OpenAI API Launch and New Tools</h2><ul><li>OpenAI announced three new built-in tools:</li>
+</ul>  * Web search tool (similar to ChatGPT for search)
+  * Improved file search tool
+  * Computer use tool (from ChatGPT Operator product)</p><ul><li>Introducing the new Responses API:</li>
+</ul>  * Designed to support more complex, multi-turn agentic workflows
+  * Aims to unify functionality from chat completions and assistance API
+  * Simplifies tool integration for developers
+  * Will support everything chat completions and assistance APIs currently support
+  * Offers a stateless mode (by passing store=false)
+  * Stores conversation state for free for 30 days
+  * Provides visual debugging and observability in dashboard</p><ul><li>Important API transition details:</li>
+</ul>  * Chat completions API is NOT going away
+    - Will continue to be maintained
+    - Optimized for earlier, simpler text-based interactions
+  * Assistance API has a planned sunset date in first half of 2026
+  * OpenAI will provide:
+    - Smooth migration path
+    - Full year for developers to transition
+    - Additional features like assistant objects and thread-like objects
+    - Future additions of code interpreter tool and async mode</p><ul><li>API recommendations:</li>
+</ul>  * New users should start with Responses API
+  * Offers more capabilities and performance than chat completions
+  * Chat completions will still be supported for years</p><h2>Web Search Feature Details</h2><ul><li>Launched in two ways:</li>
+</ul>  * As a tool in Responses API
+  * Direct access to fine-tuned search model (GPT-4o Search Preview) in chat completions</p><ul><li>Performance improvements:</li>
+</ul>  * Accuracy increased from 38% to 90% in simple QA
+  * Search team focused on:
+    - Gathering information from multiple data sources
+    - Selecting and citing information accurately
+    - Using synthetic data and model distillation techniques</p><ul><li>Web Search capabilities:</li>
+</ul>  * Can be combined with other tools like function calling and structured outputs
+  * Allows for real-time data structuring from web sources
+  * Provides citations from web sources
+  * Comparable to similar APIs from Perplexity and Gemini</p><ul><li>Technical considerations:</li>
+</ul>  * Knowledge cutoff varies depending on use case
+  * Currently no built-in parameter for search depth/breadth
+  * Potential for agent orchestration to explore deeper search layers
+  * Cost is approximately $30 per 1,000 queries
+  * Potential strategies for managing search costs include:
+    - Context budget approach
+    - Similarity matching cut-offs
+    - Storing search results in files to avoid repeated searches</p><ul><li>Emerging use cases:</li>
+</ul>  * Companies like Hebea using web search for accessing public information
+  * Potential for storing user preferences/memories in vector stores</p><h2>File Search Enhancements</h2><ul><li>File search capabilities:</li>
+</ul>  * Can be used to find personalized recommendations based on user preferences
+  * Combining with neural networks and real-time internet access enables precise, context-aware answers
+  * Allows integration of private company documents with AI systems
+  * Can be combined with web search for more dynamic information retrieval</p><ul><li>New features:</li>
+</ul>  * Expanding file type support
+  * Query optimization
+  * Custom re-ranking
+  * Metadata filtering becoming available (critical for large vector stores)</p><ul><li>Implementation approaches:</li>
+</ul>  * OpenAI offers an out-of-the-box file search solution with some customization options
+  * Recommendation: Start with managed solution, then customize or switch to custom solution if needed
+  * Some AI engineers prefer building their own vector database stack for more control</p><h2>Computer Use/Operator Tool</h2><ul><li>Developed a custom model optimized for computer use</li>
+<li>Currently in early stages (compared to GPT-1/2 level of development)</li>
+<li>API enables agents to:</li>
+</ul>  * Interact with screen (click, scroll, type)
+  * Complete multi-step tasks
+  * Report back on actions
+  * Uses screenshot inputs to determine actions
+<ul><li>Potential applications include task automation for products and customers</li>
+<li>Discussed Pokemon as a potential agent benchmark</li>
+</ul>
+<h2>Model Development Strategy</h2><ul><li>Fine-tuned models initially operate separately</li>
+<li>Goal is to merge successful preview models into main branch over time</li>
+<li>Similar to how vision capabilities were integrated into GPT-4.0</li>
+<li>Aim to reduce model fragmentation</li>
+</ul>
+<h2>Agents SDK Updates</h2><ul><li>Added support for:</li>
+</ul>  * Types
+  * Guard railing (parallel execution with blocking capability)
+  * Tracing (viewable in OpenAI dashboard)</p><ul><li>Flexible design allows:</li>
+</ul>  * Integration with any chat completions API provider
+  * Multiple tracing provider support</p><ul><li>Development background:</li>
+</ul>  * Originated from customer feedback about agent orchestration challenges
+  * Enables more modular agent design with easier monitoring
+  * Supports creating triage agents that route to different specialized agents</p><h2>Troubleshooting and Improving Agentic Workflows</h2><ul><li>Key capabilities include:</li>
+</ul>  * Ability to trace workflow steps between agents
+  * Visualizing tool calls and handoffs between different agents
+  * Helping developers build more effective AI agent systems</p><ul><li>Future plans involve:</li>
+</ul>  * Connecting traces to evaluation (evals) products
+  * Using traces to generate better evaluations
+  * Potentially implementing reinforcement fine-tuning based on those evaluations</p><ul><li>The overall goal is to create tools that make agent development easier and more transparent for developers</li>
+</ul>
+<ul><li>OpenAI is positioning 2025 as the "year of agents" with these new tools and APIs designed to support more complex AI agent development</li></ul>
+        </article>
+        
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
