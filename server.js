@@ -634,6 +634,134 @@ app.get('/briefing/:podcastId/:episodeGuid', (req, res) => {
   res.redirect(301, `/briefing/${podcastId}-${episodeGuid}`);
 });
 
+// Dynamic brief page handler - serves static or generates on-the-fly
+app.get('/briefs/:podcastId/:episodeGuid.html', async (req, res) => {
+  const { podcastId, episodeGuid } = req.params;
+  const filePath = path.join(__dirname, 'briefs', podcastId, `${episodeGuid}.html`);
+  
+  // Try to serve static file first
+  const fs = require('fs');
+  if (fs.existsSync(filePath)) {
+    return res.sendFile(filePath);
+  }
+  
+  // File doesn't exist - generate dynamically
+  console.log(`Generating brief on-the-fly for ${podcastId}/${episodeGuid}`);
+  
+  try {
+    // Fetch briefing from backend storage
+    const storage = admin.storage().bucket('podbrief-76274.firebasestorage.app');
+    const briefPath = `podcasts/${podcastId}/episodes/${episodeGuid}/briefing.json`;
+    const [briefingData] = await storage.file(briefPath).download();
+    const briefing = JSON.parse(briefingData.toString());
+    
+    // Fetch podcast and episode metadata from Firestore
+    const db = admin.firestore();
+    const podcastDoc = await db.collection('podcasts').doc(podcastId).get();
+    const episodeDoc = await db.collection('podcasts').doc(podcastId).collection('episodes').doc(episodeGuid).get();
+    
+    const podcastInfo = podcastDoc.exists ? podcastDoc.data() : {};
+    const episodeInfo = episodeDoc.exists ? episodeDoc.data() : {};
+    
+    // Generate HTML using same template as generation script
+    const podcastTitle = podcastInfo.title || 'Unknown Podcast';
+    const episodeTitle = episodeInfo.title || 'Episode';
+    
+    let briefingHTML = '<h2>Key Takeaways</h2><ul>';
+    const takeaways = briefing.key_takeaways || [];
+    for (const t of takeaways) {
+      if (typeof t === 'object' && t.title) {
+        briefingHTML += `<li><strong>${t.title}</strong> - ${t.summary || ''}</li>`;
+      } else {
+        briefingHTML += `<li>${t}</li>`;
+      }
+    }
+    briefingHTML += '</ul>';
+    
+    const deepDives = briefing.deep_dives || [];
+    if (deepDives.length > 0) {
+      briefingHTML += '<h2>Deep Dive</h2>';
+      for (const dd of deepDives) {
+        if (typeof dd === 'object' && dd.title) {
+          briefingHTML += `<h3>${dd.title}</h3><ul>`;
+          for (const bullet of (dd.bullets || [])) {
+            briefingHTML += `<li>${bullet}</li>`;
+          }
+          briefingHTML += '</ul>';
+        }
+      }
+    }
+    
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${episodeTitle} | ${podcastTitle} Brief - PodBrief</title>
+    <meta name="description" content="AI-generated brief for ${episodeTitle} from ${podcastTitle}.">
+    <link rel="canonical" href="https://podbrief.info/briefs/${podcastId}/${episodeGuid}.html">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .brief-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .brief-header { margin-bottom: 2rem; }
+        .podcast-name { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .episode-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+        .brief-content { line-height: 1.8; color: #ccc; }
+        .brief-content h2 { color: #fff; margin-top: 2rem; }
+        .brief-content h3 { color: #ddd; margin-top: 1.5rem; }
+        .brief-content ul { margin: 1rem 0; padding-left: 1.5rem; }
+        .brief-content li { margin: 0.5rem 0; }
+        .brief-content strong { color: #fff; }
+        .cta-box { background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2)); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center; }
+        .cta-box h3 { color: #fff; margin-bottom: 1rem; }
+        .cta-box p { color: #ccc; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/#Overview">Overview</a>
+                <a href="/#Features">Features</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+    <main class="brief-container">
+        <div class="brief-header">
+            <p class="podcast-name">${podcastTitle}</p>
+            <h1 class="episode-title">${episodeTitle}</h1>
+        </div>
+        <article class="brief-content">
+            ${briefingHTML}
+        </article>
+        <div class="cta-box">
+            <h3>Listen smarter with PodBrief</h3>
+            <p>Get AI-powered briefs for all your favorite podcasts, plus a daily feed that keeps you informed.</p>
+            <a href="https://apps.apple.com/us/app/podbrief-ai-podcast-app/id6748547717" class="btn-primary">Download on the App Store</a>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>`;
+    
+    res.send(html);
+  } catch (error) {
+    console.error(`Error generating brief for ${podcastId}/${episodeGuid}:`, error);
+    res.status(404).send('Brief not found');
+  }
+});
+
 // Handle root and other static routes
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
