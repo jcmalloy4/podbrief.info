@@ -169,7 +169,7 @@
             <input 
                 type="text" 
                 id="searchInput" 
-                placeholder="Search podcasts or episodes..."
+                placeholder="Search by podcast name..."
                 autocomplete="off"
             >
             <span class="search-icon">🔍</span>
@@ -191,6 +191,14 @@
         let briefsMetadata = [];
         let isLoading = false;
         
+        // Extract date from URL (episodes have GUIDs that sometimes contain dates)
+        function extractDateFromUrl(url) {
+            // Try to extract episode GUID which might contain date info
+            const parts = url.split('/');
+            const guid = parts[parts.length - 1].replace('.html', '');
+            return guid; // Use GUID for ordering (newer GUIDs tend to be more recent)
+        }
+        
         // Load briefs from sitemap
         async function loadBriefs() {
             try {
@@ -202,10 +210,10 @@
                 
                 allBriefs = Array.from(urls).map(loc => loc.textContent);
                 
-                // Shuffle for diverse initial display
-                const shuffled = [...allBriefs].sort(() => Math.random() - 0.5);
-                const initial = shuffled.slice(0, 40);
+                // Reverse to show newest first (sitemap is generated in order)
+                allBriefs.reverse();
                 
+                const initial = allBriefs.slice(0, 50);
                 await loadBriefsMetadata(initial);
                 renderBriefs(briefsMetadata);
             } catch (error) {
@@ -227,13 +235,12 @@
                     
                     const episodeTitle = doc.querySelector('.episode-title')?.textContent || 'Episode';
                     const podcastName = doc.querySelector('.podcast-name')?.textContent || 'Unknown Podcast';
-                    const content = doc.querySelector('.brief-content')?.textContent || '';
                     
                     return { 
                         episodeTitle, 
                         podcastName, 
                         url,
-                        searchText: `${podcastName} ${episodeTitle} ${content}`.toLowerCase()
+                        podcastNameLower: podcastName.toLowerCase()
                     };
                 } catch {
                     return null;
@@ -269,9 +276,9 @@
             });
         }
         
-        // Search functionality
+        // Search functionality - prioritize podcast name
         let searchTimeout;
-        document.getElementById('searchInput').addEventListener('input', (e) => {
+        document.getElementById('searchInput').addEventListener('input', async (e) => {
             clearTimeout(searchTimeout);
             const query = e.target.value.toLowerCase().trim();
             
@@ -280,10 +287,34 @@
                 return;
             }
             
-            searchTimeout = setTimeout(() => {
+            searchTimeout = setTimeout(async () => {
+                // Search through all briefs, prioritizing podcast name matches
+                const matchingUrls = allBriefs.filter(url => {
+                    const lowerUrl = url.toLowerCase();
+                    // Check if query appears in URL (simple check)
+                    return lowerUrl.includes(query);
+                });
+                
+                // Load metadata for matching briefs
+                const toLoad = matchingUrls.slice(0, 100);
+                await loadBriefsMetadata(toLoad);
+                
+                // Filter and sort: podcast name matches first, then episode matches
                 const filtered = briefsMetadata.filter(brief => 
-                    brief.searchText.includes(query)
+                    brief.podcastNameLower.includes(query) || 
+                    brief.episodeTitle.toLowerCase().includes(query)
                 );
+                
+                // Sort: podcast name matches first, then by order (recency)
+                filtered.sort((a, b) => {
+                    const aPodcastMatch = a.podcastNameLower.includes(query);
+                    const bPodcastMatch = b.podcastNameLower.includes(query);
+                    
+                    if (aPodcastMatch && !bPodcastMatch) return -1;
+                    if (!aPodcastMatch && bPodcastMatch) return 1;
+                    return 0; // Keep original order (most recent first)
+                });
+                
                 renderBriefs(filtered);
             }, 300);
         });

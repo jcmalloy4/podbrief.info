@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://podbrief.info/topics/news.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/politics.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/business.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/sports.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/education.html</loc>
+    <priority>0.9</priority>
+  </url>
+</urlset>

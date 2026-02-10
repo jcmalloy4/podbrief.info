@@ -6,4 +6,7 @@
   <sitemap>
     <loc>https://podbrief.info/sitemap-podcasts.xml</loc>
   </sitemap>
+  <sitemap>
+    <loc>https://podbrief.info/sitemap-topics.xml</loc>
+  </sitemap>
 </sitemapindex>
