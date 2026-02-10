@@ -9,70 +9,15 @@
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        .directory-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        
-        .directory-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-top: 2rem;
-        }
-        
-        .directory-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        
-        .directory-header p {
-            font-size: 1.2rem;
-            color: #ccc;
-        }
-        
-        .episodes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .episode-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 1.25rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-        }
-        
-        .episode-card:hover {
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(99, 102, 241, 0.5);
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
-        }
-        
-        .episode-card h3 {
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.4;
-            margin: 0;
-        }
-        
-        @media (max-width: 768px) {
-            .directory-header h1 {
-                font-size: 2rem;
-            }
-            
-            .episodes-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        .directory-container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+        .directory-header { text-align: center; margin-bottom: 3rem; padding-top: 2rem; }
+        .directory-header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: #fff; }
+        .directory-header p { font-size: 1.2rem; color: #ccc; }
+        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .episode-card { background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); cursor: pointer; }
+        .episode-card:hover { transform: translateY(-4px); background: rgba(255, 255, 255, 0.08); border-color: rgba(99, 102, 241, 0.5); box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2); }
+        .episode-card h3 { color: #fff; font-size: 1rem; font-weight: 600; line-height: 1.4; margin: 0; }
+        @media (max-width: 768px) { .directory-header h1 { font-size: 2rem; } .episodes-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -91,13 +36,11 @@
             </nav>
         </div>
     </header>
-
     <div class="directory-container">
         <div class="directory-header">
             <h1>Breaking Points with Krystal and Saagar</h1>
             <p>188 episode briefs available</p>
         </div>
-
         <div class="episodes-grid">
             <div class="episode-card" onclick="window.location.href='/briefs/3951100/00e0cef7-f9d4-4f4c-95af-b3cb010ba920.html'">
                 <h3>1/7/26:  Trump Seizes Russian Vessel, China Salivates Over Taiwan, Trump Seizes Millions Of Venezuela Oil Barrels</h3>
@@ -665,7 +608,6 @@
             </div>
         </div>
     </div>
-
     <footer class="footer">
         <div class="footer-container">
             <p>&copy; 2024 PodBrief. All rights reserved.</p>
