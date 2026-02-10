@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Podcast Topics | PodBrief</title>
+    <meta name="description" content="Explore podcast briefs by topic: News, Politics, Technology, Health, Comedy, History, and more. Find the best episodes in every category.">
+    <link rel="canonical" href="https://podbrief.info/topics.html">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .topics-container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+        .topics-header { text-align: center; margin-bottom: 3rem; padding-top: 2rem; }
+        .topics-header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .topics-header p { font-size: 1.2rem; color: #ccc; max-width: 700px; margin: 0 auto; }
+        .topics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .topic-card { background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 2rem; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none; display: block; }
+        .topic-card:hover { transform: translateY(-4px); background: rgba(255, 255, 255, 0.08); border-color: rgba(99, 102, 241, 0.5); box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2); }
+        .topic-card h3 { color: #8b5cf6; font-size: 1.3rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .topic-card p { color: #aaa; font-size: 0.95rem; line-height: 1.6; margin: 0; }
+        .topic-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        @media (max-width: 768px) { .topics-header h1 { font-size: 2rem; } .topics-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo">
+                    <span>PodBrief</span>
+                </a>
+            </div>
+            <nav class="navbar-links">
+                <a href="/">Home</a>
+                <a href="/browse.html">Browse Briefs</a>
+                <a href="/topics.html">Topics</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+    <div class="topics-container">
+        <div class="topics-header">
+            <h1>Browse by Topic</h1>
+            <p>Find podcast briefs organized by category</p>
+        </div>
+        <div class="topics-grid">
+            <a href="/topics/news.html" class="topic-card">
+                <div class="topic-icon">📰</div>
+                <h3>News & Current Affairs</h3>
+                <p>Stay informed with the latest news and analysis from top journalism podcasts</p>
+            </a>
+            <a href="/topics/politics.html" class="topic-card">
+                <div class="topic-icon">🗳️</div>
+                <h3>Politics & Commentary</h3>
+                <p>Political analysis and commentary from across the spectrum</p>
+            </a>
+            <a href="/topics/technology.html" class="topic-card">
+                <div class="topic-icon">🤖</div>
+                <h3>Technology & AI</h3>
+                <p>Cutting-edge tech, AI innovations, and the future of technology</p>
+            </a>
+            <a href="/topics/business.html" class="topic-card">
+                <div class="topic-icon">💼</div>
+                <h3>Business & Finance</h3>
+                <p>Markets, economics, and business strategy insights</p>
+            </a>
+            <a href="/topics/entrepreneurship.html" class="topic-card">
+                <div class="topic-icon">🚀</div>
+                <h3>Entrepreneurship & Startups</h3>
+                <p>Learn from founders and build your own success</p>
+            </a>
+            <a href="/topics/health.html" class="topic-card">
+                <div class="topic-icon">🧠</div>
+                <h3>Health & Science</h3>
+                <p>Evidence-based health, neuroscience, and wellness insights</p>
+            </a>
+            <a href="/topics/personal-development.html" class="topic-card">
+                <div class="topic-icon">📈</div>
+                <h3>Personal Development</h3>
+                <p>Improve yourself with psychology, productivity, and self-help</p>
+            </a>
+            <a href="/topics/interviews.html" class="topic-card">
+                <div class="topic-icon">🎙️</div>
+                <h3>Interviews & Conversations</h3>
+                <p>Deep conversations with fascinating people and thought leaders</p>
+            </a>
+            <a href="/topics/comedy.html" class="topic-card">
+                <div class="topic-icon">😂</div>
+                <h3>Comedy & Entertainment</h3>
+                <p>Laugh and be entertained with the best comedy podcasts</p>
+            </a>
+            <a href="/topics/history.html" class="topic-card">
+                <div class="topic-icon">📚</div>
+                <h3>History & Culture</h3>
+                <p>Explore the past and understand the present through storytelling</p>
+            </a>
+            <a href="/topics/sports.html" class="topic-card">
+                <div class="topic-icon">⚽</div>
+                <h3>Sports & Entertainment</h3>
+                <p>Sports analysis, debates, and entertainment</p>
+            </a>
+            <a href="/topics/education.html" class="topic-card">
+                <div class="topic-icon">🎓</div>
+                <h3>Education & Ideas</h3>
+                <p>TED Talks and thought-provoking ideas that inspire</p>
+            </a>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 PodBrief. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
