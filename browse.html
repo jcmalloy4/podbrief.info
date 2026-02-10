@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse Podcast Briefs - PodBrief</title>
+    <title>Browse PodBriefs - PodBrief</title>
     <meta name="description" content="Search and browse 10,000+ AI-powered podcast briefs. Get instant summaries of your favorite podcast episodes.">
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -24,9 +24,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #fff;
         }
         
         .browse-header p {
@@ -80,18 +78,22 @@
         
         .briefs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
             margin-top: 2rem;
         }
         
         .brief-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.25rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
             cursor: pointer;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .brief-card:hover {
@@ -101,28 +103,21 @@
             box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
         }
         
-        .brief-card h3 {
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-        }
-        
         .brief-card .podcast-name {
             color: #8b5cf6;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         
-        .brief-card .preview {
-            color: #aaa;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-top: 0.75rem;
+        .brief-card h3 {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 0;
         }
         
         .no-results {
@@ -166,8 +161,8 @@
 
     <div class="browse-container">
         <div class="browse-header">
-            <h1>Browse Podcast Briefs</h1>
-            <p>Search through 10,000+ AI-powered podcast summaries. Get the key insights from any episode in minutes.</p>
+            <h1>Browse PodBriefs</h1>
+            <p>Search through 10,000+ AI-powered podcast summaries</p>
         </div>
 
         <div class="search-box">
@@ -193,7 +188,8 @@
 
     <script>
         let allBriefs = [];
-        let displayedBriefs = [];
+        let briefsMetadata = [];
+        let isLoading = false;
         
         // Load briefs from sitemap
         async function loadBriefs() {
@@ -205,30 +201,48 @@
                 const urls = xml.querySelectorAll('loc');
                 
                 allBriefs = Array.from(urls).map(loc => loc.textContent);
-                displayedBriefs = allBriefs.slice(0, 30); // Show first 30
-                renderBriefs(displayedBriefs);
+                
+                // Shuffle for diverse initial display
+                const shuffled = [...allBriefs].sort(() => Math.random() - 0.5);
+                const initial = shuffled.slice(0, 40);
+                
+                await loadBriefsMetadata(initial);
+                renderBriefs(briefsMetadata);
             } catch (error) {
                 document.getElementById('briefsList').innerHTML = '<div class="no-results">Error loading briefs. Please try again.</div>';
             }
         }
         
-        // Fetch brief metadata from the brief page
-        async function getBriefMetadata(url) {
-            try {
-                const response = await fetch(url);
-                const html = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                
-                const episodeTitle = doc.querySelector('.episode-title')?.textContent || 'Episode';
-                const podcastName = doc.querySelector('.podcast-name')?.textContent || 'Unknown Podcast';
-                const content = doc.querySelector('.brief-content')?.textContent || '';
-                const preview = content.substring(0, 150) + '...';
-                
-                return { episodeTitle, podcastName, preview, url };
-            } catch {
-                return null;
-            }
+        // Fetch brief metadata from the brief pages
+        async function loadBriefsMetadata(urls) {
+            isLoading = true;
+            briefsMetadata = [];
+            
+            const promises = urls.map(async url => {
+                try {
+                    const response = await fetch(url);
+                    const html = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    const episodeTitle = doc.querySelector('.episode-title')?.textContent || 'Episode';
+                    const podcastName = doc.querySelector('.podcast-name')?.textContent || 'Unknown Podcast';
+                    const content = doc.querySelector('.brief-content')?.textContent || '';
+                    
+                    return { 
+                        episodeTitle, 
+                        podcastName, 
+                        url,
+                        searchText: `${podcastName} ${episodeTitle} ${content}`.toLowerCase()
+                    };
+                } catch {
+                    return null;
+                }
+            });
+            
+            const results = await Promise.all(promises);
+            briefsMetadata = results.filter(r => r !== null);
+            isLoading = false;
         }
         
         // Render briefs
@@ -243,39 +257,35 @@
             container.innerHTML = '<div class="briefs-grid" id="grid"></div>';
             const grid = document.getElementById('grid');
             
-            // Load first 30 briefs with metadata
-            briefs.slice(0, 30).forEach(async url => {
-                const metadata = await getBriefMetadata(url);
-                if (metadata) {
-                    const card = document.createElement('div');
-                    card.className = 'brief-card';
-                    card.onclick = () => window.location.href = url;
-                    card.innerHTML = `
-                        <div class="podcast-name">${metadata.podcastName}</div>
-                        <h3>${metadata.episodeTitle}</h3>
-                        <div class="preview">${metadata.preview}</div>
-                    `;
-                    grid.appendChild(card);
-                }
+            briefs.forEach(brief => {
+                const card = document.createElement('div');
+                card.className = 'brief-card';
+                card.onclick = () => window.location.href = brief.url;
+                card.innerHTML = `
+                    <div class="podcast-name">${brief.podcastName}</div>
+                    <h3>${brief.episodeTitle}</h3>
+                `;
+                grid.appendChild(card);
             });
         }
         
         // Search functionality
+        let searchTimeout;
         document.getElementById('searchInput').addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
+            clearTimeout(searchTimeout);
+            const query = e.target.value.toLowerCase().trim();
             
             if (!query) {
-                displayedBriefs = allBriefs.slice(0, 30);
-                renderBriefs(displayedBriefs);
+                renderBriefs(briefsMetadata);
                 return;
             }
             
-            // Simple URL-based search (for now)
-            displayedBriefs = allBriefs.filter(url => 
-                url.toLowerCase().includes(query)
-            ).slice(0, 30);
-            
-            renderBriefs(displayedBriefs);
+            searchTimeout = setTimeout(() => {
+                const filtered = briefsMetadata.filter(brief => 
+                    brief.searchText.includes(query)
+                );
+                renderBriefs(filtered);
+            }, 300);
         });
         
         // Load on page load
