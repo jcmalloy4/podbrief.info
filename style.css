@@ -413,3 +413,115 @@
     gap: 1rem; /* reduce spacing between columns */
   }
 }
+/* Enhanced Mobile Improvements */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+  
+  .navbar-links {
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .navbar-logo span {
+    font-size: 1.1rem;
+  }
+  
+  .navbar-logo img {
+    height: 28px;
+  }
+  
+  /* Better button sizing on mobile */
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+    width: auto;
+    max-width: 90%;
+  }
+  
+  /* Hero improvements */
+  .hero {
+    padding: 1.5rem 1rem 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  /* Feature sections mobile */
+  .features {
+    padding: 2rem 1rem;
+  }
+  
+  .feature-item {
+    padding: 1.5rem 1rem;
+  }
+  
+  .feature-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .feature-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  /* Footer mobile */
+  .footer {
+    padding: 2rem 1rem;
+  }
+  
+  .footer-columns {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-column {
+    width: 100%;
+  }
+}
+
+/* Extra small mobile (phones in portrait) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 0.95rem;
+  }
+  
+  .btn-primary {
+    font-size: 0.95rem;
+    padding: 0.85rem 1.75rem;
+  }
+  
+  .navbar-links a {
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero {
+    padding: 1rem;
+  }
+  
+  .image-wrapper {
+    max-width: 400px;
+  }
+  
+  .hero-image {
+    max-width: 350px;
+  }
+}
