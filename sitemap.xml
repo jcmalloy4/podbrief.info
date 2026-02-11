@@ -9,4 +9,7 @@
   <sitemap>
     <loc>https://podbrief.info/sitemap-topics.xml</loc>
   </sitemap>
+  <sitemap>
+    <loc>https://podbrief.info/sitemap-blog.xml</loc>
+  </sitemap>
 </sitemapindex>
