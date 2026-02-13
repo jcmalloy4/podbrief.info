@@ -73,8 +73,8 @@
   .btn-secondary {
     position: relative;
     background: transparent;
-    color: #8b5cf6;
-    border: 2px solid #8b5cf6;
+    color: #53a0fe;
+    border: 2px solid #53a0fe;
     padding: 0.9rem 2.25rem;
     font-size: 1.05rem;
     border-radius: 999px;
@@ -86,8 +86,8 @@
   
   .btn-secondary:hover {
     background: rgba(139, 92, 246, 0.1);
-    border-color: #a78bfa;
-    color: #a78bfa;
+    border-color: #6bb3ff;
+    color: #6bb3ff;
   }
 
   .podcast-card {
