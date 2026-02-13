@@ -69,6 +69,42 @@
   .btn-primary:hover {
     background: #3b8eea;
   }
+
+  .btn-secondary {
+    position: relative;
+    background: transparent;
+    color: #8b5cf6;
+    border: 2px solid #8b5cf6;
+    padding: 0.9rem 2.25rem;
+    font-size: 1.05rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: #a78bfa;
+    color: #a78bfa;
+  }
+
+  .podcast-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  .podcast-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(139, 92, 246, 0.4);
+    transform: translateY(-2px);
+  }
   
   .image-wrapper {
     position: relative;
@@ -447,14 +483,19 @@
   
   .hero h1 {
     font-size: 2.2rem;
-    line-height: 1.2;
+    line-height: 1.3;
     margin-bottom: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
   }
   
   .hero p {
     font-size: 1.05rem;
     margin-bottom: 1.5rem;
     padding: 0 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   /* Feature sections mobile */
