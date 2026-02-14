@@ -1,26 +1,28 @@
 {
   "startDate": "2026-02-09T16:17:00-08:00",
-  "lastUpdate": "2026-02-14T06:30:00-08:00",
-  "nextUpdate": "2026-02-14T09:30:00-08:00",
+  "lastUpdate": "2026-02-14T06:35:00-08:00",
+  "nextUpdate": "2026-02-14T09:35:00-08:00",
   "sessionStart": "2026-02-14T06:26:00-08:00",
   "metrics": {
     "briefPagesLive": 9797,
     "directoryPagesLive": 135,
     "topicPagesLive": 12,
-    "blogPostsLive": 30,
-    "totalSEOPages": 10029,
+    "blogPostsLive": 33,
+    "totalSEOPages": 10032,
     "internalLinks": 9797,
     "schemaMarkupPages": 9797,
     "googleIndexed": 0,
     "organicClicks": 0
   },
   "todayProgress": {
-    "blogPostsCreated": 3,
+    "blogPostsCreated": 6,
     "comparisonPagesCreated": 3,
+    "bestOfPagesCreated": 2,
+    "useCasePagesCreated": 1,
     "navigationImproved": false,
     "deploymentsStarted": 0,
-    "commits": 1,
-    "minutesWorked": 5
+    "commits": 2,
+    "minutesWorked": 10
   },
   "yesterdayProgress": {
     "blogPostsCreated": 10,
@@ -30,7 +32,7 @@
     "minutesWorked": 51
   },
   "deploying": [
-    "3 podcast comparison pages",
+    "6 new blog posts (comparisons, best-of, learning guide)",
     "Updated sitemap"
   ],
   "blogPostsCreated": [
@@ -56,9 +58,12 @@
     "Best Short Podcasts Under 30 Minutes",
     "All-In vs My First Million",
     "Huberman Lab vs Lex Fridman",
-    "Joe Rogan vs Lex Fridman"
+    "Joe Rogan vs Lex Fridman",
+    "Best My First Million Episodes",
+    "Best How I Built This Episodes",
+    "Best Podcasts for Learning"
   ],
-  "totalSEOPages": 10029,
+  "totalSEOPages": 10032,
   "nextActions": [
     "Continue blog posts",
     "Create podcast comparison pages",
