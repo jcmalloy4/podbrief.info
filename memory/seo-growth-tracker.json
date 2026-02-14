@@ -1,0 +1,69 @@
+{
+  "startDate": "2026-02-09T16:17:00-08:00",
+  "lastUpdate": "2026-02-14T06:30:00-08:00",
+  "nextUpdate": "2026-02-14T09:30:00-08:00",
+  "sessionStart": "2026-02-14T06:26:00-08:00",
+  "metrics": {
+    "briefPagesLive": 9797,
+    "directoryPagesLive": 135,
+    "topicPagesLive": 12,
+    "blogPostsLive": 30,
+    "totalSEOPages": 10029,
+    "internalLinks": 9797,
+    "schemaMarkupPages": 9797,
+    "googleIndexed": 0,
+    "organicClicks": 0
+  },
+  "todayProgress": {
+    "blogPostsCreated": 3,
+    "comparisonPagesCreated": 3,
+    "navigationImproved": false,
+    "deploymentsStarted": 0,
+    "commits": 1,
+    "minutesWorked": 5
+  },
+  "yesterdayProgress": {
+    "blogPostsCreated": 10,
+    "navigationImproved": true,
+    "deploymentsStarted": 4,
+    "commits": 10,
+    "minutesWorked": 51
+  },
+  "deploying": [
+    "3 podcast comparison pages",
+    "Updated sitemap"
+  ],
+  "blogPostsCreated": [
+    "Best News Podcasts",
+    "Best Personal Development Podcasts",
+    "How to Listen to Podcasts Efficiently",
+    "Podcasts vs Audiobooks",
+    "Best History Podcasts",
+    "Best Sports Podcasts",
+    "What Are Podcast Briefs",
+    "Best Podcasts for Entrepreneurs",
+    "Best Podcasts for Commuting",
+    "Best Huberman Lab Episodes",
+    "Best True Crime Podcasts",
+    "Best Science Podcasts",
+    "Best All-In Podcast Episodes",
+    "Best Lex Fridman Episodes",
+    "Best Finance Podcasts",
+    "Best Tim Ferriss Episodes",
+    "Best Marketing Podcasts",
+    "Best Technology Podcasts",
+    "Best SmartLess Episodes",
+    "Best Short Podcasts Under 30 Minutes",
+    "All-In vs My First Million",
+    "Huberman Lab vs Lex Fridman",
+    "Joe Rogan vs Lex Fridman"
+  ],
+  "totalSEOPages": 10029,
+  "nextActions": [
+    "Continue blog posts",
+    "Create podcast comparison pages",
+    "Add more topic-specific guides",
+    "Performance optimization",
+    "Internal link improvements"
+  ]
+}
