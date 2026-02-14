@@ -264,7 +264,10 @@
             return guid; // Use GUID for ordering (newer GUIDs tend to be more recent)
         }
         
-        // Load briefs from sitemap
+        // Build search index from all briefs
+        let searchableData = [];
+        
+        // Load briefs from sitemap and build searchable index
         async function loadBriefs() {
             try {
                 const response = await fetch('/sitemap-briefs.xml');
@@ -277,6 +280,26 @@
                 
                 // Reverse to show newest first (sitemap is generated in order)
                 allBriefs.reverse();
+                
+                // Build searchable data from URLs (extract podcast/episode IDs)
+                searchableData = allBriefs.map(url => {
+                    // URL format: https://podbrief.info/briefs/{podcastId}/{episodeGuid}.html
+                    const match = url.match(/briefs\/([^\/]+)\/([^\/]+)\.html/);
+                    if (match) {
+                        const podcastId = match[1];
+                        const episodeGuid = match[2];
+                        // Convert podcast ID to readable name (replace dashes/underscores with spaces)
+                        const podcastNameFromId = podcastId.replace(/[-_]/g, ' ');
+                        return {
+                            url: url,
+                            podcastId: podcastId,
+                            podcastIdLower: podcastId.toLowerCase(),
+                            episodeGuid: episodeGuid,
+                            searchText: podcastNameFromId.toLowerCase()
+                        };
+                    }
+                    return null;
+                }).filter(x => x !== null);
                 
                 const initial = allBriefs.slice(0, 50);
                 await loadBriefsMetadata(initial);
@@ -322,11 +345,17 @@
             const container = document.getElementById('briefsList');
             
             if (briefs.length === 0) {
-                container.innerHTML = '<div class="no-results">No briefs found. Try a different search.</div>';
+                container.innerHTML = '<div class="no-results">No podcasts found. Try different keywords like "joe rogan" or "huberman".</div>';
                 return;
             }
             
-            container.innerHTML = '<div class="briefs-grid" id="grid"></div>';
+            const resultCount = briefs.length === 200 ? '200+ results' : `${briefs.length} result${briefs.length === 1 ? '' : 's'}`;
+            container.innerHTML = `
+                <div style="text-align: center; color: #888; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    Found ${resultCount}
+                </div>
+                <div class="briefs-grid" id="grid"></div>
+            `;
             const grid = document.getElementById('grid');
             
             briefs.forEach(brief => {
@@ -341,7 +370,7 @@
             });
         }
         
-        // Search functionality - prioritize podcast name
+        // Search functionality - search through ALL briefs using searchableData index
         let searchTimeout;
         document.getElementById('searchInput').addEventListener('input', async (e) => {
             clearTimeout(searchTimeout);
@@ -353,35 +382,52 @@
             }
             
             searchTimeout = setTimeout(async () => {
-                // Search through all briefs, prioritizing podcast name matches
-                const matchingUrls = allBriefs.filter(url => {
-                    const lowerUrl = url.toLowerCase();
-                    // Check if query appears in URL (simple check)
-                    return lowerUrl.includes(query);
-                });
+                document.getElementById('briefsList').innerHTML = '<div class="loading">Searching all podcasts...</div>';
+                
+                // Prepare search query - try both slug and readable formats
+                const querySlug = query.replace(/\s+/g, '-').toLowerCase();
+                const queryWords = query.split(/\s+/).filter(w => w.length > 0);
+                
+                const matching = searchableData.filter(item => {
+                    // Match if:
+                    // 1. Query slug appears in podcast ID (e.g., "joe-rogan" matches "the-joe-rogan-experience")
+                    // 2. ANY query word appears in de-slugified podcast name
+                    const slugMatch = item.podcastIdLower.includes(querySlug);
+                    const wordMatch = queryWords.some(word => item.searchText.includes(word.toLowerCase()));
+                    return slugMatch || wordMatch;
+                }).slice(0, 200); // Limit to 200 results for performance
+                
+                const matchingUrls = matching.map(item => item.url);
+                
+                if (matchingUrls.length === 0) {
+                    document.getElementById('briefsList').innerHTML = '<div class="no-results">No podcasts found. Try different keywords.</div>';
+                    return;
+                }
                 
                 // Load metadata for matching briefs
-                const toLoad = matchingUrls.slice(0, 100);
-                await loadBriefsMetadata(toLoad);
+                await loadBriefsMetadata(matchingUrls);
                 
-                // Filter and sort: podcast name matches first, then episode matches
-                const filtered = briefsMetadata.filter(brief => 
-                    brief.podcastNameLower.includes(query) || 
-                    brief.episodeTitle.toLowerCase().includes(query)
-                );
+                // Filter by actual content (now that we have real titles loaded)
+                const filtered = briefsMetadata.filter(brief => {
+                    const podcastMatch = brief.podcastNameLower.includes(query) || 
+                                       queryWords.some(word => brief.podcastNameLower.includes(word.toLowerCase()));
+                    const episodeMatch = brief.episodeTitle.toLowerCase().includes(query) ||
+                                        queryWords.some(word => brief.episodeTitle.toLowerCase().includes(word.toLowerCase()));
+                    return podcastMatch || episodeMatch;
+                });
                 
-                // Sort: podcast name matches first, then by order (recency)
+                // Sort: podcast name matches first
                 filtered.sort((a, b) => {
-                    const aPodcastMatch = a.podcastNameLower.includes(query);
-                    const bPodcastMatch = b.podcastNameLower.includes(query);
+                    const aPodcastMatch = queryWords.some(word => a.podcastNameLower.includes(word));
+                    const bPodcastMatch = queryWords.some(word => b.podcastNameLower.includes(word));
                     
                     if (aPodcastMatch && !bPodcastMatch) return -1;
                     if (!aPodcastMatch && bPodcastMatch) return 1;
-                    return 0; // Keep original order (most recent first)
+                    return 0;
                 });
                 
                 renderBriefs(filtered);
-            }, 300);
+            }, 400);
         });
         
         // Load on page load
