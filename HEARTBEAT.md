@@ -5,6 +5,52 @@ Drive PodBrief to $10k MRR through SEO and content growth.
 
 ## Heartbeat Tasks (Rotate Through These)
 
+### Competitive Analysis & Website Redesign (PRIORITY)
+**Goal:** Analyze competitor websites and completely redesign podbrief.info based on best practices.
+
+**Competitive Research (Do First):**
+1. Analyze 3-5 competitor websites:
+   - Podcast summary/transcript sites
+   - Podcast discovery platforms
+   - AI content aggregators
+   - Note: design, navigation, features, UX patterns
+2. Document findings in `memory/competitive-analysis.md`
+3. Identify what makes them successful
+4. Find gaps we can fill better
+
+**Redesign Execution:**
+1. Create redesign plan based on competitive insights
+2. Prioritize homepage, browse page, blog
+3. Improve navigation, visual hierarchy, CTAs
+4. Make it look modern and professional
+5. Test on mobile and desktop
+6. Deploy incrementally (test each change)
+
+**Track progress in `memory/website-redesign-tracker.json`**
+
+### Brief Upload Automation (CRITICAL - Check Every Heartbeat)
+**Goal:** Ensure new briefs are continuously uploaded and indexed.
+
+**Every heartbeat, check:**
+1. Is the brief upload system running?
+   - Check for new briefs in the PodBrief backend
+   - Verify they're being added to sitemap-briefs.xml
+   - Confirm they're deployed to podbrief.info
+2. Are uploads working correctly?
+   - Check timestamp of last brief upload
+   - Verify sitemap count is increasing
+   - Test random brief URLs to ensure they load
+3. If broken:
+   - Investigate the issue
+   - Fix the upload pipeline
+   - Alert John immediately
+
+**Track in `memory/brief-upload-monitor.json`:**
+- Last upload timestamp
+- Number of briefs uploaded today
+- Any errors or issues
+- System health status
+
 ### Content Creation (Priority)
 **Goal:** 5-10 blog posts per day, spread throughout the day.
 
@@ -31,12 +77,38 @@ Check `memory/seo-growth-tracker.json` for current count. If fewer than 5 blog p
 - Best marketing podcasts
 - SmartLess best episodes
 
-### Site Improvements (Once Daily)
+### Comparison Pages (High-Impact SEO)
+Create 2-3 comparison pages targeting high search volume:
+- "All-In vs My First Million podcast"
+- "Huberman Lab vs Lex Fridman podcast"
+- "The Daily vs Up First news podcasts"
+- "Joe Rogan vs Lex Fridman interviews"
+
+### Best Episodes Pages (Per Show)
+Target show-specific searches:
+- "Best All-In Episodes of All Time"
+- "Best Lex Fridman Interviews"
+- "Best My First Million Episodes"
+- "Top SmartLess Celebrity Interviews"
+
+### Use-Case Landing Pages
+- "Best Podcasts for Your Morning Routine"
+- "Podcasts for Long Flights"
+- "Best Workout Podcasts"
+- "Podcasts to Fall Asleep To"
+
+### FAQ/How-To Pages
+- "How to Start Listening to Podcasts"
+- "Best Podcast Apps Compared"
+- "How to Discover New Podcasts"
+
+### Site Improvements
 - Add breadcrumbs to podcast/topic pages
 - Improve internal linking
-- Add more schema markup
-- Create comparison pages
-- Generate more topic pages
+- Add more schema markup (BreadcrumbList, FAQPage)
+- Generate more topic pages (aim for 50+ total)
+- Fix mobile responsiveness issues
+- Clean up design inconsistencies
 
 ### Metrics Check (2x Daily - Morning & Evening)
 - Check if Google Search Console data is available
@@ -51,16 +123,16 @@ Check `memory/seo-growth-tracker.json` for current count. If fewer than 5 blog p
 
 ## When to Message John
 
-**Do message:**
-- Significant milestone (50 blog posts, 15k pages, first organic traffic)
-- Deployment failures that need attention
-- Need credentials/access (Google Search Console, Analytics)
-- Strategic decisions (major site changes, spending money)
+**Message every heartbeat with:**
+- What I just built (blog posts, pages, improvements)
+- Current stats (total pages, blog count, deployments)
+- What's next
+- Any issues or blockers
 
-**Don't message:**
-- Routine content creation (just do it)
-- Successful deployments (expected behavior)
-- Progress updates unless asked
+**Always ask for approval before:**
+- Spending money
+- Major architectural changes
+- Accessing external APIs that need credentials
 
 ## When to Reply HEARTBEAT_OK
 
@@ -78,7 +150,7 @@ Check `memory/seo-growth-tracker.json` for current count. If fewer than 5 blog p
 5. **Don't wait for permission** - Build, test, deploy
 
 ## Current Stats (Updated by Me)
-Last updated: 2026-02-11 15:25:00 PST
+Last updated: 2026-02-13 13:40:00 PST
 - Total SEO pages: 10,016
 - Blog posts: 17
-- Today's blog posts: 0 (reset daily)
+- Today's blog posts: 0 (reset daily at midnight)

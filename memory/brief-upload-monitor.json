@@ -1,0 +1,28 @@
+{
+  "systemName": "Brief Upload Monitor",
+  "purpose": "Track automated upload of new podcast briefs to podbrief.info",
+  "lastChecked": "2026-02-14T11:25:00-08:00",
+  "status": "SCRIPT_READY_NEEDS_CREDENTIALS",
+  "notes": [
+    "Briefs are posted to Firebase Storage daily (confirmed by John)",
+    "Created sync script: scripts/sync-briefs-from-firebase.js",
+    "Script fetches briefs from Firebase, generates static HTML, updates sitemap",
+    "BLOCKER: Missing firebase-service-account.json credential file",
+    "Need John to provide Firebase service account credentials"
+  ],
+  "monitoring": {
+    "lastUploadTimestamp": null,
+    "briefsUploadedToday": 0,
+    "totalBriefsInSitemap": 9797,
+    "errors": [],
+    "healthStatus": "UNKNOWN"
+  },
+  "actionItems": [
+    "Ask John for access to brief generation system",
+    "Understand how new briefs are created",
+    "Set up automated upload pipeline",
+    "Monitor sitemap count for increases",
+    "Alert if no new briefs uploaded in 24h"
+  ],
+  "nextCheck": "2026-02-14T14:25:00-08:00"
+}

@@ -1,74 +1,45 @@
 {
   "startDate": "2026-02-09T16:17:00-08:00",
-  "lastUpdate": "2026-02-14T06:35:00-08:00",
-  "nextUpdate": "2026-02-14T09:35:00-08:00",
-  "sessionStart": "2026-02-14T06:26:00-08:00",
+  "lastUpdate": "2026-02-15T06:50:00-08:00",
+  "nextUpdate": "2026-02-15T09:50:00-08:00",
+  "sessionStart": "2026-02-15T00:12:00-08:00",
   "metrics": {
     "briefPagesLive": 9797,
     "directoryPagesLive": 135,
     "topicPagesLive": 12,
-    "blogPostsLive": 33,
-    "totalSEOPages": 10032,
+    "blogPostsLive": 41,
+    "totalSEOPages": 9985,
     "internalLinks": 9797,
     "schemaMarkupPages": 9797,
     "googleIndexed": 0,
     "organicClicks": 0
   },
   "todayProgress": {
-    "blogPostsCreated": 6,
-    "comparisonPagesCreated": 3,
+    "blogPostsCreated": 7,
+    "comparisonPagesCreated": 2,
     "bestOfPagesCreated": 2,
-    "useCasePagesCreated": 1,
+    "useCasePagesCreated": 2,
+    "faqPagesCreated": 1,
     "navigationImproved": false,
+    "searchFixed": false,
+    "briefAutomationCreated": false,
     "deploymentsStarted": 0,
     "commits": 2,
-    "minutesWorked": 10
+    "minutesWorked": 70
   },
-  "yesterdayProgress": {
-    "blogPostsCreated": 10,
-    "navigationImproved": true,
-    "deploymentsStarted": 4,
-    "commits": 10,
-    "minutesWorked": 51
-  },
-  "deploying": [
-    "6 new blog posts (comparisons, best-of, learning guide)",
-    "Updated sitemap"
-  ],
   "blogPostsCreated": [
-    "Best News Podcasts",
-    "Best Personal Development Podcasts",
-    "How to Listen to Podcasts Efficiently",
-    "Podcasts vs Audiobooks",
-    "Best History Podcasts",
-    "Best Sports Podcasts",
-    "What Are Podcast Briefs",
-    "Best Podcasts for Entrepreneurs",
-    "Best Podcasts for Commuting",
-    "Best Huberman Lab Episodes",
-    "Best True Crime Podcasts",
-    "Best Science Podcasts",
-    "Best All-In Podcast Episodes",
-    "Best Lex Fridman Episodes",
-    "Best Finance Podcasts",
-    "Best Tim Ferriss Episodes",
-    "Best Marketing Podcasts",
-    "Best Technology Podcasts",
-    "Best SmartLess Episodes",
-    "Best Short Podcasts Under 30 Minutes",
-    "All-In vs My First Million",
-    "Huberman Lab vs Lex Fridman",
-    "Joe Rogan vs Lex Fridman",
-    "Best My First Million Episodes",
-    "Best How I Built This Episodes",
-    "Best Podcasts for Learning"
+    "Best Podcasts to Fall Asleep To",
+    "How to Start Listening to Podcasts - Complete Beginner's Guide",
+    "Best Podcast Apps Compared (2026)",
+    "Huberman Lab vs Peter Attia Drive",
+    "Best How I Built This Episodes of All Time",
+    "Best My First Million Episodes of All Time",
+    "Joe Rogan vs Lex Fridman"
   ],
-  "totalSEOPages": 10032,
+  "totalSEOPages": 9985,
   "nextActions": [
-    "Continue blog posts",
-    "Create podcast comparison pages",
-    "Add more topic-specific guides",
-    "Performance optimization",
-    "Internal link improvements"
+    "7 blog posts today (within 5-10 goal, can add 0-3 more)",
+    "Continue comparison + best-of content",
+    "Monitor brief upload system"
   ]
 }
