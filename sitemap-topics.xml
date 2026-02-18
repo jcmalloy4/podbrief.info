@@ -1,51 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://podbrief.info/topics/business.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://podbrief.info/topics/comedy.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://podbrief.info/topics/education.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://podbrief.info/topics/entrepreneurship.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://podbrief.info/topics/health.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://podbrief.info/topics/history.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://podbrief.info/topics/interviews.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://podbrief.info/topics/news.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://podbrief.info/topics/personal-development.html</loc>
+    <lastmod>2026-02-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://podbrief.info/topics/politics.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/business.html</loc>
+    <lastmod>2026-02-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://podbrief.info/topics/sports.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/education.html</loc>
+    <lastmod>2026-02-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://podbrief.info/topics/technology.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/investing.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/comedy.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/health-wellness.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/true-crime.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/science.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/startups.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/legal.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/philosophy.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/self-help.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/film-tv.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/military.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/economics.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/society-culture.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/religion-faith.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/venture-capital.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/interviews.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/personal-development.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/history.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/topics/media.html</loc>
+    <lastmod>2026-02-18</lastmod>
     <priority>0.9</priority>
   </url>
 </urlset>
