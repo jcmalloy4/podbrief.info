@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Podcast Summaries — PodBrief | 10,000+ Episodes Summarized</title>
+    <meta name="description" content="PodBrief creates AI-powered podcast summaries for 10,000+ episodes. Read any podcast in 2 minutes. Get key insights from the world's best shows without listening to hours of audio." />
+
+    <meta property="og:title" content="AI Podcast Summaries — PodBrief | 10,000+ Episodes Summarized">
+    <meta property="og:description" content="AI-powered podcast summaries for 10,000+ episodes. Read any podcast in 2 minutes — get the key insights without hours of listening.">
+    <meta property="og:image" content="https://podbrief.info/Assets/podbrief_preview.png">
+    <meta property="og:url" content="https://podbrief.info/podcast-summaries.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Podcast Summaries — PodBrief">
+    <meta name="twitter:description" content="AI-powered podcast summaries for 10,000+ episodes. Read any podcast in 2 minutes.">
+    <meta name="twitter:image" content="https://podbrief.info/Assets/podbrief_preview.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "AI Podcast Summaries — PodBrief",
+  "url": "https://podbrief.info/podcast-summaries.html",
+  "description": "PodBrief creates AI-powered podcast summaries for 10,000+ episodes. Read any podcast episode in 2 minutes.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "PodBrief",
+    "url": "https://podbrief.info",
+    "logo": "https://podbrief.info/Assets/podbrief_logo_app.png"
+  },
+  "mainEntity": {
+    "@type": "SoftwareApplication",
+    "name": "PodBrief",
+    "applicationCategory": "EntertainmentApplication",
+    "description": "AI-powered podcast episode summaries",
+    "url": "https://podbrief.info",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+}
+</script>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="theme-color" content="#10101e">
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      .lp-hero {
+        text-align: center;
+        padding: 5rem 2rem 4rem;
+        background: linear-gradient(180deg, #0a0a18 0%, #10101e 100%);
+      }
+      .lp-hero .eyebrow {
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #53a0fe;
+        margin-bottom: 1rem;
+      }
+      .lp-hero h1 {
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+        max-width: 860px;
+        margin: 0 auto 1.25rem;
+      }
+      .lp-hero p {
+        font-size: 1.15rem;
+        color: #bbb;
+        max-width: 620px;
+        margin: 0 auto 2rem;
+        line-height: 1.6;
+      }
+      .lp-section {
+        padding: 4rem 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .lp-section h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+      .lp-section p {
+        color: #bbb;
+        line-height: 1.7;
+        font-size: 1.05rem;
+        margin-bottom: 1rem;
+      }
+      .lp-section-alt {
+        background: #0f0f1d;
+        padding: 4rem 2rem;
+      }
+      .lp-section-alt-inner {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .lp-section-alt h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 1.5rem;
+      }
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      .step-card {
+        background: #1a1a2e;
+        border: 1px solid #2a2a40;
+        border-radius: 12px;
+        padding: 1.5rem;
+      }
+      .step-card .step-num {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .step-card h3 {
+        color: #fff;
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .step-card p {
+        color: #999;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+      .faq-list {
+        margin-top: 1.5rem;
+      }
+      .faq-item {
+        border-bottom: 1px solid #2a2a40;
+        padding: 1.25rem 0;
+      }
+      .faq-item h3 {
+        color: #fff;
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .faq-item p {
+        color: #999;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+      .shows-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .show-card {
+        background: #1a1a2e;
+        border: 1px solid #2a2a40;
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+        text-decoration: none;
+        transition: border-color 0.2s;
+      }
+      .show-card:hover {
+        border-color: #53a0fe;
+      }
+      .show-card .show-name {
+        color: #fff;
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+      .show-card .show-cat {
+        color: #888;
+        font-size: 0.8rem;
+        margin-top: 0.25rem;
+      }
+      .category-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+      }
+      .category-tag {
+        background: #1a1a2e;
+        border: 1px solid #2a2a40;
+        border-radius: 999px;
+        padding: 0.5rem 1.1rem;
+        color: #ccc;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: border-color 0.2s, color 0.2s;
+      }
+      .category-tag:hover {
+        border-color: #53a0fe;
+        color: #53a0fe;
+      }
+      .lp-cta {
+        text-align: center;
+        padding: 5rem 2rem;
+        background: linear-gradient(135deg, rgba(83, 160, 254, 0.08), rgba(83, 160, 254, 0.04));
+      }
+      .lp-cta h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+      .lp-cta p {
+        color: #bbb;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-content">
+        <div class="navbar-logo">
+          <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+            <img src="/Assets/podbrief_logo.png" alt="PodBrief Logo" />
+            <span>PodBrief</span>
+          </a>
+        </div>
+        <nav class="navbar-links">
+          <a href="/browse.html">Browse</a>
+          <a href="/all-podcasts.html">Podcasts</a>
+          <a href="/topics.html">Topics</a>
+          <a href="/blog">Blog</a>
+          <a href="/faq.html">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="lp-hero">
+      <p class="eyebrow">AI Podcast Summaries</p>
+      <h1>Read Any Podcast Episode in 2 Minutes</h1>
+      <p>PodBrief uses AI to summarize 10,000+ podcast episodes so you can get the key insights without sitting through hours of audio. The fastest way to discover, learn, and decide what to listen to.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/browse.html" class="btn-primary">Browse Podcast Summaries</a>
+        <a href="/all-podcasts.html" class="btn-secondary">Browse Shows</a>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">Free to use • 10,000+ summaries • 500+ shows</p>
+    </section>
+
+    <!-- What Are Podcast Summaries -->
+    <section class="lp-section">
+      <h2>What Are AI Podcast Summaries?</h2>
+      <p>A podcast summary is a condensed version of a full podcast episode — the key ideas, main arguments, notable quotes, and most important takeaways, distilled into a quick 2-minute read.</p>
+      <p>PodBrief's AI listens to each episode, identifies what matters most, and writes a clean, structured summary you can read in minutes. Unlike transcripts (which are just walls of text), our summaries are genuinely useful — they surface the substance, not just the words.</p>
+      <p>Think of it like having a trusted friend who listened to every podcast and can quickly tell you exactly what you need to know.</p>
+    </section>
+
+    <!-- How PodBrief Creates Them -->
+    <section class="lp-section-alt">
+      <div class="lp-section-alt-inner">
+        <h2>How PodBrief Creates Podcast Summaries</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">🎙️</div>
+            <h3>Episode ingested</h3>
+            <p>New episodes from hundreds of popular shows are pulled in automatically as they're published.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">🤖</div>
+            <h3>AI analysis</h3>
+            <p>Our AI listens to the full episode, identifies the key themes, arguments, and moments — filtering out filler and off-topic tangents.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">✍️</div>
+            <h3>Summary written</h3>
+            <p>A clean, structured summary is generated: headline, key points, notable quotes, and a one-sentence takeaway.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">📖</div>
+            <h3>You read it in 2 min</h3>
+            <p>Browse, search, and read summaries across any device. Decide in seconds if the full episode is worth your time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Shows -->
+    <section class="lp-section">
+      <h2>Browse Summaries for Popular Podcasts</h2>
+      <p>From news to business to science to comedy — we've got the shows people actually listen to.</p>
+      <div class="shows-grid">
+        <a href="/podcasts/the-joe-rogan-experience.html" class="show-card">
+          <div class="show-name">The Joe Rogan Experience</div>
+          <div class="show-cat">Society & Culture</div>
+        </a>
+        <a href="/podcasts/huberman-lab.html" class="show-card">
+          <div class="show-name">Huberman Lab</div>
+          <div class="show-cat">Health & Science</div>
+        </a>
+        <a href="/podcasts/the-daily.html" class="show-card">
+          <div class="show-name">The Daily</div>
+          <div class="show-cat">News</div>
+        </a>
+        <a href="/podcasts/all-in-with-chamath-jason-sacks-friedberg.html" class="show-card">
+          <div class="show-name">All-In</div>
+          <div class="show-cat">Technology & Business</div>
+        </a>
+        <a href="/podcasts/smartless.html" class="show-card">
+          <div class="show-name">SmartLess</div>
+          <div class="show-cat">Comedy</div>
+        </a>
+        <a href="/all-podcasts.html" class="show-card">
+          <div class="show-name">Browse All Shows →</div>
+          <div class="show-cat">500+ podcasts</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Browse by Topic -->
+    <section class="lp-section-alt">
+      <div class="lp-section-alt-inner">
+        <h2>Browse Podcast Summaries by Topic</h2>
+        <p style="color: #bbb; font-size: 1.05rem;">Find summaries on the subjects that matter to you.</p>
+        <div class="category-tags">
+          <a href="/topics/news.html" class="category-tag">📰 News</a>
+          <a href="/topics/business.html" class="category-tag">💼 Business</a>
+          <a href="/topics/technology.html" class="category-tag">💻 Technology</a>
+          <a href="/topics/health.html" class="category-tag">🏃 Health</a>
+          <a href="/topics/comedy.html" class="category-tag">😂 Comedy</a>
+          <a href="/topics.html" class="category-tag">🎙️ All Topics →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="lp-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Are the summaries accurate?</h3>
+          <p>Yes. Our AI is trained to extract factual information from episodes — key points, guest names, arguments made, and conclusions reached. We focus on accuracy and clarity over sensationalism.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long is a typical podcast summary?</h3>
+          <p>Most summaries take 2–3 minutes to read. They cover the episode's main ideas without padding or filler — just what you actually need to know.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you summarize every episode of every podcast?</h3>
+          <p>We cover 500+ popular shows with new summaries added daily. We're constantly expanding our library. If your favorite show isn't covered yet, let us know.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is PodBrief free to use?</h3>
+          <p>Yes — browsing summaries on podbrief.info is free. The PodBrief iOS app is free to download with a Premium plan available at $4.99/mo or $35.99/yr.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I still listen to the full episode after reading a summary?</h3>
+          <p>Absolutely — that's often the point. Summaries help you decide which episodes deserve your full attention. Many users read the summary first, then listen to the episodes they're most excited about.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="lp-cta">
+      <h2>Start reading podcast summaries</h2>
+      <p>10,000+ episodes summarized. Free to browse. No signup required.</p>
+      <a href="/browse.html" class="btn-primary">Browse Podcast Summaries</a>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h4>Browse & Discover</h4>
+            <a href="/browse.html">Browse All Briefs</a>
+            <a href="/all-podcasts.html">All Podcasts</a>
+            <a href="/topics.html">Browse by Topic</a>
+            <a href="/blog">Blog & Guides</a>
+          </div>
+          <div class="footer-column">
+            <h4>Popular Topics</h4>
+            <a href="/topics/news.html">News</a>
+            <a href="/topics/business.html">Business</a>
+            <a href="/topics/technology.html">Technology</a>
+            <a href="/topics/health.html">Health</a>
+            <a href="/topics/comedy.html">Comedy</a>
+          </div>
+          <div class="footer-column">
+            <h4>Popular Podcasts</h4>
+            <a href="/podcasts/the-joe-rogan-experience.html">Joe Rogan</a>
+            <a href="/podcasts/huberman-lab.html">Huberman Lab</a>
+            <a href="/podcasts/the-daily.html">The Daily</a>
+            <a href="/podcasts/all-in-with-chamath-jason-sacks-friedberg.html">All-In</a>
+            <a href="/podcasts/smartless.html">SmartLess</a>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <a href="/faq.html">FAQ</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Use</a>
+            <p style="margin-top: 1rem;"><a href="mailto:john@podbrief.info">john@podbrief.info</a></p>
+          </div>
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <a href="https://twitter.com/podbrief_ai">Twitter</a>
+            <a href="https://www.linkedin.com/company/podbrief-ai?trk=blended-typeahead">LinkedIn</a>
+            <a href="https://instagram.com/podbrief.ai">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
