@@ -7,15 +7,19 @@
     "phase1": {
       "name": "Homepage Redesign",
       "priority": 1,
-      "status": "Not Started",
+      "status": "In Progress",
       "tasks": [
         {
           "task": "New hero section with bold value prop",
-          "completed": false
+          "completed": true,
+          "completedDate": "2026-02-19",
+          "notes": "Updated to 'Read Any Podcast Episode in 2 Minutes' + dual CTA row"
         },
         {
           "task": "Add social proof section",
-          "completed": false
+          "completed": true,
+          "completedDate": "2026-02-19",
+          "notes": "Added 5-star rating + 10,000+ episode summaries line"
         },
         {
           "task": "Show featured/trending briefs on homepage",

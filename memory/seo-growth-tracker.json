@@ -1,21 +1,21 @@
 {
   "startDate": "2026-02-09T16:17:00-08:00",
-  "lastUpdate": "2026-02-19T10:00:00-08:00",
+  "lastUpdate": "2026-02-19T17:00:00-08:00",
   "nextUpdate": "2026-02-20T00:00:00-08:00",
   "sessionStart": "2026-02-19T10:00:00-08:00",
   "metrics": {
     "briefPagesLive": 9797,
     "directoryPagesLive": 135,
-    "topicPagesLive": 12,
-    "blogPostsLive": 79,
-    "totalSEOPages": 10011,
+    "topicPagesLive": 52,
+    "blogPostsLive": 103,
+    "totalSEOPages": 10022,
     "internalLinks": 9797,
     "schemaMarkupPages": 9797,
     "googleIndexed": 0,
     "organicClicks": 0
   },
   "todayProgress": {
-    "blogPostsCreated": 7,
+    "blogPostsCreated": 31,
     "comparisonPagesCreated": 0,
     "bestOfPagesCreated": 7,
     "useCasePagesCreated": 0,
@@ -24,7 +24,7 @@
     "searchFixed": false,
     "briefAutomationCreated": false,
     "deploymentsStarted": 1,
-    "commits": 1,
+    "commits": 2,
     "minutesWorked": 30
   },
   "blogPostsCreated": [
@@ -59,11 +59,17 @@
     "Best Food and Cooking Podcasts (2026)",
     "Best Podcasts for Kids and Families (2026)",
     "Best Language Learning Podcasts (2026)",
-    "Best Podcasts for Software Developers (2026)"
+    "Best Podcasts for Software Developers (2026)",
+    "Best Dan Carlin's Hardcore History Episodes of All Time",
+    "Best 99% Invisible Episodes of All Time",
+    "Best Darknet Diaries Episodes of All Time",
+    "Best Acquired Podcast Episodes of All Time",
+    "Pivot vs All-In Podcast: Which Tech Podcast Is Better?",
+    "Best Narrative Nonfiction Podcasts of 2026"
   ],
-  "totalSEOPages": 10011,
+  "totalSEOPages": 10023,
   "nextActions": [
-    "7 new blog posts created Feb 19: Learning Skills, Mental Health, Travel, Food/Cooking, Kids/Families, Language Learning, Developer Podcasts",
+    "Batch 3 (Feb 19): Fresh Air, The Moth, Planet Money, runners, relationships, philosophy — 93 posts total",
     "Continue creating quality content",
     "Monitor brief upload system"
   ]
