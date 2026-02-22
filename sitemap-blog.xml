@@ -111,4 +111,34 @@
   <url><loc>https://podbrief.info/blog/best-podcasts-for-creatives.html</loc><lastmod>2026-02-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://podbrief.info/blog/best-wtf-marc-maron-episodes.html</loc><lastmod>2026-02-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://podbrief.info/blog/best-podcasts-about-money.html</loc><lastmod>2026-02-19</lastmod><priority>0.8</priority></url>
+  <url>
+    <loc>https://podbrief.info/blog/best-podcasts-for-learning.html</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/blog/best-short-podcasts-under-30-minutes.html</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/blog/best-finance-podcasts.html</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/blog/best-podcasts-for-commuting.html</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://podbrief.info/blog/lex-fridman-best-episodes.html</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
