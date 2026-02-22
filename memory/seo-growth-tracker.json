@@ -1,21 +1,21 @@
 {
   "startDate": "2026-02-09T16:17:00-08:00",
-  "lastUpdate": "2026-02-22T06:51:08-08:00",
+  "lastUpdate": "2026-02-22T11:18:33-08:00",
   "nextUpdate": "2026-02-22T00:00:00-08:00",
   "sessionStart": "2026-02-22T04:42:00-08:00",
   "metrics": {
     "briefPagesLive": 9797,
     "directoryPagesLive": 135,
     "topicPagesLive": 52,
-    "blogPostsLive": 115,
-    "totalSEOPages": 10099,
+    "blogPostsLive": 117,
+    "totalSEOPages": 10101,
     "internalLinks": 9797,
     "schemaMarkupPages": 9797,
     "googleIndexed": 0,
     "organicClicks": 0
   },
   "todayProgress": {
-    "blogPostsCreated": 6,
+    "blogPostsCreated": 8,
     "blogPostsUpdated": 11,
     "comparisonPagesCreated": 0,
     "bestOfPagesCreated": 0,
@@ -34,7 +34,9 @@
     "Best Podcasts for Running",
     "Best Daily Podcasts",
     "SmartLess Best Episodes",
-    "Best Podcasts for Sleep"
+    "Best Podcasts for Sleep",
+    "Best Investigative Podcasts",
+    "Best Mindfulness Podcasts"
   ],
   "totalSEOPages": 10096,
   "notes": [
