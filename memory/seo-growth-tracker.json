@@ -1,21 +1,21 @@
 {
   "startDate": "2026-02-09T16:17:00-08:00",
-  "lastUpdate": "2026-02-22T05:15:19-08:00",
+  "lastUpdate": "2026-02-22T06:51:08-08:00",
   "nextUpdate": "2026-02-22T00:00:00-08:00",
   "sessionStart": "2026-02-22T04:42:00-08:00",
   "metrics": {
     "briefPagesLive": 9797,
     "directoryPagesLive": 135,
     "topicPagesLive": 52,
-    "blogPostsLive": 112,
-    "totalSEOPages": 10096,
+    "blogPostsLive": 115,
+    "totalSEOPages": 10099,
     "internalLinks": 9797,
     "schemaMarkupPages": 9797,
     "googleIndexed": 0,
     "organicClicks": 0
   },
   "todayProgress": {
-    "blogPostsCreated": 1,
+    "blogPostsCreated": 6,
     "blogPostsUpdated": 11,
     "comparisonPagesCreated": 0,
     "bestOfPagesCreated": 0,
@@ -25,11 +25,16 @@
     "searchFixed": false,
     "briefAutomationCreated": false,
     "deploymentsStarted": 0,
-    "commits": 1,
+    "commits": 2,
     "minutesWorked": 30
   },
   "blogPostsCreated": [
-    "Best Short Podcasts Under 30 Minutes (NEW)"
+    "Best Short Podcasts Under 30 Minutes",
+    "Best Storytelling Podcasts",
+    "Best Podcasts for Running",
+    "Best Daily Podcasts",
+    "SmartLess Best Episodes",
+    "Best Podcasts for Sleep"
   ],
   "totalSEOPages": 10096,
   "notes": [
