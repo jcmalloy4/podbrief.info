@@ -1,22 +1,22 @@
 {
   "startDate": "2026-02-09T16:17:00-08:00",
-  "lastUpdate": "2026-02-22T11:18:33-08:00",
-  "nextUpdate": "2026-02-22T00:00:00-08:00",
-  "sessionStart": "2026-02-22T04:42:00-08:00",
+  "lastUpdate": "2026-02-24T06:18:00-08:00",
+  "nextUpdate": "2026-02-25T00:00:00-08:00",
+  "sessionStart": "2026-02-24T06:16:00-08:00",
   "metrics": {
     "briefPagesLive": 9797,
     "directoryPagesLive": 135,
     "topicPagesLive": 52,
-    "blogPostsLive": 117,
-    "totalSEOPages": 10101,
+    "blogPostsLive": 130,
+    "totalSEOPages": 10114,
     "internalLinks": 9797,
     "schemaMarkupPages": 9797,
     "googleIndexed": 0,
     "organicClicks": 0
   },
   "todayProgress": {
-    "blogPostsCreated": 8,
-    "blogPostsUpdated": 11,
+    "blogPostsCreated": 3,
+    "blogPostsUpdated": 0,
     "comparisonPagesCreated": 0,
     "bestOfPagesCreated": 0,
     "useCasePagesCreated": 0,
@@ -25,46 +25,30 @@
     "searchFixed": false,
     "briefAutomationCreated": false,
     "deploymentsStarted": 0,
-    "commits": 2,
-    "minutesWorked": 30
+    "commits": 0,
+    "minutesWorked": 2
   },
   "blogPostsCreated": [
-    "Best Short Podcasts Under 30 Minutes",
-    "Best Storytelling Podcasts",
-    "Best Podcasts for Running",
-    "Best Daily Podcasts",
-    "SmartLess Best Episodes",
-    "Best Podcasts for Sleep",
-    "Best Investigative Podcasts",
-    "Best Mindfulness Podcasts"
+    "Best True Crime Podcasts 2026 (updated)",
+    "Best Science Podcasts 2026 (updated)",
+    "Best Finance Podcasts 2026 (updated)"
   ],
-  "totalSEOPages": 10096,
+  "totalSEOPages": 10114,
   "notes": [
-    "\u2705 Created 1 new blog post + updated 11 existing (Feb 22)",
-    "New: Best Short Podcasts Under 30 Minutes",
-    "Updated: Major 'best episodes' guides for Lex, Tim, Joe Rogan, Huberman",
-    "Updated: Category guides (comedy, history, interview, sports, true crime)",
-    "Added: Finance, learning, commuting podcast guides",
+    "✅ Updated 3 existing blog posts (Feb 24)",
+    "Session 1 (6:16 AM): True Crime, Science, Finance (3 posts updated with fresh content)",
     "All posts have schema markup, internal links, CTAs",
-    "1 commit, ready to push"
+    "Updated sitemap-blog.xml with new lastmod dates",
+    "Ready to commit and push"
   ],
   "nextActions": [
-    "Continue 5-10 posts daily cadence (focus on NEW posts tomorrow)",
+    "Create 2-5 more blog posts today to hit 5-10 goal",
     "Website redesign (competitive analysis ready)",
     "Brief monitoring (waiting on Firebase credentials)"
   ],
   "blogPostsUpdated": [
-    "Best Podcasts for Learning",
-    "Best Finance Podcasts",
-    "Best Podcasts for Commuting",
-    "Lex Fridman Best Episodes",
-    "Tim Ferriss Best Episodes",
-    "Joe Rogan Best Episodes",
-    "Huberman Lab Best Episodes",
-    "Best Comedy Podcasts",
-    "Best History Podcasts",
-    "Best Interview Podcasts",
-    "Best Sports Podcasts",
-    "Best True Crime Podcasts"
+    "best-true-crime-podcasts.html",
+    "best-science-podcasts.html",
+    "best-finance-podcasts.html"
   ]
 }
