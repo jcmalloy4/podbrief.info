@@ -1,28 +1,33 @@
 {
   "systemName": "Brief Upload Monitor",
   "purpose": "Track automated upload of new podcast briefs to podbrief.info",
-  "lastChecked": "2026-02-14T11:25:00-08:00",
-  "status": "SCRIPT_READY_NEEDS_CREDENTIALS",
+  "lastChecked": "2026-02-25T04:18:00-08:00",
+  "status": "⚠️ STALLED - NO NEW BRIEFS IN 3 DAYS",
   "notes": [
     "Briefs are posted to Firebase Storage daily (confirmed by John)",
     "Created sync script: scripts/sync-briefs-from-firebase.js",
     "Script fetches briefs from Firebase, generates static HTML, updates sitemap",
     "BLOCKER: Missing firebase-service-account.json credential file",
-    "Need John to provide Firebase service account credentials"
+    "Need John to provide Firebase service account credentials",
+    "⚠️ NEW FINDING: Last brief update was Feb 22, 2026 - 3 days ago!",
+    "sitemap-briefs.xml last modified: 2026-02-22 05:16:05",
+    "All brief directories show Feb 22 timestamps",
+    "No new briefs added since then - CONTENT PIPELINE STALLED"
   ],
   "monitoring": {
-    "lastUploadTimestamp": null,
+    "lastUploadTimestamp": "2026-02-22T05:16:05-08:00",
     "briefsUploadedToday": 0,
     "totalBriefsInSitemap": 9797,
-    "errors": [],
-    "healthStatus": "UNKNOWN"
+    "daysSinceLastUpload": 3,
+    "errors": ["No new briefs uploaded in 72+ hours"],
+    "healthStatus": "⚠️ DEGRADED - Content pipeline stalled"
   },
   "actionItems": [
-    "Ask John for access to brief generation system",
-    "Understand how new briefs are created",
-    "Set up automated upload pipeline",
-    "Monitor sitemap count for increases",
-    "Alert if no new briefs uploaded in 24h"
+    "URGENT: Alert John that brief uploads have stopped for 3 days",
+    "Get Firebase service account credentials ASAP",
+    "Test sync script once credentials available",
+    "Set up monitoring to alert if no uploads in 24h",
+    "Investigate if brief generation system is still running"
   ],
-  "nextCheck": "2026-02-14T14:25:00-08:00"
+  "nextCheck": "2026-02-25T08:18:00-08:00"
 }
