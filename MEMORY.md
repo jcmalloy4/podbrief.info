@@ -15,18 +15,28 @@
 - **BLOCKED:** Missing `firebase-service-account.json` — need credentials from John
 - Current brief count in sitemap: ~9,797
 
-### Site Stats (as of Feb 17, 2026)
-- Total SEO pages: ~9,993
-- Blog posts: 56 (49 before today + 9 today)
+### Site Stats (as of Feb 27, 2026)
+- Total SEO pages: ~10,141
+- Blog posts: 157
 - Brief pages: 9,797
 - Directory pages: 135
-- Topic pages: 12
+- Topic pages: 52
 
 ## Blog Content
 - Daily target: 5-10 posts
 - Current blog post list tracked in `memory/seo-growth-tracker.json`
 - All posts follow template from `blog/lex-fridman-best-episodes.html`
 - After each batch: update `blog/index.html` + `sitemap-blog.xml` + trigger Cloud Build
+
+## Website Redesign (Feb 2026)
+- Completed competitive analysis of Snipd, Podwise, Snipcast
+- **Phase 1 Complete:** Homepage redesign (`index-new.html`, `homepage-redesign.css`)
+  - Modern gradients, search bar, topic cards, value props section
+- **Phase 2 Complete:** Browse page redesign (`browse-new.html`)
+  - Topic filters, sorting, modern card layout, needs dynamic data loading
+- **Phase 3 TODO:** Blog page redesign
+- **Phase 4 TODO:** Individual episode/podcast page improvements
+- Design emphasizes: free access, search prominence, topic discovery, social proof
 
 ## Key Blockers for John
 1. **Firebase credentials** — needed to automate brief sync
