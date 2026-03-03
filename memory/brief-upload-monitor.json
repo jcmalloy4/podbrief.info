@@ -1,28 +1,34 @@
 {
   "systemName": "Brief Upload Monitor",
   "purpose": "Track automated upload of new podcast briefs to podbrief.info",
-  "lastChecked": "2026-02-14T11:25:00-08:00",
-  "status": "SCRIPT_READY_NEEDS_CREDENTIALS",
+  "lastChecked": "2026-03-01T05:17:00-08:00",
+  "status": "🚨 CRITICAL - NO NEW BRIEFS IN 7 DAYS",
   "notes": [
     "Briefs are posted to Firebase Storage daily (confirmed by John)",
     "Created sync script: scripts/sync-briefs-from-firebase.js",
     "Script fetches briefs from Firebase, generates static HTML, updates sitemap",
     "BLOCKER: Missing firebase-service-account.json credential file",
-    "Need John to provide Firebase service account credentials"
+    "Need John to provide Firebase service account credentials",
+    "🚨 Last brief update was Feb 22, 2026 - NOW 7 DAYS AGO!",
+    "sitemap-briefs.xml last modified: 2026-02-22 05:16:05",
+    "All brief directories show Feb 22 timestamps",
+    "No new briefs added since then - CONTENT PIPELINE COMPLETELY STALLED",
+    "Estimated ~350-700 briefs missing (assuming 50-100 briefs/day × 7 days)"
   ],
   "monitoring": {
-    "lastUploadTimestamp": null,
+    "lastUploadTimestamp": "2026-02-22T05:16:05-08:00",
     "briefsUploadedToday": 0,
     "totalBriefsInSitemap": 9797,
-    "errors": [],
-    "healthStatus": "UNKNOWN"
+    "daysSinceLastUpload": 7,
+    "errors": ["No new briefs uploaded in 168+ hours (7 days)"],
+    "healthStatus": "🚨 CRITICAL - Content pipeline completely stalled for a full week"
   },
   "actionItems": [
-    "Ask John for access to brief generation system",
-    "Understand how new briefs are created",
-    "Set up automated upload pipeline",
-    "Monitor sitemap count for increases",
-    "Alert if no new briefs uploaded in 24h"
+    "🚨 URGENT: Brief uploads stalled for FULL WEEK (7 DAYS)",
+    "Waiting on Firebase service account credentials from John",
+    "Test sync script once credentials available",
+    "Set up monitoring to alert if no uploads in 24h",
+    "Potentially losing 350-700 briefs worth of SEO content"
   ],
-  "nextCheck": "2026-02-14T14:25:00-08:00"
+  "nextCheck": "2026-03-01T10:17:00-08:00"
 }

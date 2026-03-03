@@ -1,160 +1,105 @@
 {
-  "redesignProject": "PodBrief Website Redesign",
-  "startDate": "2026-02-15",
-  "status": "Planning",
-  "competitiveAnalysisComplete": true,
-  "phases": {
-    "phase1": {
-      "name": "Homepage Redesign",
-      "priority": 1,
-      "status": "In Progress",
-      "tasks": [
-        {
-          "task": "New hero section with bold value prop",
-          "completed": true,
-          "completedDate": "2026-02-19",
-          "notes": "Updated to 'Read Any Podcast Episode in 2 Minutes' + dual CTA row"
-        },
-        {
-          "task": "Add social proof section",
-          "completed": true,
-          "completedDate": "2026-02-19",
-          "notes": "Added 5-star rating + 10,000+ episode summaries line"
-        },
-        {
-          "task": "Show featured/trending briefs on homepage",
-          "completed": false
-        },
-        {
-          "task": "Prominent search bar",
-          "completed": false
-        },
-        {
-          "task": "Mobile optimization",
-          "completed": false
-        }
+  "startDate": "2026-02-27T08:46:00-08:00",
+  "purpose": "Complete website redesign based on competitive analysis",
+  "status": "In Progress",
+  "competitiveAnalysis": {
+    "completed": true,
+    "competitorsAnalyzed": ["Snipd", "Podwise", "Snipcast"],
+    "documentPath": "memory/competitive-analysis.md",
+    "keyInsights": [
+      "Clear value prop above fold is critical",
+      "Search bar prominence increases engagement",
+      "Topic-based browsing helps discovery",
+      "Modern gradient design with clean typography",
+      "Social proof (stats) builds trust",
+      "Feature highlights with icons",
+      "Mobile-first responsive design"
+    ]
+  },
+  "redesignPhases": {
+    "phase1Homepage": {
+      "status": "Complete",
+      "files": [
+        "podbrief.info/index-new.html",
+        "podbrief.info/homepage-redesign.css"
+      ],
+      "improvements": [
+        "✅ Added hero badge with episode count",
+        "✅ Gradient text for main headline",
+        "✅ Prominent search bar in hero section",
+        "✅ Hero stats section (10,000+ episodes, 100+ podcasts, 50+ topics)",
+        "✅ Quick browse topics section with 6 topic cards",
+        "✅ Value props section with 6 feature cards",
+        "✅ Featured podcasts grid",
+        "✅ CTA section with gradient background",
+        "✅ Modern footer with multiple sections",
+        "✅ Mobile responsive design",
+        "✅ Modern CSS with gradients, hover effects, smooth transitions",
+        "✅ Search functionality (redirects to browse page with query)"
+      ],
+      "completedAt": "2026-02-27T09:16:00-08:00"
+    },
+    "phase2BrowsePage": {
+      "status": "Complete",
+      "priority": "High",
+      "files": [
+        "podbrief.info/browse-new.html"
+      ],
+      "improvements": [
+        "✅ Card-based layout for episodes",
+        "✅ Filter by topic dropdown (8 topics)",
+        "✅ Sort options (latest, alphabetical, by podcast)",
+        "✅ Modern card design with hover effects",
+        "✅ Search bar with icon",
+        "✅ Results counter",
+        "✅ Load more button placeholder",
+        "✅ Matches new homepage design system",
+        "✅ Fully mobile responsive",
+        "✅ Modern footer matching homepage",
+        "⏳ Dynamic data loading (requires API integration)"
+      ],
+      "completedAt": "2026-02-27T10:16:00-08:00"
+    },
+    "phase3BlogPage": {
+      "status": "Not Started",
+      "priority": "Medium",
+      "improvements": [
+        "Featured posts section",
+        "Category filters",
+        "Better typography",
+        "Related content suggestions",
+        "Card-based grid layout"
       ]
     },
-    "phase2": {
-      "name": "Browse Page Improvements",
-      "priority": 2,
+    "phase4IndividualPages": {
       "status": "Not Started",
-      "tasks": [
-        {
-          "task": "Add filters (topic, podcast, date, length)",
-          "completed": false
-        },
-        {
-          "task": "Better preview cards with excerpts",
-          "completed": false
-        },
-        {
-          "task": "Autocomplete search",
-          "completed": false
-        },
-        {
-          "task": "Trending/popular sections",
-          "completed": false
-        }
-      ]
-    },
-    "phase3": {
-      "name": "Brief Page Redesign",
-      "priority": 3,
-      "status": "Not Started",
-      "tasks": [
-        {
-          "task": "Better visual hierarchy",
-          "completed": false
-        },
-        {
-          "task": "Share buttons",
-          "completed": false
-        },
-        {
-          "task": "Related episodes section",
-          "completed": false
-        },
-        {
-          "task": "Listen on... links",
-          "completed": false
-        },
-        {
-          "task": "Export options (copy, email, etc.)",
-          "completed": false
-        }
-      ]
-    },
-    "phase4": {
-      "name": "Advanced Features",
-      "priority": 4,
-      "status": "Not Started",
-      "tasks": [
-        {
-          "task": "Chat with episodes",
-          "completed": false
-        },
-        {
-          "task": "Export to Notion/Obsidian",
-          "completed": false
-        },
-        {
-          "task": "Podcast subscriptions",
-          "completed": false
-        },
-        {
-          "task": "Personalized recommendations",
-          "completed": false
-        }
-      ]
-    },
-    "phase5": {
-      "name": "Monetization",
-      "priority": 5,
-      "status": "Not Started",
-      "tasks": [
-        {
-          "task": "Design pricing tiers",
-          "completed": false
-        },
-        {
-          "task": "Implement free tier limits",
-          "completed": false
-        },
-        {
-          "task": "Premium subscription system",
-          "completed": false
-        },
-        {
-          "task": "API access for developers",
-          "completed": false
-        }
+      "priority": "Medium",
+      "improvements": [
+        "Better episode page layout",
+        "Related episodes sidebar",
+        "Topic connections",
+        "Share functionality",
+        "Improved readability",
+        "Better mobile experience"
       ]
     }
   },
-  "keyInsights": [
-    "Competitors lead with bold value props: 'Turn Listening into Learning', 'Know Before You Listen'",
-    "Social proof is critical (testimonials with names/titles/companies, user counts)",
-    "Mobile-first design is standard",
-    "Integration ecosystems matter (Notion, Readwise, Obsidian)",
-    "Pre-listen value: help users decide BEFORE they commit time",
-    "Our advantage: instant access to 9,797 briefs (no waiting, no pasting links)",
-    "Our advantage: SEO-optimized landing pages (10,000+ pages)",
-    "Our advantage: no account required to browse"
+  "nextSteps": [
+    "Test new homepage and browse page on mobile and desktop",
+    "Get John's approval on redesigns",
+    "Replace index.html with index-new.html",
+    "Replace browse.html with browse-new.html",
+    "Implement dynamic data loading for browse page (parse sitemap-briefs.xml)",
+    "Move to Phase 3: Blog page redesign",
+    "Update all internal pages to match new design system"
   ],
-  "proposedTaglines": [
-    "Know Before You Listen",
-    "Discover What's Worth Listening To",
-    "Never Waste Time on a Bad Podcast Again",
-    "The Podcast Discovery Engine",
-    "Your Personal Podcast Curator"
-  ],
-  "nextActions": [
-    "Review competitive analysis with John",
-    "Get approval on redesign direction",
-    "Start Phase 1: Homepage redesign",
-    "Create homepage mockup/wireframe",
-    "Implement and test incrementally"
-  ],
-  "lastUpdated": "2026-02-15T07:37:00-08:00"
+  "notes": [
+    "New homepage built based on competitive insights from Snipd and Podwise",
+    "Design emphasizes: search, discovery, free access, social proof",
+    "Modern gradient aesthetics with clean Inter font",
+    "Fully responsive with mobile-first approach",
+    "Search bar redirects to browse.html with query parameter",
+    "Need to ensure browse.html can handle search queries",
+    "May need podcast/topic images for featured sections"
+  ]
 }
