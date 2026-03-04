@@ -1,34 +1,36 @@
 {
   "systemName": "Brief Upload Monitor",
   "purpose": "Track automated upload of new podcast briefs to podbrief.info",
-  "lastChecked": "2026-03-01T05:17:00-08:00",
-  "status": "🚨 CRITICAL - NO NEW BRIEFS IN 7 DAYS",
+  "lastChecked": "2026-03-03T08:15:00-08:00",
+  "status": "\ud83d\udea8 CRITICAL - NO NEW BRIEFS IN 8 DAYS",
   "notes": [
     "Briefs are posted to Firebase Storage daily (confirmed by John)",
     "Created sync script: scripts/sync-briefs-from-firebase.js",
     "Script fetches briefs from Firebase, generates static HTML, updates sitemap",
     "BLOCKER: Missing firebase-service-account.json credential file",
     "Need John to provide Firebase service account credentials",
-    "🚨 Last brief update was Feb 22, 2026 - NOW 7 DAYS AGO!",
+    "\ud83d\udea8 Last brief update was Feb 22, 2026 - NOW 8 DAYS AGO!",
     "sitemap-briefs.xml last modified: 2026-02-22 05:16:05",
     "All brief directories show Feb 22 timestamps",
     "No new briefs added since then - CONTENT PIPELINE COMPLETELY STALLED",
-    "Estimated ~350-700 briefs missing (assuming 50-100 briefs/day × 7 days)"
+    "Estimated ~400-800 briefs missing (assuming 50-100 briefs/day \u00d7 8 days)"
   ],
   "monitoring": {
     "lastUploadTimestamp": "2026-02-22T05:16:05-08:00",
     "briefsUploadedToday": 0,
     "totalBriefsInSitemap": 9797,
-    "daysSinceLastUpload": 7,
-    "errors": ["No new briefs uploaded in 168+ hours (7 days)"],
-    "healthStatus": "🚨 CRITICAL - Content pipeline completely stalled for a full week"
+    "daysSinceLastUpload": 8,
+    "errors": [
+      "No new briefs uploaded in 192+ hours (8 days)"
+    ],
+    "healthStatus": "\ud83d\udea8 CRITICAL - Content pipeline completely stalled for 8 days"
   },
   "actionItems": [
-    "🚨 URGENT: Brief uploads stalled for FULL WEEK (7 DAYS)",
+    "\ud83d\udea8 URGENT: Brief uploads stalled for 8 FULL DAYS",
     "Waiting on Firebase service account credentials from John",
     "Test sync script once credentials available",
     "Set up monitoring to alert if no uploads in 24h",
-    "Potentially losing 350-700 briefs worth of SEO content"
+    "Potentially losing 400-800 briefs worth of SEO content"
   ],
-  "nextCheck": "2026-03-01T10:17:00-08:00"
+  "nextCheck": "2026-03-02T10:00:00-08:00"
 }
