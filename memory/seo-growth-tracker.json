@@ -1,92 +1,60 @@
 {
   "startDate": "2026-02-09T16:17:00-08:00",
-  "lastUpdate": "2026-03-07T11:35:00-08:00",
-  "nextUpdate": "2026-03-08T00:00:00-08:00",
-  "sessionStart": "2026-03-07T05:35:00-08:00",
+  "lastUpdate": "2026-03-09T05:05:26-07:00",
+  "nextUpdate": "2026-03-10T00:00:00-07:00",
+  "sessionStart": "2026-03-09T05:05:00-07:00",
   "metrics": {
     "briefPagesLive": 9797,
     "directoryPagesLive": 135,
     "topicPagesLive": 52,
-    "blogPostsLive": 183,
-    "totalSEOPages": 10167,
+    "blogPostsLive": 186,
+    "totalSEOPages": 10170,
     "internalLinks": 9797,
     "schemaMarkupPages": 9797,
     "googleIndexed": 0,
     "organicClicks": 0
   },
   "todayProgress": {
-    "blogPostsCreated": 10,
-    "blogPostsUpdated": 8,
-    "comparisonPagesCreated": 1,
-    "bestOfPagesCreated": 3,
-    "useCasePagesCreated": 1,
-    "faqPagesCreated": 1,
+    "blogPostsCreated": 3,
+    "blogPostsUpdated": 2,
+    "comparisonPagesCreated": 0,
+    "bestOfPagesCreated": 0,
+    "useCasePagesCreated": 0,
+    "faqPagesCreated": 0,
     "navigationImproved": false,
     "searchFixed": false,
     "briefAutomationCreated": false,
     "homepageRedesigned": false,
     "browsePageRedesigned": false,
     "deploymentsStarted": 0,
-    "commits": 4,
-    "minutesWorked": 360
+    "commits": 0,
+    "minutesWorked": 15
   },
   "blogPostsCreated": [
-    "best-podcasts-for-learning-2026.html",
-    "best-short-podcasts-2026.html",
-    "best-marketing-podcasts-2026.html",
-    "best-finance-podcasts-2026.html",
-    "how-to-discover-new-podcasts.html",
-    "best-all-in-podcast-episodes.html",
-    "best-podcast-apps-compared.html",
-    "best-lex-fridman-podcast-episodes.html",
-    "best-tim-ferriss-podcast-episodes.html",
-    "best-podcasts-for-commuting-2026.html"
+    "best-productivity-podcasts-2026.html",
+    "best-business-podcasts-2026.html",
+    "best-history-podcasts-2026.html"
   ],
-  "totalSEOPages": 10167,
+  "totalSEOPages": 10170,
   "notes": [
-    "🎯 March 7, 2026 - 11:35 AM (DAILY MAXIMUM ACHIEVED! 10/10)",
-    "✅ Created 10/10 blog posts for the day (PERFECT EXECUTION!):",
-    "Batch 1 (5:35 AM - 3 posts):",
-    "  • Best Podcasts for Learning 2026 (science, history, business, philosophy, skills)",
-    "  • Best Short Podcasts 2026 (under 30 min, daily news, quick learning)",
-    "  • Best Marketing Podcasts 2026 (growth, SEO, social media, content strategy)",
-    "Batch 2 (6:05 AM - 2 posts):",
-    "  • Best Finance Podcasts 2026 (personal finance, investing, wealth building)",
-    "  • How to Discover New Podcasts (discovery methods, tools, strategies)",
-    "Batch 3 (8:35 AM - 2 posts):",
-    "  • Best All-In Podcast Episodes (show-specific best-of guide)",
-    "  • Best Podcast Apps Compared (app comparison guide)",
-    "Batch 4 (11:35 AM - 3 posts - FINAL):",
-    "  • Best Lex Fridman Podcast Episodes (show-specific best-of guide)",
-    "  • Best Tim Ferriss Show Episodes (show-specific best-of guide)",
-    "  • Best Podcasts for Commuting 2026 (use-case guide)",
-    "Diverse content types: category guides, how-to guides, comparison guides, best-of guides, use-case guides",
-    "Total blog posts now: 183 (+10 today)",
-    "Total SEO pages: 10,167",
-    "Four commits pushed successfully",
-    "⭐ PERFECT EXECUTION: Hit daily maximum of 10 blog posts!"
+    "🎯 March 9, 2026 - 5:05 AM (Back to work after 2-day pause)",
+    "✅ Created 3/10 blog posts for today:",
+    "  • Best Productivity Podcasts 2026 (time management, GTD, deep work, efficiency)",
+    "  • Best Business Podcasts 2026 (All-In, MFM, Acquired, HIBT, entrepreneurship)",
+    "  • Best History Podcasts 2026 (Hardcore History, wars, civilizations, storytelling)",
+    "High-value category guides targeting broad search terms",
+    "Total blog posts now: 186 (+3 today)",
+    "Total SEO pages: 10,170",
+    "Updated blog index and sitemap",
+    "Ready to commit and continue"
   ],
   "nextActions": [
-    "Daily goal crushed: 10/10 posts created ✅",
-    "Tomorrow: Continue content creation or start website redesign work",
-    "Monitor brief upload situation (still stalled 13+ days)"
+    "Continue to 10/10 blog posts today",
+    "Target: 7 more posts (finance, technology, science, comedy, wellness, parenting, sports)",
+    "Monitor brief upload situation (still stalled)"
   ],
   "blogPostsUpdated": [
     "blog/index.html",
     "sitemap-blog.xml"
-  ],
-  "comparisonPagesCreated": [
-    "best-podcast-apps-compared.html"
-  ],
-  "useCasePagesCreated": [
-    "best-podcasts-for-commuting-2026.html"
-  ],
-  "faqPagesCreated": [
-    "how-to-discover-new-podcasts.html"
-  ],
-  "bestOfPagesCreated": [
-    "best-all-in-podcast-episodes.html",
-    "best-lex-fridman-podcast-episodes.html",
-    "best-tim-ferriss-podcast-episodes.html"
   ]
 }
